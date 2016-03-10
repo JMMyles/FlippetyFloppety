@@ -45,36 +45,64 @@ create table inventory(
 create table eusesi(
 	);
 create table sreviewsi(
+	lastchecked date,
+	ssid varchar(10),
+	iid varchar(10),
+	primary key (ssid, iid),
+	foreign key (ssid) references supervisor,
+	foreign key (iid) references inventory
 	);
 create table rupdatei(
-	);
-create table rcreatesi(
+	rsid varchar(10),
+	iid varchar(10),
+	lastchecked date,
+	primary key (rsid, iid),
+	foreign key (rsid) references researcher,
+	foreign key (iid) references inventory
 	);
 create table labcreated(
 	iid varchar(10) primary key,
 	amnt double,
 	booknum integer,
 	datelc date,
+	foreign key (iid) references inventory,
 	foreign key (booknum) references labbook,
 	foreign key (datelc) references experiment
 	);
+-- researcher only creates new labcreated tuples.
+-- Does references labcreated make sense? Can we cascade up to inventory to update that table?
+-- Or is there some other way we should inforce this restriction?
+	create table rcreatesi(
+	rsid varchar(10),
+	iid varchar(10),
+	iname varchar2(40),
+	-- does iname really need to be a part of the key?
+	primary key (rsid, iid, iname),
+	foreign key (rsid) references researcher,
+	foreign key (iid, iname) references labcreated
+	);
 create table machinery(
 	iid varchar(10) primary key,
-	serialnum varchar(10)
+	serialnum varchar(10),
+	foreign key (iid) references equipment
 	);
 create table consumable(
+	iid varchar(10) primary key,
+	amnt float,
+	foreign key (iid) references equipment
 	);
 create table inspection(
 	datec date,
 	iid varchar(10),
-	primary key(datec, iid)
+	primary key(datec, iid),
+	foreign key (iid) references machinery
 	);
 create table breakdown(
 	iid varchar(10),
 	datec date,
 	description varchar(40),
 	primary key(iid, datec),
-	foreign key (iid) references inventory
+	foreign key (iid) references machinery
 	);
 create table productinfo(
 	supplier varchar2(40),
@@ -85,5 +113,6 @@ create table equipment(
 	iid varchar(10) primary key,
 	supplier varchar2(40),
 	ordernum varchar(10),
+	foreign key (inventory) references inventory,
 	foreign key (ordernum) references productinfo
 	);
