@@ -28,8 +28,12 @@ create table researcher(
 	rname varchar2(40)
 	);
 create table labbook(
+	booknum int primary key,
+	rsid varchar(10) NOT NULL,
+	foreign key (rsid) references researcher
 	);
 create table experiment(
+	-- JL: i dont think this one is right in the google doc the on update cascade, on delete cascade
 	);
 create table inventory(
 	iid varchar(10) primary key,
@@ -55,14 +59,31 @@ create table labcreated(
 	foreign key (datelc) references experiment
 	);
 create table machinery(
+	iid varchar(10) primary key,
+	serialnum varchar(10)
 	);
 create table consumable(
 	);
 create table inspection(
+	datec date,
+	iid varchar(10),
+	primary key(datec, iid)
 	);
 create table breakdown(
+	iid varchar(10),
+	datec date,
+	description varchar(40),
+	primary key(iid, datec),
+	foreign key (iid) references inventory
 	);
 create table productinfo(
+	supplier varchar2(40),
+	ordernum varchar(10),
+	primary key (supplier, ordernum)
 	);
 create table equipment(
+	iid varchar(10) primary key,
+	supplier varchar2(40),
+	ordernum varchar(10),
+	foreign key (ordernum) references productinfo
 	);
