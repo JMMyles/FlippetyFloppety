@@ -34,6 +34,11 @@ create table labbook(
 	);
 create table experiment(
 	-- JL: i dont think this one is right in the google doc the on update cascade, on delete cascade
+	-- JM: I've added the other bits of the table anyway.  We'll have a look.
+	book# int,
+	cdate date,
+	page# int,
+	primary key (book#, cdate)
 	);
 create table inventory(
 	iid varchar(10) primary key,
@@ -43,6 +48,12 @@ create table inventory(
 	iname varchar2(40)
 	);
 create table eusesi(
+	book# int NOT NULL,
+	cdate date NOT NULL,
+	iid varchar(10),
+	primary key book#, date, iid,
+	foreign key cdate references inventory,
+	foreign key book# references labbook
 	);
 create table sreviewsi(
 	lastchecked date,
