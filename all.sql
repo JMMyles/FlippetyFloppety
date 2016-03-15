@@ -37,6 +37,7 @@ create table experiment(
 	-- JM: I've added the other bits of the table anyway.  We'll have a look.
 	booknum int,
 	cdate date,
+	-- JS: We should probs specify that pagenum can't be negative
 	pagenum int,
 	primary key (booknum, cdate),
 	foreign key (booknum) references labbook on delete cascade
@@ -126,3 +127,28 @@ create table equipment(
 	foreign key (inventory) references inventory,
 	foreign key (ordernum, supplier) references productinfo,
 	);
+	
+-- Adding supervisor tuples
+insert into supervisor values('s1.eyung', 'Eric Yung');
+insert into supervisor values('s2.rholt', 'Rob Holt');
+insert into supervisor values('s3.gperona', 'Georgia Perona');
+insert into supervisor values('s4.dacton', 'Donald Acton');
+insert into supervisor values('s5.rgatema', 'Robert Gateman');
+-- Adding researcher tuples
+insert into researcher values('r1.jsihvon', 'Jelena Sihvonen');
+insert into researcher values('r2.jlam', 'Jeanie Lam');
+insert into researcher values('r3.jmyles', 'Joey Myles');
+insert into researcher values('r4.bli', 'Benson Li');
+insert into researcher values('r5.akapron', 'Anna Kapron-King');
+-- Adding labbook tuples
+insert into labbook values(1, 'r1.jsihvon');
+insert into labbook values(2, 'r2.jlam');
+insert into labbook values(3, 'r3.jmyles');
+insert into labbook values(4, 'r4.bli');
+insert into labbook values(5, 'r1.jsihvon');
+-- Adding experiment tuples
+insert into experiment values(1, '1-JAN-2001', 1);
+insert into experiment values(2, '1-JAN-2016', 307);
+insert into experiment values(2, '3-JUL-2015', 210);
+insert into experiment values(3, '28-OCT-2015', 313);
+insert into experiment values(1, '10-NOV-2014', 221);
