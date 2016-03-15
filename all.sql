@@ -75,6 +75,7 @@ create table rupdatei(
 	);
 create table labcreated(
 	iid varchar2(10) primary key,
+	-- JS: Maybe amt should be a char, so as not to restrict units (aka, only stored in mL)?
 	amnt double NOT NULL,
 	booknum integer NOT NULL,
 	datelc date NOT NULL,
@@ -152,3 +153,17 @@ insert into experiment values(2, '1-JAN-2016', 307);
 insert into experiment values(2, '3-JUL-2015', 210);
 insert into experiment values(3, '28-OCT-2015', 313);
 insert into experiment values(1, '10-NOV-2014', 221);
+-- Adding inventory tuples
+insert into inventory values('m.00000001', 'Bench 2', '1-JAN-2014', 1, 'Mini centrifuge');
+insert into inventory values('m.00000002', 'Corner of Bench 2', '2-FEB-2014', 1, 'Table top shaker');
+-- Adding eusesi tuples
+-- Adding sreviewsi tuples
+-- Adding rupdatei tuples
+-- Adding labcreated tuples
+-- Adding rcreatesi tuples
+-- Adding machinery tuples
+insert into machinery values('m.00000001', 'abcd');
+insert into machinery values('m.00000002', 'efgh');
+insert into machinery values('m.00000003', 'ijkl');
+insert into machinery values('m.00000004', 'mnop');
+insert into machinery values('m.00000005', 'qrst');
