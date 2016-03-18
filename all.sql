@@ -77,6 +77,7 @@ create table labcreated(
 	iid varchar2(10) primary key,
 	-- JS: Maybe amt should be a char, so as not to restrict units (aka, only stored in mL)?
 	amnt double NOT NULL,
+    units varchar2(2) NOT NULL,
 	booknum integer NOT NULL,
 	datelc date NOT NULL,
 	foreign key (iid) references inventory,
@@ -175,11 +176,11 @@ insert into rupdatei values('b4.bli', 'm2', '23-SEP-2015');
 insert into rupdatei values('r5.akapron', 'm3', '9-NOV-2015');
 insert into rupdatei values('r1.jsihvon', 'c4', '2-FEB-2016');
 -- Adding labcreated tuples
-insert into labcreated values('l1', 0, 0001, '1-JAN-2001');
-insert into labcreated values('l2', 1.5, 0002, '1-JAN-2016');
-insert into labcreated values('l3', 40, 0002, '03-JUL-2015');
-insert into labcreated values('l4', 5, 0003, '28-OCT-2015');
-insert into labcreated values('l5', 10, 0001, '10-NOV-2014');
+insert into labcreated values('l1', 0, 'uL', 0001, '1-JAN-2001');
+insert into labcreated values('l2', 1.5, 'mL', 0002, '1-JAN-2016');
+insert into labcreated values('l3', 40, 'uL', 0002, '03-JUL-2015');
+insert into labcreated values('l4', 5, 'uL', 0003, '28-OCT-2015');
+insert into labcreated values('l5', 10, 'uL', 0001, '10-NOV-2014');
 -- Adding rcreatesi tuples
 insert into rcreatesi values('r1.jsihvon', 'l4', 'F.nucleatum gDNA');
 insert into rcreatesi values('r2.jlam', 'l1', 'plasmid 330');
