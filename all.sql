@@ -1,23 +1,23 @@
 -- Database Table Creation
 --
 -- First drop any existing tables.
-drop table supervisor;
-drop table researcher;
-drop table labbook;
-drop table experiment;
-drop table inventory;
-drop table eusesi;
+drop table supervisor cascade constraints;
+drop table researcher cascade constraints;
+drop table labbook cascade constraints;
+drop table experiment cascade constraints;
+drop table inventory cascade constraints;
+drop table eusesi cascade constraints;
 -- JS: Can't remember if we should change the table below:
-drop table sreviewsi;
-drop table rupdatei;
-drop table rcreatesi;
-drop table labcreated;
-drop table machinery;
-drop table consumable;
-drop table inspection;
-drop table breakdown;
-drop table productinfo;
-drop table equipment;
+drop table sreviewsi cascade constraints;
+drop table rupdatei cascade constraints;
+drop table rcreatesi cascade constraints;
+drop table labcreated cascade constraints;
+drop table machinery cascade constraints;
+drop table consumable cascade constraints;
+drop table inspection cascade constraints;
+drop table breakdown cascade constraints;
+drop table productinfo cascade constraints;
+drop table equipment cascade constraints;
 -- Create each table.
 create table supervisor(
 	ssid varchar2(10) NOT NULL primary key,
@@ -157,10 +157,35 @@ insert into experiment values(1, '10-NOV-2014', 221);
 insert into inventory values('m.00000001', 'Bench 2', '1-JAN-2014', 1, 'Mini centrifuge');
 insert into inventory values('m.00000002', 'Corner of Bench 2', '2-FEB-2014', 1, 'Table top shaker');
 -- Adding eusesi tuples
+insert into eusesi values(0001, '1-JAN-2001', 'L1');
+insert into eusesi values(0002, '1-JAN-2016', 'L2');
+insert into eusesi values(0003, '3-JUL-2015', 'L3');
+insert into eusesi values(0004, '28-OCT-2015', 'L4');
+insert into eusesi values(0001, '10-NOV-2014', 'L5');
 -- Adding sreviewsi tuples
+insert into sreviewsi values('18-MAR-2015', 's1.eyung', 'm1');
+insert into sreviewsi values('25-MAY-2015', 's2.rholt', 'c3');
+insert into sreviewsi values('8-AUG-2015', 's3.gperona', 'm4');
+insert into sreviewsi values('12-DEC-2015', 's4.dacton', 'c5');
+insert into sreviewsi values('13-FEB-2016', 's1.eyung', 'm5');
 -- Adding rupdatei tuples
+insert into rupdatei values('r1.jsihvon', 'c2', '10-OCT-2014');
+insert into rupdatei values('r2.jlam', 'c5', '7-APR-2015');
+insert into rupdatei values('b4.bli', 'm2', '23-SEP-2015');
+insert into rupdatei values('r5.akapron', 'm3', '9-NOV-2015');
+insert into rupdatei values('r1.jsihvon', 'c4', '2-FEB-2016');
 -- Adding labcreated tuples
+insert into labcreated values('l1', 0, 0001, '1-JAN-2001');
+insert into labcreated values('l2', 1.5, 0002, '1-JAN-2016');
+insert into labcreated values('l3', 40, 0002, '03-JUL-2015');
+insert into labcreated values('l4', 5, 0003, '28-OCT-2015');
+insert into labcreated values('l5', 10, 0001, '10-NOV-2014');
 -- Adding rcreatesi tuples
+insert into rcreatesi values('r1.jsihvon', 'l4', 'F.nucleatum gDNA');
+insert into rcreatesi values('r2.jlam', 'l1', 'plasmid 330');
+insert into rcreatesi values('r2.jlam', 'l5', 'plasmid p241');
+insert into rcreatesi values('r4.bli', 'l2', 'p241 infected HEK293T cells');
+insert into rcreatesi values('r5.akapron', 'l3', 'p241 transformed bacteria stock');
 -- Adding machinery tuples
 insert into machinery values('m.00000001', 'abcd');
 insert into machinery values('m.00000002', 'efgh');
