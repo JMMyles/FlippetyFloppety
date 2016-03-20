@@ -1,5 +1,8 @@
 package com.flippetyfloppety;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseSetup {
     private Connection connection = null;
