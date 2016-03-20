@@ -18,7 +18,7 @@ public class Login {
     public Login() {
         loginBtn.addActionListener(new ActionListener() {
             /**
-             * Invoked when an login button is pressed.
+             * Invoked when login button is pressed.
              *
              * @param e
              */
