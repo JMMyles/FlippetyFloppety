@@ -205,33 +205,43 @@ insert into rcreatesi values('r5.akapron', 'l.00000003');
 -- Adding product info tuples
 insert into productinfo values('Invitrogen', 88947);
 insert into productinfo values('Invitrogen', 32439);
+insert into productinfo values('Invitrogen', 55421);
+insert into productinfo values('HappyDays', 71328);
+insert into productinfo values('FallOut', 80085);
 insert into productinfo values('TxMedical', 28263);
 insert into productinfo values('TxMedical', 29768);
+insert into productinfo values('CompanyInc', 90981);
+insert into productinfo values('CompanyInc', 00819);
 insert into productinfo values('ThermoScientific', 01924);
 -- Adding equipment tuples
 insert into equipment values('m.00000001', 'Invitrogen', 88947);
+insert into equipment values('m.00000002', 'Invitrogen', 44521);
 insert into equipment values('m.00000003', 'Invitrogen', 32439);
+insert into equipment values('m.00000004', 'HappyDays', 71328);
+insert into equipment values('m.00000005', 'FallOut', 80085);
 insert into equipment values('c.00000001', 'TxMedical', 28263);
 insert into equipment values('c.00000002', 'TxMedical', 29768);
+insert into equipment values('c.00000003', 'CompanyInc', 90981);
+insert into equipment values('c.00000004', 'CompanyInc', 00819);
 insert into equipment values('c.00000005', 'ThermoScientific', 01924);
 -- Adding machinery tuples
 insert into machinery values('m.00000001', 'abcd');
-insert into machinery values('c.00000002', 'efgh');
-insert into machinery values('c.00000001', 'mnop');
-insert into machinery values('m.00000003', 'ijkl');
-insert into machinery values('c.00000005', 'qrst');
+insert into machinery values('m.00000002', 'efgh');
+insert into machinery values('m.00000003', 'mnop');
+insert into machinery values('m.00000004', 'ijkl');
+insert into machinery values('m.00000005', 'qrst');
 -- Adding consumable tuples
-insert into consumable values('m.00000001', 300);
+insert into consumable values('c.00000001', 300);
 insert into consumable values('c.00000002', 300);
-insert into consumable values('m.00000003', 100);
-insert into consumable values('c.00000005', 25);
-insert into consumable values('c.00000001', 90);
+insert into consumable values('c.00000003', 100);
+insert into consumable values('c.00000004', 25);
+insert into consumable values('c.00000005', 90);
 -- Adding inspection tuples
 insert into inspection values('2015-01-01', 'm.00000001');
 insert into inspection values('2015-02-02', 'm.00000003');
-insert into inspection values('2015-03-03', 'c.00000001');
-insert into inspection values('2015-04-04', 'c.00000002');
-insert into inspection values('2016-01-01', 'c.00000005');
+insert into inspection values('2015-03-03', 'm.00000001');
+insert into inspection values('2015-04-04', 'm.00000002');
+insert into inspection values('2016-01-01', 'm.00000005');
 -- Adding breakdown tuples
 insert into breakdown values('m.00000001', '2015-03-08', 'explosion');
 insert into breakdown values('m.00000001', '2015-11-11', '2nd explosion');
