@@ -78,7 +78,7 @@ public class QueriesGUI {
                 // Perform the query
             }
         });
-        nestAggMaxBtnaddActionListener(new ActionListener() {
+        nestAggMaxBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
