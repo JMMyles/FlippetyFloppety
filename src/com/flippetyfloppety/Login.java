@@ -24,8 +24,10 @@ public class Login {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 System.out.println("HI");
-            }
+                DatabaseSetup db = new DatabaseSetup();
+                        }
         });
     }
 
