@@ -18,7 +18,7 @@ public class QueriesGUI {
 // TODO users tab for supervisors
 // Delete w/out cascade: delete researcher
 
-    private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggBtn, cDeleteBtn, nCDeleteBtn;
+    private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggMinBtn, nestAggMaxBtn, cDeleteBtn, nCDeleteBtn;
 
     public void queryGUI() {
         TextField tfSelection, tfAttribute, tfJoin, tfDivision, tfAgg, tfNestAgg, tfCascadeDeletion, tfNCascadeDeletion;
@@ -69,7 +69,16 @@ public class QueriesGUI {
         });
         // nested aggregation text field
         tfNestAgg = new TextField("nested aggregation query", 30);
-        nestAggBtn.addActionListener(new ActionListener() {
+        nestAggMinBtn.addActionListener(new ActionListener() {
+            /**
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Perform the query
+            }
+        });
+        nestAggMaxBtnaddActionListener(new ActionListener() {
             /**
              * @param e
              */
