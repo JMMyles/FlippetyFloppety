@@ -19,9 +19,19 @@ public class QueriesGUI {
 // TODO users tab for supervisors
 // Delete w/out cascade: delete researcher
 
+    // filter options - add this to panel later
+
     private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggMinBtn, nestAggMaxBtn, cDeleteBtn, nCDeleteBtn;
 
     public void queryGUI() {
+
+//        // panel costruction
+//        private JPanel queryPanel;
+//        queryFrame = new JFrame("Query");
+//        queryFrame.setContentPane(new queriesGUI.queryPanel);
+//        queryFrame.pack();
+//        queryFrame.setVisible(true);
+
         TextField tfSelection, tfAttribute, tfJoin, tfDivision, tfAgg, tfNestAgg, tfCascadeDeletion, tfNCascadeDeletion;
         // projection and selection text field
         tfSelection = new TextField("selection condition", 30);  //arbitrary length - test
@@ -110,5 +120,16 @@ public class QueriesGUI {
                 // Perform the query
             }
         });
+    }
+
+    // function to construct panel
+    public void queryPanel() {
+        
+        // panel costruction
+        private JPanel queryPanel;
+        queryFrame = new JFrame("Query");
+        queryFrame.setContentPane(new queriesGUI.queryPanel);
+        queryFrame.pack();
+        queryFrame.setVisible(true);
     }
 }
