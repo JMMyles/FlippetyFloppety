@@ -23,7 +23,7 @@ public class QueriesGUI {
 
     private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggMinBtn, nestAggMaxBtn, cDeleteBtn, nCDeleteBtn;
 
-    public queryGUI() {
+    public QueriesGUI() {
 
 //        // panel costruction
 //        private JPanel queryPanel;
@@ -128,7 +128,7 @@ public class QueriesGUI {
         // panel costruction
         private JPanel queryPanel;
         queryFrame = new JFrame("Query");
-        queryFrame.setContentPane(new queriesGUI.queryPanel);
+        queryFrame.setContentPane(new QueriesGUI.queryPanel);
         queryFrame.pack();
         queryFrame.setVisible(true);
     }
