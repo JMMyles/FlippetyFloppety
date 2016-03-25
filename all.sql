@@ -1,5 +1,9 @@
 -- Database Table Creation
 --
+drop database if exists Lab;
+create database Lab;
+
+use Lab;
 -- First drop any existing tables.
 drop table supervisor cascade constraints;
 drop table researcher cascade constraints;
@@ -21,11 +25,13 @@ drop table equipment cascade constraints;
 -- Create each table.
 create table supervisor(
 	ssid varchar2(10) NOT NULL primary key,
-	sname varchar2(40)
+	sname varchar2(40),
+	spwd varchar2(40)
 	);
 create table researcher(
 	rsid varchar2(10) NOT NULL primary key,
-	rname varchar2(40)
+	rname varchar2(40),
+	rpwd varchar2(40)
 	);
 create table labbook(
 	booknum int NOT NULL primary key,
@@ -132,17 +138,17 @@ create table breakdown(
 
 	
 -- Adding supervisor tuples
-insert into supervisor values('s1.eyung', 'Eric Yung');
-insert into supervisor values('s2.rholt', 'Rob Holt');
-insert into supervisor values('s3.gperona', 'Georgia Perona');
-insert into supervisor values('s4.dacton', 'Donald Acton');
-insert into supervisor values('s5.rgatema', 'Robert Gateman');
+insert into supervisor values('s1.eyung', 'Eric Yung', '1234');
+insert into supervisor values('s2.rholt', 'Rob Holt', 'abcd');
+insert into supervisor values('s3.gperona', 'Georgia Perona', '1234');
+insert into supervisor values('s4.dacton', 'Donald Acton', '5678');
+insert into supervisor values('s5.rgatema', 'Robert Gateman', 'asdf');
 -- Adding researcher tuples
-insert into researcher values('r1.jsihvon', 'Jelena Sihvonen');
-insert into researcher values('r2.jlam', 'Jeanie Lam');
-insert into researcher values('r3.jmyles', 'Joey Myles');
-insert into researcher values('r4.bli', 'Benson Li');
-insert into researcher values('r5.akapron', 'Anna Kapron-King');
+insert into researcher values('r1.jsihvon', 'Jelena Sihvonen', 'qwerty');
+insert into researcher values('r2.jlam', 'Jeanie Lam', 'asdfgh');
+insert into researcher values('r3.jmyles', 'Joey Myles', 'zxcvb');
+insert into researcher values('r4.bli', 'Benson Li' 'poiuy');
+insert into researcher values('r5.akapron', 'Anna Kapron-King', 'lkjh');
 -- Adding labbook tuples
 insert into labbook values(1, 'r1.jsihvon');
 insert into labbook values(2, 'r2.jlam');

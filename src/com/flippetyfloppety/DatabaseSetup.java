@@ -39,4 +39,14 @@ public class DatabaseSetup {
             return false;
         }
     }
+
+    public ResultSet executeQuery(String query) {
+        try {
+            Statement stmt = this.connection.createStatement();
+            return stmt.executeQuery(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
