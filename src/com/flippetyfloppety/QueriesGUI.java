@@ -7,17 +7,25 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 
 import java.awt.*;
-import java.awt.TextField;
+//import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QueriesGUI {
+// TODO handle query action via button
+// TODO stats tab
+// TODO differentiate between supervisors and researchers (if 1, then...)
+// TODO users tab for supervisors
+// Delete w/out cascade: delete researcher
+
+    private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggBtn, cDeleteBtn, nCDeleteBtn;
 
     public void queryGUI() {
-        TextField tfPs, tfJoin, tfDivision, tfAgg, tfNestAgg, tfCascadeDeletion, tfNCascadeDeletion;
+        TextField tfSelection, tfAttribute, tfJoin, tfDivision, tfAgg, tfNestAgg, tfCascadeDeletion, tfNCascadeDeletion;
         // projection and selection text field
-        tfPs = new TextField("projection and selection query", 30);  //arbitrary length - test
-        tfPs.addActionListener(new ActionListener() {
+        tfSelection = new TextField("selection condition", 30);  //arbitrary length - test
+        tfAttribute = new TextField("attribute", 30);
+        sPBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -28,7 +36,7 @@ public class QueriesGUI {
         });
         // join text field
         tfJoin = new TextField("join query", 30);
-        tfJoin.addActionListener(new ActionListener() {
+        jBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -39,7 +47,7 @@ public class QueriesGUI {
         });
         // division text field
         tfDivision = new TextField("division query", 30);
-        tfDivision.addActionListener(new ActionListener() {
+        divideBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -50,7 +58,7 @@ public class QueriesGUI {
         });
         // aggregation text field
         tfAgg = new TextField("aggregation query", 30);
-        tfAgg.addActionListener(new ActionListener() {
+        aggBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -61,7 +69,7 @@ public class QueriesGUI {
         });
         // nested aggregation text field
         tfNestAgg = new TextField("nested aggregation query", 30);
-        tfNestAgg.addActionListener(new ActionListener() {
+        nestAggBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -72,7 +80,7 @@ public class QueriesGUI {
         });
         // deletion with cascades text field
         tfCascadeDeletion = new TextField("deletion with cascades", 30);
-        tfCascadeDeletion.addActionListener(new ActionListener() {
+        cDeleteBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
@@ -83,7 +91,7 @@ public class QueriesGUI {
         });
         // deletion without cascades text field
         tfNCascadeDeletion = new TextField("deletion without cascades", 30);
-        tfNCascadeDeletion.addActionListener(new ActionListener() {
+        nCDeleteBtn.addActionListener(new ActionListener() {
             /**
              * @param e
              */
