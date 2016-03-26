@@ -81,7 +81,14 @@
             </constraints>
             <properties/>
             <border type="none"/>
-            <children/>
+            <children>
+              <component id="495b1" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
+            </children>
           </grid>
           <grid id="a2221" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
             <constraints>

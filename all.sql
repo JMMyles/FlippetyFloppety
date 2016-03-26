@@ -1,9 +1,5 @@
 -- Database Table Creation
 --
-drop database if exists Lab;
-create database Lab;
-
-use Lab;
 -- First drop any existing tables.
 drop table supervisor cascade constraints;
 drop table researcher cascade constraints;
@@ -147,7 +143,7 @@ insert into supervisor values('s5.rgatema', 'Robert Gateman', 'asdf');
 insert into researcher values('r1.jsihvon', 'Jelena Sihvonen', 'qwerty');
 insert into researcher values('r2.jlam', 'Jeanie Lam', 'asdfgh');
 insert into researcher values('r3.jmyles', 'Joey Myles', 'zxcvb');
-insert into researcher values('r4.bli', 'Benson Li' 'poiuy');
+insert into researcher values('r4.bli', 'Benson Li', 'poiuy');
 insert into researcher values('r5.akapron', 'Anna Kapron-King', 'lkjh');
 -- Adding labbook tuples
 insert into labbook values(1, 'r1.jsihvon');
@@ -212,6 +208,7 @@ insert into rcreatesi values('r5.akapron', 'l.00000003');
 insert into productinfo values('Invitrogen', 88947);
 insert into productinfo values('Invitrogen', 32439);
 insert into productinfo values('Invitrogen', 55421);
+insert into productinfo values('Invitrogen', 44521);
 insert into productinfo values('HappyDays', 71328);
 insert into productinfo values('FallOut', 80085);
 insert into productinfo values('TxMedical', 28263);

@@ -14,10 +14,16 @@ public class MainPage extends JFrame {
     private JTextField eSearchQuery;
     private JButton eSearchBtn;
     private JFrame mainFrame;
+    private JPanel inventory;
+    private JPanel experiment;
+    private JPanel statistics;
+    private JPanel userSettings;
 
-    public MainPage() {
+    private int user;
+
+    public MainPage(int userType) {
         System.out.println("In Main Page");
-
+        this.user = userType;
 
         iSearchBtn.addActionListener(new ActionListener() {
             /**
@@ -43,6 +49,10 @@ public class MainPage extends JFrame {
         });
         mainFrame = new JFrame("Main");
         getContentPane().add(inventoryPane);
+        if (this.user == Login.RESEARCHER) {
+            inventoryPane.setEnabledAt(2, false);
+//            inventoryPane.remove(getPanel("Statistics"));
+        }
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
