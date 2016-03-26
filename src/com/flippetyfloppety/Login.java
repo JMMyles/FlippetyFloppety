@@ -10,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by Jeanie on 3/19/2016.
  */
-public class Login {
+public class Login extends JFrame{
     private static JFrame loginFrame;
     private JPanel panel1;
     private JPasswordField passwordField1;
@@ -28,19 +28,23 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 boolean researcherLogin = false;
                 System.out.println("HI");
-                DatabaseSetup db = new DatabaseSetup();
+                loginFrame.setVisible(false);
+                new MainPage().setVisible(true);
 
-                int type = isRegistered(usernameInput.getText(), String.valueOf(passwordField1.getPassword()), db);
-                if (type != 0) {
-                    // go to next form
-                    if (type == 1) {
-                        // researcher
-                    } else if (type == 2) {
-                        // supervisor
-                    }
-                } else {
-                    passwordField1.setText("");
-                }
+//                new QueriesGUI().queryPanel();
+//                DatabaseSetup db = new DatabaseSetup();
+//
+//                int type = isRegistered(usernameInput.getText(), String.valueOf(passwordField1.getPassword()), db);
+//                if (type != 0) {
+//                    // go to next form
+//                    if (type == 1) {
+//                        // researcher
+//                    } else if (type == 2) {
+//                        // supervisor
+//                    }
+//                } else {
+//                    passwordField1.setText("");
+//                }
 
 
             }
@@ -79,7 +83,7 @@ public class Login {
     public static void main(String[] args) {
         loginFrame = new JFrame("Login");
         loginFrame.setContentPane(new Login().panel1);
-        loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginFrame.pack();
         loginFrame.setVisible(true);
     }

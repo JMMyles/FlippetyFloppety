@@ -19,11 +19,11 @@ public class QueriesGUI {
 // TODO users tab for supervisors
 // Delete w/out cascade: delete researcher
 
-    private static JFrame queryFrame
-
+    private static JFrame queryFrame;
+    private JPanel queryPanel;
     private JButton sPBtn, jBtn, divideBtn, aggBtn, nestAggMinBtn, nestAggMaxBtn, cDeleteBtn, nCDeleteBtn;
 
-    public queryGUI() {
+    public QueriesGUI() {
 
 //        // panel costruction
 //        private JPanel queryPanel;
@@ -126,9 +126,9 @@ public class QueriesGUI {
     public void queryPanel() {
         
         // panel costruction
-        private JPanel queryPanel;
+
         queryFrame = new JFrame("Query");
-        queryFrame.setContentPane(new queriesGUI.queryPanel);
+        queryFrame.setContentPane(new QueriesGUI().queryPanel);
         queryFrame.pack();
         queryFrame.setVisible(true);
     }
