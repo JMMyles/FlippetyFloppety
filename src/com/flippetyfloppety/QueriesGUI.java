@@ -128,6 +128,7 @@ public class QueriesGUI {
         // panel costruction
 
         queryFrame = new JFrame("Query");
+
         queryFrame.setContentPane(new QueriesGUI().queryPanel);
         queryFrame.pack();
         queryFrame.setVisible(true);
