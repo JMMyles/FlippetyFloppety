@@ -84,8 +84,9 @@ public class MainPage extends JFrame {
                     // error code 00001 = unique tuple check failed
                     if (ce.getMessage().substring(4, 9).equals("00001")) {
                         JOptionPane.showMessageDialog(mainFrame, "Researcher already exists in database! Please login with appropriate credentials.", "Error!", JOptionPane.ERROR_MESSAGE);
+                    } else if (ce.getMessage().substring(4,0).equals("01438")) {
+                        JOptionPane.showMessageDialog(mainFrame, "ID's must be less than 10 characters long. Names and passwords must be less than 40 characters long.", "Error!", JOptionPane.ERROR_MESSAGE);
                     } else JOptionPane.showMessageDialog(mainFrame, ce.getMessage());
-
                 } finally {
                     // clear the user input fields
                     rsid.setText("");
