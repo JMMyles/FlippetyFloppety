@@ -114,8 +114,8 @@ create table machinery(
 	);
 create table consumable(
 	iid varchar2(10) primary key,
-	amnt float NOT NULL,
-	foreign key (iid) references equipment(iid)
+	amnt float NOT NULL CHECK (amnt>=0),
+	foreign key (iid) references equipment(iid),
 	);
 create table inspection(
 	datec date NOT NULL,

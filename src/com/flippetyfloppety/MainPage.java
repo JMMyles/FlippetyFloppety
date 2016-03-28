@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -26,6 +28,7 @@ public class MainPage extends JFrame {
     private JButton viewConsumablesButton;
     private JComboBox filterComboBox;
     private JTable filterResultsTable;
+    private JList columnList;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -66,6 +69,31 @@ public class MainPage extends JFrame {
         if (this.user == Login.RESEARCHER) {
             inventoryPane.setEnabledAt(2, false);
             inventoryPane.setEnabledAt(3, false);
+        } else {
+            inventoryPane.addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent changeEvent) {
+                    columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    DefaultListModel model = (DefaultListModel)columnList.getModel();
+                    try{
+                        model.removeAllElements();
+                        // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
+                        String query = "SELECT * FROM consumable NATURAL JOIN inventory";
+                        Connection con = db.getConnection();
+                        PreparedStatement ps = con.prepareStatement(query);
+                        ResultSet rs = ps.executeQuery();
+
+                        ResultSetMetaData metaData = rs.getMetaData();
+                        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                            model.addElement(metaData.getColumnLabel(i));
+                        }
+
+                    } catch (SQLException sqle) {
+                        sqle.printStackTrace();
+                    }
+
+                }
+            });
         }
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
@@ -86,7 +114,7 @@ public class MainPage extends JFrame {
                     ps.setString(3, String.valueOf(rpwd.getPassword()));
 
                     ResultSet rs = ps.executeQuery();
-                    // alert the user that the insert was succesful
+                    // alert the user that the insert was successful
                     JOptionPane.showMessageDialog(mainFrame, "Researcher " + rsid.getText().toLowerCase() + " has succesfully been added to the database!");
                 } catch (SQLException ce) {
                     // error code 00001 = unique tuple check failed
@@ -119,7 +147,21 @@ public class MainPage extends JFrame {
                     } else if (filter.equals("None Remaining")) {
                         quantity = " = 0";
                     }
-                    String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+
+                    String proj = "";
+                    List<String> projection = columnList.getSelectedValuesList();
+                    if (projection.size() == 0) {
+                        proj = "*";
+                    } else {
+                        proj = projection.get(0);
+                        for (int i = 1; i < projection.size(); i++) {
+                            proj = proj.concat(", " + projection.get(i));
+                        }
+                    }
+
+
+                    String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+
                     Connection con = db.getConnection();
                     PreparedStatement ps = con.prepareStatement(query);
                     ResultSet rs = ps.executeQuery();
@@ -153,5 +195,6 @@ public class MainPage extends JFrame {
                 }
             }
         });
+
     }
 }

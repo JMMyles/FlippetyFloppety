@@ -108,7 +108,7 @@
                     <children>
                       <component id="687d6" class="javax.swing.JButton" binding="viewConsumablesButton" default-binding="true">
                         <constraints>
-                          <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="5" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="1.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -116,38 +116,15 @@
                           <text value="View Consumables"/>
                         </properties>
                       </component>
-                      <component id="690d2" class="javax.swing.JComboBox" binding="filterComboBox">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                          <gridbag weightx="0.0" weighty="0.0"/>
-                        </constraints>
-                        <properties>
-                          <font size="20"/>
-                          <model>
-                            <item value="Low Quantity"/>
-                            <item value="None Remaining"/>
-                          </model>
-                        </properties>
-                      </component>
                       <vspacer id="6ccf4">
                         <constraints>
-                          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                       </vspacer>
-                      <component id="c0146" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                          <gridbag weightx="1.0" weighty="0.0"/>
-                        </constraints>
-                        <properties>
-                          <font size="25"/>
-                          <text value="Filter by:"/>
-                        </properties>
-                      </component>
                       <scrollpane id="c98e">
                         <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                          <grid row="2" column="0" row-span="1" col-span="7" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -172,6 +149,51 @@
                           </component>
                         </children>
                       </scrollpane>
+                      <component id="c0146" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font size="25"/>
+                          <text value="Filter by:"/>
+                        </properties>
+                      </component>
+                      <component id="690d2" class="javax.swing.JComboBox" binding="filterComboBox">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <model>
+                            <item value="Low Quantity"/>
+                            <item value="None Remaining"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="fbf1e" class="javax.swing.JList" binding="columnList">
+                        <constraints>
+                          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="50"/>
+                          </grid>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <model/>
+                        </properties>
+                      </component>
+                      <component id="154fe" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Return:"/>
+                        </properties>
+                      </component>
                     </children>
                   </grid>
                   <grid id="405f2" layout-manager="GridBagLayout">
