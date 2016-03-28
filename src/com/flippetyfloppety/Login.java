@@ -38,7 +38,7 @@ public class Login extends JFrame{
                 int type = isRegistered(usernameInput.getText(), String.valueOf(passwordField1.getPassword()), db);
                 if (type != 0) {
                     // go to next form
-                    new MainPage(type).setVisible(true);
+                    new MainPage(type, db).setVisible(true);
                 } else {
                     passwordField1.setText("");
                 }
