@@ -28,18 +28,19 @@ public class Login extends JFrame{
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                boolean researcherLogin = false;
-                System.out.println("HI");
-                loginFrame.setVisible(false);
-
                 DatabaseSetup db = new DatabaseSetup();
+
                 System.out.println("username: " + usernameInput.getText());
                 System.out.println("pwd: " + passwordField1.getText());
+
                 int type = isRegistered(usernameInput.getText(), String.valueOf(passwordField1.getPassword()), db);
                 if (type != 0) {
                     // go to next form
+                    loginFrame.setVisible(false);
                     new MainPage(type, db).setVisible(true);
                 } else {
+                    JOptionPane.showMessageDialog(loginFrame, "Incorrect username and password combination!", "Error!", JOptionPane.ERROR_MESSAGE);
+                    usernameInput.setText("");
                     passwordField1.setText("");
                 }
 

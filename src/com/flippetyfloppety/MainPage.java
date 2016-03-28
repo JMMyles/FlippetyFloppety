@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -18,6 +21,11 @@ public class MainPage extends JFrame {
     private JPasswordField rpwd;
     private JButton createAccBtn;
     private JTextField rname;
+    private JTabbedPane statsTabs;
+    private JTable resultTable;
+    private JButton viewConsumablesButton;
+    private JComboBox filterComboBox;
+    private JTable filterResultsTable;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -92,6 +100,56 @@ public class MainPage extends JFrame {
                     rsid.setText("");
                     rname.setText("");
                     rpwd.setText("");
+                }
+            }
+        });
+        viewConsumablesButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when view consumables button on statistics tab is pressed.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String filter = filterComboBox.getSelectedItem().toString();
+                    String quantity = "";
+                    if (filter.equals("Low Quantity")) {
+                        quantity = "< 50";
+                    } else if (filter.equals("None Remaining")) {
+                        quantity = " = 0";
+                    }
+                    String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+                    Connection con = db.getConnection();
+                    PreparedStatement ps = con.prepareStatement(query);
+                    ResultSet rs = ps.executeQuery();
+
+                    ResultSetMetaData metaData = rs.getMetaData();
+                    int numColumns = metaData.getColumnCount();
+                    if (numColumns > 0) {
+                        Vector<String> columnNames = new Vector<String>();
+                        for (int i = 1; i <= numColumns; i++) {
+                            columnNames.add(metaData.getColumnName(i));
+                        }
+                        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+                        while (rs.next()) {
+                            Vector<Object> rowVal = new Vector<Object>();
+                            for (int j = 1; j <= numColumns; j++) {
+                                rowVal.add(rs.getObject(j));
+                            }
+                            data.add(rowVal);
+                        }
+                        DefaultTableModel model = (DefaultTableModel) filterResultsTable.getModel();
+                        model.setDataVector(data, columnNames);
+
+                        for (int k = 0; k < numColumns; k++) {
+                            TableColumn tc = filterResultsTable.getColumnModel().getColumn(k);
+                            tc.setHeaderValue(columnNames.get(k));
+                        }
+                    }
+
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
                 }
             }
         });
