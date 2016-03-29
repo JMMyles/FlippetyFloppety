@@ -106,25 +106,15 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="687d6" class="javax.swing.JButton" binding="viewConsumablesButton" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="5" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                          <gridbag weightx="1.0" weighty="0.0"/>
-                        </constraints>
-                        <properties>
-                          <font size="20"/>
-                          <text value="View Consumables"/>
-                        </properties>
-                      </component>
                       <vspacer id="6ccf4">
                         <constraints>
-                          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                          <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                       </vspacer>
                       <scrollpane id="c98e">
                         <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="7" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                          <grid row="3" column="0" row-span="1" col-span="8" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -151,7 +141,7 @@
                       </scrollpane>
                       <component id="c0146" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="1.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -161,7 +151,7 @@
                       </component>
                       <component id="690d2" class="javax.swing.JComboBox" binding="filterComboBox">
                         <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -172,21 +162,9 @@
                           </model>
                         </properties>
                       </component>
-                      <component id="fbf1e" class="javax.swing.JList" binding="columnList">
-                        <constraints>
-                          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                            <preferred-size width="150" height="50"/>
-                          </grid>
-                          <gridbag weightx="0.0" weighty="0.0"/>
-                        </constraints>
-                        <properties>
-                          <font size="20"/>
-                          <model/>
-                        </properties>
-                      </component>
                       <component id="154fe" class="javax.swing.JLabel">
                         <constraints>
-                          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                           <gridbag weightx="0.0" weighty="0.0"/>
                         </constraints>
                         <properties>
@@ -194,27 +172,144 @@
                           <text value="Return:"/>
                         </properties>
                       </component>
+                      <scrollpane id="7b50f">
+                        <constraints>
+                          <grid row="0" column="5" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <minimumSize width="100" height="18"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="e7df5" class="javax.swing.JList" binding="columnList">
+                            <constraints/>
+                            <properties/>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <hspacer id="e9d3e">
+                        <constraints>
+                          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="0.0" weighty="0.0"/>
+                        </constraints>
+                      </hspacer>
+                      <component id="687d6" class="javax.swing.JButton" binding="viewConsumablesButton" default-binding="true">
+                        <constraints>
+                          <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                          <gridbag weightx="1.0" weighty="0.0"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <text value="View Consumables"/>
+                        </properties>
+                      </component>
                     </children>
                   </grid>
-                  <grid id="405f2" layout-manager="GridBagLayout">
+                  <grid id="405f2" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                     <constraints>
                       <tabbedpane title="Inspection Log"/>
                     </constraints>
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <hspacer id="68fe3">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                          <gridbag weightx="0.0" weighty="0.0"/>
-                        </constraints>
-                      </hspacer>
-                      <vspacer id="36718">
-                        <constraints>
-                          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                          <gridbag weightx="0.0" weighty="0.0"/>
-                        </constraints>
+                      <vspacer id="b595b">
+                        <constraints/>
                       </vspacer>
+                      <component id="b2498" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Return:"/>
+                        </properties>
+                      </component>
+                      <scrollpane id="2ff4f">
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="59ceb" class="javax.swing.JList" binding="iColumnList">
+                            <constraints/>
+                            <properties/>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <component id="c8f68" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="25"/>
+                          <text value="Order by"/>
+                        </properties>
+                      </component>
+                      <component id="88a49" class="javax.swing.JComboBox" binding="orderByComboBox">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <model>
+                            <item value="Item"/>
+                            <item value="Inspector"/>
+                            <item value="Date"/>
+                            <item value="All"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="10924" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="in:"/>
+                        </properties>
+                      </component>
+                      <component id="92e00" class="javax.swing.JComboBox" binding="sortByComboBox">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <model>
+                            <item value="ASC"/>
+                            <item value="DESC"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="1cf78" class="javax.swing.JButton" binding="inspectionLogBtn">
+                        <constraints/>
+                        <properties>
+                          <text value="View Log"/>
+                        </properties>
+                      </component>
+                      <hspacer id="77548">
+                        <constraints/>
+                      </hspacer>
+                      <scrollpane id="dbcf8">
+                        <constraints/>
+                        <properties>
+                          <font size="50" style="3"/>
+                          <minimumSize width="29" height="433"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="2bd96" class="javax.swing.JTable" binding="iFilterResultsTable">
+                            <constraints/>
+                            <properties>
+                              <autoResizeMode value="4"/>
+                              <cellSelectionEnabled value="true"/>
+                              <font size="20"/>
+                              <minimumSize width="1100" height="433"/>
+                              <preferredScrollableViewportSize width="1100" height="433"/>
+                              <preferredSize width="1100" height="433"/>
+                              <rowHeight value="24"/>
+                              <rowMargin value="3"/>
+                              <toolTipText value="Results of filter"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <component id="8976" class="javax.swing.JButton" default-binding="true">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="View Consumables"/>
+                        </properties>
+                      </component>
                     </children>
                   </grid>
                   <grid id="2d412" layout-manager="GridBagLayout">

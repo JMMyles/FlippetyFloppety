@@ -18,6 +18,8 @@ drop table inspection cascade constraints;
 drop table breakdown cascade constraints;
 drop table productinfo cascade constraints;
 drop table equipment cascade constraints;
+drop table rinspectm cascade constraints;
+
 -- Create each table.
 create table supervisor(
 	ssid varchar2(10) NOT NULL primary key,
@@ -114,14 +116,23 @@ create table machinery(
 	);
 create table consumable(
 	iid varchar2(10) primary key,
-	amnt float NOT NULL CHECK (amnt>=0),
+	amnt float NOT NULL,
 	foreign key (iid) references equipment(iid),
+	constraint nonNegAmnt check (amnt >=0)
 	);
 create table inspection(
-	datec date NOT NULL,
+	dateInspected date NOT NULL,
 	iid varchar2(10) NOT NULL,
-	primary key(datec, iid),
+	primary key(dateInspected, iid),
 	foreign key (iid) references machinery(iid)
+	);
+create table rinspectm(
+	dateInspected date NOT NULL,
+	ssid varchar2(10) NOT NULL,
+	iid varchar2(10) NOT NULL,
+	primary key (ssid, dateInspected, iid),
+	foreign key (dateInspected, iid) references inspection(dateInspected, iid),
+	foreign key (ssid) references supervisor(ssid)
 	);
 create table breakdown(
 	iid varchar2(10) NOT NULL,
@@ -245,6 +256,12 @@ insert into inspection values('2015-02-02', 'm.00000003');
 insert into inspection values('2015-03-03', 'm.00000001');
 insert into inspection values('2015-04-04', 'm.00000002');
 insert into inspection values('2016-01-01', 'm.00000005');
+-- Adding rinspectm tuples
+insert into rinspectm values('2015-02-02', 's1.eyung', 'm.00000003');
+insert into rinspectm values('2015-03-03', 's1.eyung', 'm.00000001');
+insert into rinspectm values('2015-01-01', 's1.eyung', 'm.00000001');
+insert into rinspectm values('2015-04-04', 's2.rholt', 'm.00000002');
+insert into rinspectm values('2016-01-01', 's3.gperona', 'm.00000005');
 -- Adding breakdown tuples
 insert into breakdown values('m.00000001', '2015-03-08', 'explosion');
 insert into breakdown values('m.00000001', '2015-11-11', '2nd explosion');

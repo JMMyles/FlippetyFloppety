@@ -1,14 +1,15 @@
 package com.flippetyfloppety;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.*;
-import java.util.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.*;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -29,6 +30,11 @@ public class MainPage extends JFrame {
     private JComboBox filterComboBox;
     private JTable filterResultsTable;
     private JList columnList;
+    private JComboBox sortByComboBox;
+    private JComboBox orderByComboBox;
+    private JList iColumnList;
+    private JTable iFilterResultsTable;
+    private JButton inspectionLogBtn;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -36,11 +42,12 @@ public class MainPage extends JFrame {
     private JPanel userSettings;
 
     private int user;
-
+    private DatabaseSetup db;
 
     public MainPage(int userType, DatabaseSetup db) {
         System.out.println("In Main Page");
         this.user = userType;
+        this.db = db;
 
         iSearchBtn.addActionListener(new ActionListener() {
             /**
@@ -73,25 +80,27 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
+
+                    // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-                    DefaultListModel model = (DefaultListModel)columnList.getModel();
-                    try{
-                        model.removeAllElements();
-                        // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
-                        String query = "SELECT * FROM consumable NATURAL JOIN inventory";
-                        Connection con = db.getConnection();
-                        PreparedStatement ps = con.prepareStatement(query);
-                        ResultSet rs = ps.executeQuery();
+                    columnList.setModel(new DefaultListModel());
+                    DefaultListModel uModel = (DefaultListModel)columnList.getModel();
 
-                        ResultSetMetaData metaData = rs.getMetaData();
-                        for (int i = 1; i <= metaData.getColumnCount(); i++) {
-                            model.addElement(metaData.getColumnLabel(i));
-                        }
+                    // set projection options in INSPECTION tab
+                    iColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    iColumnList.setModel((new DefaultListModel()));
+                    DefaultListModel iModel = (DefaultListModel) iColumnList.getModel();
 
-                    } catch (SQLException sqle) {
-                        sqle.printStackTrace();
-                    }
+                    uModel.removeAllElements();
+                    // GET ALL COLUMN NAMES FOR CONSUMABLE INVENTORY JOIN
+                    String urgentQuery = "SELECT * FROM consumable NATURAL JOIN inventory";
+                    fillProjectionList(uModel, urgentQuery);
 
+                    iModel.removeAllElements();
+                    // GET ALL COLUMN NAMES FROM INSPECTION , MACHINERY, EQUIPMENT JOIN
+                    String inspectionQuery = "SELECT * FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
+                            " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR";
+                    fillProjectionList(iModel, inspectionQuery);
                 }
             });
         }
@@ -139,62 +148,116 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    String filter = filterComboBox.getSelectedItem().toString();
-                    String quantity = "";
-                    if (filter.equals("Low Quantity")) {
-                        quantity = "< 50";
-                    } else if (filter.equals("None Remaining")) {
-                        quantity = " = 0";
-                    }
 
-                    String proj = "";
-                    List<String> projection = columnList.getSelectedValuesList();
-                    if (projection.size() == 0) {
-                        proj = "*";
-                    } else {
-                        proj = projection.get(0);
-                        for (int i = 1; i < projection.size(); i++) {
-                            proj = proj.concat(", " + projection.get(i));
-                        }
-                    }
-
-
-                    String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
-
-                    Connection con = db.getConnection();
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ResultSet rs = ps.executeQuery();
-
-                    ResultSetMetaData metaData = rs.getMetaData();
-                    int numColumns = metaData.getColumnCount();
-                    if (numColumns > 0) {
-                        Vector<String> columnNames = new Vector<String>();
-                        for (int i = 1; i <= numColumns; i++) {
-                            columnNames.add(metaData.getColumnName(i));
-                        }
-                        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-                        while (rs.next()) {
-                            Vector<Object> rowVal = new Vector<Object>();
-                            for (int j = 1; j <= numColumns; j++) {
-                                rowVal.add(rs.getObject(j));
-                            }
-                            data.add(rowVal);
-                        }
-                        DefaultTableModel model = (DefaultTableModel) filterResultsTable.getModel();
-                        model.setDataVector(data, columnNames);
-
-                        for (int k = 0; k < numColumns; k++) {
-                            TableColumn tc = filterResultsTable.getColumnModel().getColumn(k);
-                            tc.setHeaderValue(columnNames.get(k));
-                        }
-                    }
-
-                } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                String filter = filterComboBox.getSelectedItem().toString();
+                String quantity = "";
+                if (filter.equals("Low Quantity")) {
+                    quantity = "< 50";
+                } else if (filter.equals("None Remaining")) {
+                    quantity = " = 0";
                 }
+
+                String proj = getProjectedAttributes(columnList);
+
+                String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                fillTable(rs, filterResultsTable);
             }
         });
 
+        inspectionLogBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String sortBy = sortByComboBox.getSelectedItem().toString().toLowerCase();
+                String groupBy = orderByComboBox.getSelectedItem().toString().toLowerCase();
+                String sqlGroup = "";
+                if (groupBy.equals("item")) {
+                    sqlGroup = "ORDER BY iid";
+                } else if (groupBy.equals("all")) {
+                    sqlGroup = "";
+                    sortBy = "";
+                } else if (groupBy.equals("inspector")) {
+                    sqlGroup = "ORDER BY sname";
+                } else if (groupBy.equals("date")) {
+                    sqlGroup = "ORDER BY dateInspected";
+                } else {
+                    sortBy = "";
+                }
+
+                String proj = getProjectedAttributes(iColumnList);
+
+                String query = "SELECT " + proj + " FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
+                        " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR " + sqlGroup + " " + sortBy;
+                System.out.println("Query = " + query);;
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, iFilterResultsTable);
+
+            }
+        });
+    }
+
+    private void fillProjectionList(DefaultListModel model, String query) {
+        model.removeAllElements();
+        // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
+        try {
+            ResultSet rs = this.db.executeSQLQuery(query);
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                if (!metaData.getColumnLabel(i).toLowerCase().contains("pwd")) {
+                    model.addElement(metaData.getColumnLabel(i));
+                }
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+
+    }
+    private String getProjectedAttributes(JList list) {
+        String proj = "";
+        List<String> projection = list.getSelectedValuesList();
+        if (projection.size() == 0) {
+            proj = "*";
+        } else {
+            proj = projection.get(0);
+            for (int i = 1; i < projection.size(); i++) {
+                proj = proj.concat(", " + projection.get(i).toLowerCase());
+            }
+        }
+        System.out.println("proj = " + proj);
+        return proj;
+    }
+
+    private void fillTable(ResultSet rs, JTable table) {
+        try {
+            ResultSetMetaData metaData = rs.getMetaData();
+            int numColumns = metaData.getColumnCount();
+            if (numColumns > 0) {
+                Vector<String> columnNames = new Vector<String>();
+                for (int i = 1; i <= numColumns; i++) {
+                    columnNames.add(metaData.getColumnName(i));
+                }
+                Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+                while (rs.next()) {
+                    Vector<Object> rowVal = new Vector<Object>();
+                    for (int j = 1; j <= numColumns; j++) {
+                        rowVal.add(rs.getObject(j));
+                    }
+                    data.add(rowVal);
+                }
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                model.setDataVector(data, columnNames);
+
+                for (int k = 0; k < numColumns; k++) {
+                    TableColumn tc = table.getColumnModel().getColumn(k);
+                    tc.setHeaderValue(columnNames.get(k));
+                }
+            }
+            System.out.println("tabled filled");
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
     }
 }
