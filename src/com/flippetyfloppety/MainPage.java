@@ -1,12 +1,15 @@
 package com.flippetyfloppety;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
+import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -26,6 +29,35 @@ public class MainPage extends JFrame {
     private JButton viewConsumablesButton;
     private JComboBox filterComboBox;
     private JTable filterResultsTable;
+    private JList columnList;
+    private JComboBox sortByComboBox;
+    private JComboBox orderByComboBox;
+    private JList iColumnList;
+    private JTable iFilterResultsTable;
+    private JButton inspectionLogBtn;
+    private JList bColumnList;
+    private JComboBox bOrderByComboBox;
+    private JComboBox bSortByComboBox;
+    private JButton viewBreakdownsButton;
+    private JTable bFilterResultsTable;
+    private JTextArea numResearchers;
+    private JTextArea numSupervisors;
+    private JTextArea numExperiments;
+    private JTextArea mostSuper;
+    private JTextArea numMostSuper;
+    private JTextArea leastSuper;
+    private JTextArea numLeastSuper;
+    private JTextArea mostSupplier;
+    private JTextArea avgBreakdown;
+    private JButton calcNumResearchers;
+    private JButton calcNumSupervisors;
+    private JButton calcNumExp;
+    private JButton calcMostInspec;
+    private JButton calcLeastInspec;
+    private JButton calcMostSupplier;
+    private JButton calcAvgBreakdown;
+    private JTextArea superAllMachines;
+    private JButton calcSuperAllInspected;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -33,11 +65,12 @@ public class MainPage extends JFrame {
     private JPanel userSettings;
 
     private int user;
-
+    private DatabaseSetup db;
 
     public MainPage(int userType, DatabaseSetup db) {
         System.out.println("In Main Page");
         this.user = userType;
+        this.db = db;
 
         iSearchBtn.addActionListener(new ActionListener() {
             /**
@@ -66,6 +99,40 @@ public class MainPage extends JFrame {
         if (this.user == Login.RESEARCHER) {
             inventoryPane.setEnabledAt(2, false);
             inventoryPane.setEnabledAt(3, false);
+        } else {
+            inventoryPane.addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent changeEvent) {
+
+                    // set projection options in URGENT tab
+                    columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    columnList.setModel(new DefaultListModel());
+                    DefaultListModel uModel = (DefaultListModel)columnList.getModel();
+
+                    // set projection options in INSPECTION tab
+                    iColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    iColumnList.setModel((new DefaultListModel()));
+                    DefaultListModel iModel = (DefaultListModel) iColumnList.getModel();
+
+                    // set projection options in BREAJDIWNS tab
+                    bColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    bColumnList.setModel((new DefaultListModel()));
+                    DefaultListModel bModel = (DefaultListModel) bColumnList.getModel();
+
+                    // GET ALL COLUMN NAMES FOR CONSUMABLE INVENTORY JOIN
+                    String urgentQuery = "SELECT * FROM consumable NATURAL JOIN inventory";
+                    fillProjectionList(uModel, urgentQuery);
+
+                    // GET ALL COLUMN NAMES FROM INSPECTION , MACHINERY, EQUIPMENT JOIN
+                    String inspectionQuery = "SELECT * FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
+                            " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR";
+                    fillProjectionList(iModel, inspectionQuery);
+
+                    String breakdownQuery = "SELECT * FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
+                            " NATURAL JOIN inventory ";
+                    fillProjectionList(bModel, breakdownQuery);
+                }
+            });
         }
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
@@ -86,7 +153,7 @@ public class MainPage extends JFrame {
                     ps.setString(3, String.valueOf(rpwd.getPassword()));
 
                     ResultSet rs = ps.executeQuery();
-                    // alert the user that the insert was succesful
+                    // alert the user that the insert was successful
                     JOptionPane.showMessageDialog(mainFrame, "Researcher " + rsid.getText().toLowerCase() + " has succesfully been added to the database!");
                 } catch (SQLException ce) {
                     // error code 00001 = unique tuple check failed
@@ -111,50 +178,251 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                String filter = filterComboBox.getSelectedItem().toString();
+                String quantity = "";
+                if (filter.equals("Low Quantity")) {
+                    quantity = "< 50";
+                } else if (filter.equals("None Remaining")) {
+                    quantity = " = 0";
+                }
+
+                String proj = getProjectedAttributes(columnList);
+
+                String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                fillTable(rs, filterResultsTable);
+            }
+        });
+
+        inspectionLogBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String sortBy = sortByComboBox.getSelectedItem().toString().toLowerCase();
+                String groupBy = orderByComboBox.getSelectedItem().toString().toLowerCase();
+                String sqlGroup = "";
+                if (groupBy.equals("item")) {
+                    sqlGroup = "ORDER BY iid";
+                } else if (groupBy.equals("all")) {
+                    sqlGroup = "";
+                    sortBy = "";
+                } else if (groupBy.equals("inspector")) {
+                    sqlGroup = "ORDER BY sname";
+                } else if (groupBy.equals("date")) {
+                    sqlGroup = "ORDER BY dateInspected";
+                } else {
+                    sortBy = "";
+                }
+
+                String proj = getProjectedAttributes(iColumnList);
+
+                String query = "SELECT " + proj + " FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
+                        " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR " + sqlGroup + " " + sortBy;
+                System.out.println("Query = " + query);
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, iFilterResultsTable);
+
+            }
+        });
+        viewBreakdownsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String sortBy = bSortByComboBox.getSelectedItem().toString().toLowerCase();
+                String groupBy = bOrderByComboBox.getSelectedItem().toString().toLowerCase();
+                String sqlGroup = "";
+                if (groupBy.equals("machine")) {
+                    sqlGroup = "ORDER BY iname";
+                } else if (groupBy.equals("date")) {
+                    sqlGroup = "ORDER BY breakdownDate";
+                } else if (groupBy.equals("all")) {
+                    sqlGroup = "";
+                    sortBy = "";
+                } else {
+                    sortBy = "";
+                }
+
+                String proj = getProjectedAttributes(bColumnList);
+                String query = "SELECT " + proj + " FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
+                        " NATURAL JOIN inventory " + sqlGroup + " " + sortBy;
+                System.out.println(query);
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, bFilterResultsTable);
+            }
+        });
+        calcNumResearchers.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 try {
-                    String filter = filterComboBox.getSelectedItem().toString();
-                    String quantity = "";
-                    if (filter.equals("Low Quantity")) {
-                        quantity = "< 50";
-                    } else if (filter.equals("None Remaining")) {
-                        quantity = " = 0";
-                    }
-                    String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
-                    Connection con = db.getConnection();
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ResultSet rs = ps.executeQuery();
-
-                    // code adapted from http://stackoverflow.com/questions/29662235/how-to-get-jtable-data-to-update-from-resultset?rq=1
-                    ResultSetMetaData metaData = rs.getMetaData();
-                    int numColumns = metaData.getColumnCount();
-                    if (numColumns > 0) {
-                        Vector<String> columnNames = new Vector<String>();
-                        for (int i = 1; i <= numColumns; i++) {
-                            columnNames.add(metaData.getColumnName(i));
-                        }
-                        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-                        while (rs.next()) {
-                            Vector<Object> rowVal = new Vector<Object>();
-                            for (int j = 1; j <= numColumns; j++) {
-                                rowVal.add(rs.getObject(j));
-                            }
-                            data.add(rowVal);
-                        }
-                        // code adapted from http://www.coderanch.com/t/491763/GUI/java/Adding-row-existing-Swing-JTable
-                        DefaultTableModel model = (DefaultTableModel) filterResultsTable.getModel();
-                        model.setDataVector(data, columnNames);
-
-                        // code adapted from http://stackoverflow.com/questions/8216116/name-columns-in-a-jtable
-                        for (int k = 0; k < numColumns; k++) {
-                            TableColumn tc = filterResultsTable.getColumnModel().getColumn(k);
-                            tc.setHeaderValue(columnNames.get(k));
-                        }
-                    }
-
+                    String query = "SELECT COUNT(*) AS numResearchers FROM researcher";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    numResearchers.setText(String.valueOf(rs.getInt("numResearchers")));
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
+
             }
         });
+        calcNumSupervisors.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "SELECT COUNT(*) AS numSuper FROM supervisor";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    numSupervisors.setText(String.valueOf(rs.getInt("numSuper")));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+
+            }
+        });
+        calcNumExp.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "SELECT COUNT(*) AS numExp FROM experiment";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    numExperiments.setText(String.valueOf(rs.getInt("numExp")));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+
+            }
+        });
+        calcMostInspec.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "select max(numInspections) as maxNum, sname from (select count(*) as numInspections, sname from rinspectm natural join supervisor group by sname) group by sname order by maxNum DESC";
+                    ResultSet rs = db.executeSQLQuery(query);
+
+                    rs.next();
+                    mostSuper.setText("");
+                    numMostSuper.setText("");
+                    mostSuper.setText(rs.getString("sname"));
+                    numMostSuper.setText(String.valueOf(rs.getInt("maxNum")));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+
+            }
+        });
+        calcLeastInspec.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "select min(numInspections) as minNum, sname from (select count(*) as numInspections, sname from rinspectm natural join supervisor group by sname) group by sname order by minNum ASC";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    leastSuper.setText("");
+                    numLeastSuper.setText("");
+                    leastSuper.setText(rs.getString("sname"));
+                    numLeastSuper.setText(String.valueOf(rs.getInt("minNum")));
+
+
+//                    String query = "select sname from supervisor natural join rinspect m where " + minNum + "= (select count(*), sname FROM rinspectm natural join supervisor group by sname)";
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+
+            }
+        });
+    }
+
+    private void fillProjectionList(DefaultListModel model, String query) {
+        model.removeAllElements();
+        // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
+        try {
+            ResultSet rs = this.db.executeSQLQuery(query);
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+                if (!metaData.getColumnLabel(i).toLowerCase().contains("pwd")) {
+                    model.addElement(metaData.getColumnLabel(i));
+                }
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+
+    }
+    private String getProjectedAttributes(JList list) {
+        String proj = "";
+        List<String> projection = list.getSelectedValuesList();
+
+        if (projection.size() == 0) {
+            DefaultListModel dlm = (DefaultListModel) list.getModel();
+            proj = dlm.toString().substring(1, dlm.toString().length() - 1);
+//            proj = "*";
+        } else {
+            proj = projection.get(0);
+            for (int i = 1; i < projection.size(); i++) {
+                proj = proj.concat(", " + projection.get(i).toLowerCase());
+            }
+        }
+        System.out.println("proj = " + proj);
+        return proj;
+    }
+
+    // code adapted from http://stackoverflow.com/questions/29662235/how-to-get-jtable-data-to-update-from-resultset?rq=1
+    private void fillTable(ResultSet rs, JTable table) {
+        try {
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int numColumns = metaData.getColumnCount();
+            if (numColumns > 0) {
+                Vector<String> columnNames = new Vector<String>();
+                for (int i = 1; i <= numColumns; i++) {
+                    columnNames.add(metaData.getColumnName(i));
+                }
+                Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+                while (rs.next()) {
+                    Vector<Object> rowVal = new Vector<Object>();
+                    for (int j = 1; j <= numColumns; j++) {
+                        rowVal.add(rs.getObject(j));
+                    }
+                    data.add(rowVal);
+                }
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                model.setDataVector(data, columnNames);
+
+                for (int k = 0; k < numColumns; k++) {
+                    TableColumn tc = table.getColumnModel().getColumn(k);
+                    tc.setHeaderValue(columnNames.get(k));
+                }
+            }
+            System.out.println("tabled filled");
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
     }
 }

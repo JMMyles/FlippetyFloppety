@@ -1,10 +1,6 @@
 package com.flippetyfloppety;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class DatabaseSetup {
     private Connection connection = null;
@@ -34,8 +30,8 @@ public class DatabaseSetup {
 
     public ResultSet executeSQLQuery(String query) {
         try {
-            Statement stmt = this.connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+            PreparedStatement ps = this.connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
             return rs;
         } catch (SQLException e) {
             System.out.println(e.getMessage());

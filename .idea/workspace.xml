@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="added import to QueriesGUI">
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Statistics tab up to least number of machines implemention completed">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/AbstractLayout.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/AbstractLayout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/DimensionInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/DimensionInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridConstraints.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridConstraints.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridLayoutManager.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridLayoutManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/HorizontalInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/HorizontalInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/LayoutState.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/LayoutState.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Spacer.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Spacer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Util.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Util.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/VerticalInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/VerticalInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.sql" afterPath="$PROJECT_DIR$/all.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
     </list>
     <ignored path="CPSC 304.iws" />
@@ -43,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -56,7 +79,6 @@
               <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
               </folding>
             </state>
           </provider>
@@ -65,10 +87,11 @@
       <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5116629">
-              <caret line="132" column="71" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.136">
+              <caret line="407" column="33" selection-start-line="407" selection-start-column="33" selection-end-line="407" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1459286598395" expanded="true" signature="13460:13720" placeholder="//..." />
               </folding>
             </state>
           </provider>
@@ -78,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/all.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+              <caret line="150" column="67" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -86,11 +109,8 @@
       </file>
       <file leaf-file-name="MainPage.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -118,12 +138,12 @@
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Main.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/SearchQueries.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java" />
-        <option value="$PROJECT_DIR$/all.sql" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.form" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.java" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
+        <option value="$PROJECT_DIR$/all.sql" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       </list>
     </option>
   </component>
@@ -133,10 +153,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3229" />
-    <option name="y" value="-83" />
-    <option name="width" value="2902" />
-    <option name="height" value="1582" />
+    <option name="x" value="82" />
+    <option name="y" value="-11" />
+    <option name="width" value="2089" />
+    <option name="height" value="1462" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -163,7 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,11 +219,33 @@
               <option name="myItemId" value="flippetyfloppety" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MainPage" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlippetyFloppety" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlippetyFloppety" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flippetyfloppety" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,10 +257,10 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43563217" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="387" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="149" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="606" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="482" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -693,43 +735,64 @@
       <workItem from="1458967057121" duration="244000" />
       <workItem from="1458967850200" duration="3282000" />
       <workItem from="1459118201475" duration="595000" />
-      <workItem from="1459134039825" duration="13089000" />
-      <workItem from="1459151427531" duration="49000" />
+      <workItem from="1459134039825" duration="12934000" />
+      <workItem from="1459231820982" duration="108000" />
+      <workItem from="1459270741050" duration="8033000" />
+      <workItem from="1459279500014" duration="3819000" />
     </task>
+    <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
+      <created>1459213391250</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1459213391250</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed password bug -- no longer shows the results table">
+      <created>1459214502994</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459214502994</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Breakdown tab populated with table and drop down menu options -- all.sql date field in breakdown table updated to be called breakdownDate to avoid ambiguity when displaying">
+      <created>1459223768760</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1459223768760</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33066000" />
+    <option name="totallyTimeSpent" value="44822000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3229" y="-83" width="2902" height="1582" extended-state="6" />
+    <frame x="82" y="-11" width="2089" height="1462" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32506004" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.502851" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15682063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2506005" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943755" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14932288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724616" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943755" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -773,8 +836,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="added import to QueriesGUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added import to QueriesGUI" />
+    <MESSAGE value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
+    <MESSAGE value="Fixed password bug -- no longer shows the results table" />
+    <MESSAGE value="Breakdown tab populated with table and drop down menu options -- all.sql date field in breakdown table updated to be called breakdownDate to avoid ambiguity when displaying" />
+    <MESSAGE value="Statistics tab up to least number of machines implemention completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Statistics tab up to least number of machines implemention completed" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -809,7 +878,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -827,6 +895,7 @@
           <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1459286598395" expanded="true" signature="13460:13720" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -853,7 +922,6 @@
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -864,6 +932,7 @@
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1459286598395" expanded="true" signature="13460:13720" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -897,7 +966,6 @@
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -908,6 +976,7 @@
           <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1459286598395" expanded="true" signature="13460:13720" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -934,7 +1003,6 @@
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -967,7 +1035,6 @@
           <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -993,7 +1060,6 @@
           <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1019,7 +1085,6 @@
           <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1045,7 +1110,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1064,7 +1128,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1090,7 +1153,6 @@
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1116,7 +1178,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1142,7 +1203,7 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/ClassLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61492085">
+        <state vertical-scroll-proportion="0.0">
           <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
         </state>
       </provider>
@@ -1160,7 +1221,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1171,7 +1232,6 @@
           <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459150331833" expanded="true" signature="789:1563" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -1179,28 +1239,29 @@
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+          <caret line="150" column="67" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="ui-designer">
+      <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5116629">
-          <caret line="132" column="71" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.136">
+          <caret line="407" column="33" selection-start-line="407" selection-start-column="33" selection-end-line="407" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1459286598395" expanded="true" signature="13460:13720" placeholder="//..." />
           </folding>
         </state>
       </provider>
