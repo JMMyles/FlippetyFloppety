@@ -124,6 +124,7 @@ public class MainPage extends JFrame {
                     PreparedStatement ps = con.prepareStatement(query);
                     ResultSet rs = ps.executeQuery();
 
+                    // code adapted from http://stackoverflow.com/questions/29662235/how-to-get-jtable-data-to-update-from-resultset?rq=1
                     ResultSetMetaData metaData = rs.getMetaData();
                     int numColumns = metaData.getColumnCount();
                     if (numColumns > 0) {
@@ -139,9 +140,11 @@ public class MainPage extends JFrame {
                             }
                             data.add(rowVal);
                         }
+                        // code adapted from http://www.coderanch.com/t/491763/GUI/java/Adding-row-existing-Swing-JTable
                         DefaultTableModel model = (DefaultTableModel) filterResultsTable.getModel();
                         model.setDataVector(data, columnNames);
 
+                        // code adapted from http://stackoverflow.com/questions/8216116/name-columns-in-a-jtable
                         for (int k = 0; k < numColumns; k++) {
                             TableColumn tc = filterResultsTable.getColumnModel().getColumn(k);
                             tc.setHeaderValue(columnNames.get(k));
