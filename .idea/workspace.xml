@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Fixed password bug -- no longer shows the results table">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.sql" afterPath="$PROJECT_DIR$/all.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
     </list>
     <ignored path="CPSC 304.iws" />
@@ -66,12 +67,12 @@
       <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="228" column="75" selection-start-line="228" selection-start-column="75" selection-end-line="228" selection-end-column="75" />
+            <state relative-caret-position="289">
+              <caret line="244" column="58" selection-start-line="244" selection-start-column="58" selection-end-line="244" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9876#9884#0" expanded="true" />
-                <element signature="e#10192#10200#0" expanded="true" />
+                <element signature="e#11904#11912#0" expanded="true" />
+                <element signature="e#12220#12228#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.java" />
         <option value="$PROJECT_DIR$/all.sql" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       </list>
     </option>
   </component>
@@ -123,10 +124,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="1431" />
     <option name="y" value="24" />
-    <option name="width" value="1301" />
-    <option name="height" value="744" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -472,14 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1459213391250</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed password bug -- no longer shows the results table">
+      <created>1459214502994</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1459214502994</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="32862000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <frame x="1431" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -490,7 +498,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.502851" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15682063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3695976" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2522889" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943755" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -550,9 +558,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="added import to QueriesGUI" />
     <MESSAGE value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
+    <MESSAGE value="Fixed password bug -- no longer shows the results table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed password bug -- no longer shows the results table" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -606,8 +616,8 @@
           <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9876#9884#0" expanded="true" />
-            <element signature="e#10192#10200#0" expanded="true" />
+            <element signature="e#11904#11912#0" expanded="true" />
+            <element signature="e#12220#12228#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -644,8 +654,8 @@
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9876#9884#0" expanded="true" />
-            <element signature="e#10192#10200#0" expanded="true" />
+            <element signature="e#11904#11912#0" expanded="true" />
+            <element signature="e#12220#12228#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,8 +699,8 @@
           <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9876#9884#0" expanded="true" />
-            <element signature="e#10192#10200#0" expanded="true" />
+            <element signature="e#11904#11912#0" expanded="true" />
+            <element signature="e#12220#12228#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -933,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/all.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="121" column="30" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -970,14 +972,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/all.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="121" column="6" selection-start-line="121" selection-start-column="6" selection-end-line="121" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="228" column="75" selection-start-line="228" selection-start-column="75" selection-end-line="228" selection-end-column="75" />
+        <state relative-caret-position="289">
+          <caret line="244" column="58" selection-start-line="244" selection-start-column="58" selection-end-line="244" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9876#9884#0" expanded="true" />
-            <element signature="e#10192#10200#0" expanded="true" />
+            <element signature="e#11904#11912#0" expanded="true" />
+            <element signature="e#12220#12228#0" expanded="true" />
           </folding>
         </state>
       </provider>

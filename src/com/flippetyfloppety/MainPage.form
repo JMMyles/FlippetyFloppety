@@ -312,13 +312,98 @@
                       </component>
                     </children>
                   </grid>
-                  <grid id="2d412" layout-manager="GridBagLayout">
+                  <grid id="2d412" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
                     <constraints>
                       <tabbedpane title="Breakdown Log"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <font size="20"/>
+                    </properties>
                     <border type="none"/>
-                    <children/>
+                    <children>
+                      <component id="51f4c" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Return:"/>
+                        </properties>
+                      </component>
+                      <vspacer id="a4114">
+                        <constraints/>
+                      </vspacer>
+                      <scrollpane id="4210c">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="c7871" class="javax.swing.JList" binding="bColumnList">
+                            <constraints/>
+                            <properties>
+                              <font size="14"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <component id="9a3cb" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Order by:"/>
+                        </properties>
+                      </component>
+                      <component id="e30d7" class="javax.swing.JComboBox" binding="bOrderByComboBox">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <model>
+                            <item value="Machine"/>
+                            <item value="Date"/>
+                            <item value="All"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="9ad36" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <text value="in:"/>
+                        </properties>
+                      </component>
+                      <component id="82a27" class="javax.swing.JComboBox" binding="bSortByComboBox">
+                        <constraints/>
+                        <properties>
+                          <font size="20"/>
+                          <model>
+                            <item value="ASC"/>
+                            <item value="DESC"/>
+                          </model>
+                        </properties>
+                      </component>
+                      <component id="2c66f" class="javax.swing.JButton" binding="viewBreakdownsButton" default-binding="true">
+                        <constraints/>
+                        <properties>
+                          <text value="View Breakdowns"/>
+                        </properties>
+                      </component>
+                      <scrollpane id="20bfe">
+                        <constraints/>
+                        <properties>
+                          <preferredSize width="1100" height="410"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <component id="63b30" class="javax.swing.JTable" binding="bFilterResultsTable">
+                            <constraints/>
+                            <properties>
+                              <preferredScrollableViewportSize width="1100" height="400"/>
+                              <preferredSize width="1100" height="410"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </scrollpane>
+                    </children>
                   </grid>
                 </children>
               </tabbedpane>

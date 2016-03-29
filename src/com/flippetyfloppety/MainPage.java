@@ -35,6 +35,11 @@ public class MainPage extends JFrame {
     private JList iColumnList;
     private JTable iFilterResultsTable;
     private JButton inspectionLogBtn;
+    private JList bColumnList;
+    private JComboBox bOrderByComboBox;
+    private JComboBox bSortByComboBox;
+    private JButton viewBreakdownsButton;
+    private JTable bFilterResultsTable;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -91,6 +96,11 @@ public class MainPage extends JFrame {
                     iColumnList.setModel((new DefaultListModel()));
                     DefaultListModel iModel = (DefaultListModel) iColumnList.getModel();
 
+                    // set projection options in BREAJDIWNS tab
+                    bColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    bColumnList.setModel((new DefaultListModel()));
+                    DefaultListModel bModel = (DefaultListModel) bColumnList.getModel();
+
                     uModel.removeAllElements();
                     // GET ALL COLUMN NAMES FOR CONSUMABLE INVENTORY JOIN
                     String urgentQuery = "SELECT * FROM consumable NATURAL JOIN inventory";
@@ -101,6 +111,11 @@ public class MainPage extends JFrame {
                     String inspectionQuery = "SELECT * FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
                             " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR";
                     fillProjectionList(iModel, inspectionQuery);
+
+                    bModel.removeAllElements();
+                    String breakdownQuery = "SELECT * FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
+                            " NATURAL JOIN inventory ";
+                    fillProjectionList(bModel, breakdownQuery);
                 }
             });
         }
@@ -194,6 +209,31 @@ public class MainPage extends JFrame {
                 ResultSet rs = db.executeSQLQuery(query);
                 fillTable(rs, iFilterResultsTable);
 
+            }
+        });
+        viewBreakdownsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String sortBy = bSortByComboBox.getSelectedItem().toString().toLowerCase();
+                String groupBy = bOrderByComboBox.getSelectedItem().toString().toLowerCase();
+                String sqlGroup = "";
+                if (groupBy.equals("machine")) {
+                    sqlGroup = "ORDER BY iname";
+                } else if (groupBy.equals("date")) {
+                    sqlGroup = "ORDER BY breakdownDate";
+                } else if (groupBy.equals("all")) {
+                    sqlGroup = "";
+                    sortBy = "";
+                } else {
+                    sortBy = "";
+                }
+
+                String proj = getProjectedAttributes(bColumnList);
+                String query = "SELECT " + proj + " FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
+                        " NATURAL JOIN inventory " + sqlGroup + " " + sortBy;
+                System.out.println(query);
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, bFilterResultsTable);
             }
         });
     }

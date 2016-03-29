@@ -136,9 +136,9 @@ create table rinspectm(
 	);
 create table breakdown(
 	iid varchar2(10) NOT NULL,
-	datec date NOT NULL,
+	breakdownDate date NOT NULL,
 	description varchar2(40) NOT NULL,
-	primary key(iid, datec),
+	primary key(iid, breakdownDate),
 	foreign key (iid) references machinery(iid)
 	);
 
