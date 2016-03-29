@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="added import to QueriesGUI">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/DatabaseSetup.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.sql" afterPath="$PROJECT_DIR$/all.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
     </list>
     <ignored path="CPSC 304.iws" />
@@ -73,12 +66,12 @@
       <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="237" column="66" selection-start-line="237" selection-start-column="66" selection-end-line="237" selection-end-column="66" />
+            <state relative-caret-position="252">
+              <caret line="228" column="75" selection-start-line="228" selection-start-column="75" selection-end-line="228" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9725#9733#0" expanded="true" />
-                <element signature="e#10041#10049#0" expanded="true" />
+                <element signature="e#9876#9884#0" expanded="true" />
+                <element signature="e#10192#10200#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -472,6 +465,14 @@
       <workItem from="1459118201475" duration="595000" />
       <workItem from="1459134039825" duration="12934000" />
     </task>
+    <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
+      <created>1459213391250</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1459213391250</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -550,7 +551,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added import to QueriesGUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added import to QueriesGUI" />
+    <MESSAGE value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
+    <option name="LAST_COMMIT_MESSAGE" value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,8 +606,8 @@
           <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9725#9733#0" expanded="true" />
-            <element signature="e#10041#10049#0" expanded="true" />
+            <element signature="e#9876#9884#0" expanded="true" />
+            <element signature="e#10192#10200#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,8 +644,8 @@
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9725#9733#0" expanded="true" />
-            <element signature="e#10041#10049#0" expanded="true" />
+            <element signature="e#9876#9884#0" expanded="true" />
+            <element signature="e#10192#10200#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,8 +689,8 @@
           <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9725#9733#0" expanded="true" />
-            <element signature="e#10041#10049#0" expanded="true" />
+            <element signature="e#9876#9884#0" expanded="true" />
+            <element signature="e#10192#10200#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -969,12 +972,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="237" column="66" selection-start-line="237" selection-start-column="66" selection-end-line="237" selection-end-column="66" />
+        <state relative-caret-position="252">
+          <caret line="228" column="75" selection-start-line="228" selection-start-column="75" selection-end-line="228" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9725#9733#0" expanded="true" />
-            <element signature="e#10041#10049#0" expanded="true" />
+            <element signature="e#9876#9884#0" expanded="true" />
+            <element signature="e#10192#10200#0" expanded="true" />
           </folding>
         </state>
       </provider>

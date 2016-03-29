@@ -190,7 +190,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT " + proj + " FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
                         " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR " + sqlGroup + " " + sortBy;
-                System.out.println("Query = " + query);;
+                System.out.println("Query = " + query);
                 ResultSet rs = db.executeSQLQuery(query);
                 fillTable(rs, iFilterResultsTable);
 
@@ -218,8 +218,11 @@ public class MainPage extends JFrame {
     private String getProjectedAttributes(JList list) {
         String proj = "";
         List<String> projection = list.getSelectedValuesList();
+
         if (projection.size() == 0) {
-            proj = "*";
+            DefaultListModel dlm = (DefaultListModel) list.getModel();
+            proj = dlm.toString().substring(1, dlm.toString().length() - 1);
+//            proj = "*";
         } else {
             proj = projection.get(0);
             for (int i = 1; i < projection.size(); i++) {
