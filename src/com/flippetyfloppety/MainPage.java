@@ -265,7 +265,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numResearchers.setText(String.valueOf(rs.getInt("numResearchers")));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -284,7 +284,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numSupervisors.setText(String.valueOf(rs.getInt("numSuper")));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -303,7 +303,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numExperiments.setText(String.valueOf(rs.getInt("numExp")));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -331,7 +331,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     mostSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -359,7 +359,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     leastSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -379,7 +379,7 @@ public class MainPage extends JFrame {
                     superAllMachines.setText("");
                     superAllMachines.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
 
             }
@@ -393,7 +393,9 @@ public class MainPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String query = "create view groupedCount as select count(*) as supplierCount, supplier from productinfo group by supplier";
+
+                    String query = "create or replace" +
+                            " view groupedCount as select count(*) as supplierCount, supplier from productinfo group by supplier";
                     db.executeSQLQuery(query);
                     query = "select supplier from groupedCount where supplierCount = (select max(supplierCount) from groupedCount)";
                     ResultSet rs = db.executeSQLQuery(query);
@@ -401,7 +403,7 @@ public class MainPage extends JFrame {
                     mostSupplier.setText("");
                     mostSupplier.setText(rs.getString("supplier"));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
             }
         });
@@ -424,12 +426,15 @@ public class MainPage extends JFrame {
                     System.out.println("recent date = " + recent);
                     int num = rs.getInt("numBreakdowns");
 
-                    System.out.println("num = " + num);
-                    double average = ((recent - oldest)/num);
-                    System.out.println("average = " + average);
-                    avgBreakdown.setText(Double.toString(average));
+                    int numerator = recent - oldest;
+                    System.out.println("numerator = " + numerator);
+
+                    float division = (float) numerator/num;
+                    System.out.println("division = " + division);
+
+                    avgBreakdown.setText(Float.toString(division));
                 } catch (SQLException sqle) {
-                    sqle.printStackTrace();
+                    showErrorDialog(sqle.getMessage());
                 }
             }
         });
@@ -448,7 +453,7 @@ public class MainPage extends JFrame {
                 }
             }
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            showErrorDialog(sqle.getMessage());
         }
 
     }
@@ -497,9 +502,13 @@ public class MainPage extends JFrame {
                     tc.setHeaderValue(columnNames.get(k));
                 }
             }
-            System.out.println("tabled filled");
+            System.out.println("tabledfilled");
         } catch (SQLException sqle) {
-            sqle.printStackTrace();
+            showErrorDialog(sqle.getMessage());
         }
+    }
+
+    private void showErrorDialog(String errorMsg) {
+        JOptionPane.showMessageDialog(mainFrame, errorMsg, "Error!", JOptionPane.ERROR_MESSAGE);
     }
 }
