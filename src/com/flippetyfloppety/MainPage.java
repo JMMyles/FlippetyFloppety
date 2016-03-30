@@ -317,14 +317,19 @@ public class MainPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String query = "select max(numInspections) as maxNum, sname from (select count(*) as numInspections, sname from rinspectm natural join supervisor group by sname) group by sname order by maxNum DESC";
+                    String query = "select max(numInspections) as maxNum from (select count(*) as numInspections, ssid from rinspectm group by ssid)";
                     ResultSet rs = db.executeSQLQuery(query);
 
                     rs.next();
                     mostSuper.setText("");
                     numMostSuper.setText("");
+                    int maxNum = rs.getInt("maxNum");
+                    numMostSuper.setText(String.valueOf(maxNum));
+
+                    query = "select sname from (select count(*) as maxNum, sname from rinspectm natural join supervisor group by sname) where maxNum = " + maxNum;
+                    rs = db.executeSQLQuery(query);
+                    rs.next();
                     mostSuper.setText(rs.getString("sname"));
-                    numMostSuper.setText(String.valueOf(rs.getInt("maxNum")));
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
@@ -340,20 +345,92 @@ public class MainPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String query = "select min(numInspections) as minNum, sname from (select count(*) as numInspections, sname from rinspectm natural join supervisor group by sname) group by sname order by minNum ASC";
+                    String query = "select min(numInspections) as minNum from (select count(*) as numInspections, ssid from rinspectm group by ssid)";
                     ResultSet rs = db.executeSQLQuery(query);
+
                     rs.next();
                     leastSuper.setText("");
                     numLeastSuper.setText("");
+                    int minNum = rs.getInt("minNum");
+                    numLeastSuper.setText(String.valueOf(minNum));
+
+                    query = "select sname from (select count(*) as minNum, sname from rinspectm natural join supervisor group by sname) where minNum = " + minNum;
+                    rs = db.executeSQLQuery(query);
+                    rs.next();
                     leastSuper.setText(rs.getString("sname"));
-                    numLeastSuper.setText(String.valueOf(rs.getInt("minNum")));
-
-
-//                    String query = "select sname from supervisor natural join rinspect m where " + minNum + "= (select count(*), sname FROM rinspectm natural join supervisor group by sname)";
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
 
+            }
+        });
+        calcSuperAllInspected.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "select sname from supervisor s where not exists (select * from machinery m where not exists(select * from rinspectm i where i.ssid=s.ssid and i.iid=m.iid))";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    superAllMachines.setText("");
+                    superAllMachines.setText(rs.getString("sname"));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+
+            }
+        });
+        calcMostSupplier.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "create view groupedCount as select count(*) as supplierCount, supplier from productinfo group by supplier";
+                    db.executeSQLQuery(query);
+                    query = "select supplier from groupedCount where supplierCount = (select max(supplierCount) from groupedCount)";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    mostSupplier.setText("");
+                    mostSupplier.setText(rs.getString("supplier"));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+            }
+        });
+        calcAvgBreakdown.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             * TODO: average is 0 when it should be 0.2 -- type conversion?
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String query = "select min(breakdownDate) as oldest, max(breakdownDate) as recent, count(*) as numBreakdowns from breakdown order by breakdownDate ASC";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+
+                    int oldest = Integer.parseInt(rs.getString("oldest").substring(2,4));
+                    System.out.println("oldest date = " + oldest);
+                    int recent = Integer.parseInt(rs.getString("recent").substring(2,4));
+                    System.out.println("recent date = " + recent);
+                    int num = rs.getInt("numBreakdowns");
+
+                    System.out.println("num = " + num);
+                    double average = ((recent - oldest)/num);
+                    System.out.println("average = " + average);
+                    avgBreakdown.setText(Double.toString(average));
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
             }
         });
     }

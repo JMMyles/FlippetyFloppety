@@ -253,14 +253,19 @@ insert into consumable values('c.00000005', 90);
 -- Adding inspection tuples
 insert into inspection values('2015-01-01', 'm.00000001');
 insert into inspection values('2015-02-02', 'm.00000003');
-insert into inspection values('2015-03-03', 'm.00000001');
+insert into inspection values('2015-03-03', 'm.00000002');
 insert into inspection values('2015-04-04', 'm.00000002');
-insert into inspection values('2016-01-01', 'm.00000005');
+insert into inspection values('2016-01-02', 'm.00000005');
 insert into inspection values('2016-01-06', 'm.00000002');
+
+insert into inspection values('2012-01-01', 'm.00000004');
+insert into inspection values('2016-01-01', 'm.00000005');
 -- Adding rinspectm tuples
 insert into rinspectm values('2015-02-02', 's1.eyung', 'm.00000003');
-insert into rinspectm values('2015-03-03', 's1.eyung', 'm.00000001');
+insert into rinspectm values('2015-03-03', 's1.eyung', 'm.00000002');
 insert into rinspectm values('2015-01-01', 's1.eyung', 'm.00000001');
+insert into rinspectm values('2012-01-01', 's1.eyung', 'm.00000004');
+insert into rinspectm values('2016-01-02', 's1.eyung', 'm.00000005');
 insert into rinspectm values('2015-04-04', 's2.rholt', 'm.00000002');
 insert into rinspectm values('2016-01-01', 's3.gperona', 'm.00000005');
 insert into rinspectm values('2016-01-06', 's3.gperona', 'm.00000002');
