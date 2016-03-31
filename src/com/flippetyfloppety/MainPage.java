@@ -63,6 +63,11 @@ public class MainPage extends JFrame {
     private JPanel experiment;
     private JPanel statistics;
     private JPanel userSettings;
+    private JComboBox inventoryFilterComboBox;
+    private JList inventoryColumnList;
+    private JTable inventoryFilterResultsTable;
+    private JTabbedPane inventory2Pane;
+    private JFrame headFrame;
 
     private int user;
     private DatabaseSetup db;
@@ -71,7 +76,30 @@ public class MainPage extends JFrame {
         System.out.println("In Main Page");
         this.user = userType;
         this.db = db;
+        headFrame = new JFrame("Header");
+        getContentPane().add(inventory2Pane);
+        if (this.user == Login.RESEARCHER) {
+            inventory2Pane.setEnabledAt(2, false);
+            inventory2Pane.setEnabledAt(3, false);
+        } else {
+            inventory2Pane.addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent changeEvent) {
 
+                    // set projection options in INVENTORY tab
+                    inventoryColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    inventoryColumnList.setModel(new DefaultListModel());
+                    DefaultListModel inventoryModel = (DefaultListModel) inventoryColumnList.getModel();
+
+                    // GET COLUMN NAMES FOR INVENTORY
+                    String inventoryQuery = "SELECT * FROM inventory";
+                    fillProjectionList(inventoryModel, inventoryQuery);
+                }
+            });
+        }
+        headFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pack();
+        setVisible(true);
         iSearchBtn.addActionListener(new ActionListener() {
             /**
              * Invoked when inventory search button is pressed
@@ -80,7 +108,14 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+                String proj = getProjectedAttributes(inventoryColumnList);
+                String invItem = inventoryFilterComboBox.getSelectedItem().toString();
 
+                String query = "SELECT " + proj + " FROM inventory WHERE " + invItem + " LIKE iname";
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                fillTable(rs, inventoryFilterResultsTable);
             }
         });
         eSearchBtn.addActionListener(new ActionListener() {
