@@ -76,13 +76,15 @@ public class MainPage extends JFrame {
         System.out.println("In Main Page");
         this.user = userType;
         this.db = db;
-        headFrame = new JFrame("Header");
-        getContentPane().add(inventory2Pane);
+
+        mainFrame = new JFrame("Main");
+        getContentPane().add(inventoryPane);
         if (this.user == Login.RESEARCHER) {
-            inventory2Pane.setEnabledAt(2, false);
-            inventory2Pane.setEnabledAt(3, false);
+            inventoryPane.setEnabledAt(2, false);
+            inventoryPane.setEnabledAt(3, false);
         } else {
-            inventory2Pane.addChangeListener(new ChangeListener() {
+
+            inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
 
@@ -94,50 +96,6 @@ public class MainPage extends JFrame {
                     // GET COLUMN NAMES FOR INVENTORY
                     String inventoryQuery = "SELECT * FROM inventory";
                     fillProjectionList(inventoryModel, inventoryQuery);
-                }
-            });
-        }
-        headFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        pack();
-        setVisible(true);
-        iSearchBtn.addActionListener(new ActionListener() {
-            /**
-             * Invoked when inventory search button is pressed
-             *
-             * @param e
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String proj = getProjectedAttributes(inventoryColumnList);
-                String invItem = inventoryFilterComboBox.getSelectedItem().toString();
-
-                String query = "SELECT " + proj + " FROM inventory WHERE " + invItem + " LIKE iname";
-
-                ResultSet rs = db.executeSQLQuery(query);
-
-                fillTable(rs, inventoryFilterResultsTable);
-            }
-        });
-        eSearchBtn.addActionListener(new ActionListener() {
-            /**
-             * Invoked when experiment search button is pressed
-             *
-             * @param e
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        mainFrame = new JFrame("Main");
-        getContentPane().add(inventoryPane);
-        if (this.user == Login.RESEARCHER) {
-            inventoryPane.setEnabledAt(2, false);
-            inventoryPane.setEnabledAt(3, false);
-        } else {
-            inventoryPane.addChangeListener(new ChangeListener() {
-                @Override
-                public void stateChanged(ChangeEvent changeEvent) {
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -172,6 +130,36 @@ public class MainPage extends JFrame {
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
+
+        iSearchBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when inventory search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String proj = getProjectedAttributes(inventoryColumnList);
+                String invItem = inventoryFilterComboBox.getSelectedItem().toString();
+
+                String query = "SELECT " + proj + " FROM inventory WHERE " + invItem + " LIKE iname";
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                fillTable(rs, inventoryFilterResultsTable);
+            }
+        });
+        eSearchBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when experiment search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         createAccBtn.addActionListener(new ActionListener() {
             /**
              * Invoked when create account button is pressed
