@@ -44,7 +44,7 @@ create table experiment(
 	-- JS: We should probs specify that pagenum can't be negative
 	pagenum int,
 	primary key (booknum, cdate),
-	foreign key (booknum) references labbook(booknum) on delete cascade
+	foreign key (booknum) references labbook(booknum)
 	);
 create table inventory(
 	iid varchar2(10) NOT NULL primary key,
@@ -58,24 +58,17 @@ create table eusesi(
 	cdate date NOT NULL,
 	iid varchar2(10),
 	primary key (booknum, cdate, iid),
-	foreign key (iid) references inventory(iid),
+	foreign key (iid) references inventory(iid), 
 	foreign key (booknum, cdate) references experiment(booknum, cdate)
 	);
-create table sreviewsi(
-	lastchecked date NOT NULL,
-	ssid varchar2(10) NOT NULL,
-	iid varchar2(10) NOT NULL,
-	primary key (ssid, iid),
-	foreign key (ssid) references supervisor(ssid),
-	foreign key (iid) references inventory(iid)
-	);
+
 create table rupdatei(
 	rsid varchar2(10) NOT NULL,
 	iid varchar2(10) NOT NULL,
 	lastchecked date NOT NULL,
 	primary key (rsid, iid),
 	foreign key (rsid) references researcher(rsid),
-	foreign key (iid) references inventory(iid)
+	foreign key (iid) references inventory(iid) on delete cascade
 	);
 create table labcreated(
 	iid varchar2(10) primary key,
@@ -84,7 +77,7 @@ create table labcreated(
     units varchar2(2) NOT NULL,
 	booknum integer NOT NULL,
 	datelc date NOT NULL,
-	foreign key (iid) references inventory(iid),
+	foreign key (iid) references inventory(iid) on delete cascade,
 	foreign key (datelc, booknum) references experiment(cdate, booknum)
 	);
 -- researcher only creates new labcreated tuples.
@@ -95,7 +88,7 @@ create table rcreatesi(
 	iid varchar2(10) NOT NULL,
 	primary key (rsid, iid),
 	foreign key (rsid) references researcher(rsid),
-	foreign key (iid) references labcreated(iid)
+	foreign key (iid) references labcreated(iid) on delete cascade
 	);
 create table productinfo(
 	supplier varchar2(40) NOT NULL,
@@ -107,31 +100,31 @@ create table equipment(
 	supplier varchar2(40) NOT NULL,
 	ordernum varchar2(10) NOT NULL,
 	foreign key (iid) references inventory(iid),
-	foreign key (supplier, ordernum) references productinfo(supplier,ordernum)
+	foreign key (supplier, ordernum) references productinfo(supplier,ordernum) on delete cascade
 	);
 create table machinery(
 	iid varchar2(10) primary key,
 	serialnum varchar2(10),
-	foreign key (iid) references equipment(iid)
+	foreign key (iid) references equipment(iid) on delete cascade
 	);
 create table consumable(
 	iid varchar2(10) primary key,
 	amnt float NOT NULL,
-	foreign key (iid) references equipment(iid),
+	foreign key (iid) references equipment(iid) on delete cascade,
 	constraint nonNegAmnt check (amnt >=0)
 	);
 create table inspection(
 	dateInspected date NOT NULL,
 	iid varchar2(10) NOT NULL,
 	primary key(dateInspected, iid),
-	foreign key (iid) references machinery(iid)
+	foreign key (iid) references machinery(iid) on delete cascade
 	);
 create table rinspectm(
 	dateInspected date NOT NULL,
 	ssid varchar2(10) NOT NULL,
 	iid varchar2(10) NOT NULL,
 	primary key (ssid, dateInspected, iid),
-	foreign key (dateInspected, iid) references inspection(dateInspected, iid),
+	foreign key (dateInspected, iid) references inspection(dateInspected, iid) on delete cascade,
 	foreign key (ssid) references supervisor(ssid)
 	);
 create table breakdown(
@@ -139,7 +132,7 @@ create table breakdown(
 	breakdownDate date NOT NULL,
 	description varchar2(40) NOT NULL,
 	primary key(iid, breakdownDate),
-	foreign key (iid) references machinery(iid)
+	foreign key (iid) references machinery(iid) on delete cascade
 	);
 
 
@@ -191,12 +184,6 @@ insert into eusesi values(0002, '2016-01-01', 'l.00000002');
 insert into eusesi values(0002, '2015-07-03', 'l.00000003');
 insert into eusesi values(0003, '2015-10-28', 'l.00000004');
 insert into eusesi values(0001, '2014-11-10', 'l.00000005');
--- Adding sreviewsi tuples
-insert into sreviewsi values('2015-03-18', 's1.eyung', 'm.00000001');
-insert into sreviewsi values('2015-05-25', 's2.rholt', 'c.00000003');
-insert into sreviewsi values('2015-08-08', 's3.gperona', 'm.00000004');
-insert into sreviewsi values('2015-12-12', 's4.dacton', 'c.00000005');
-insert into sreviewsi values('2016-02-13', 's1.eyung', 'm.00000005');
 -- Adding rupdatei tuples
 insert into rupdatei values('r1.jsihvon', 'c.00000002', '2014-10-10');
 insert into rupdatei values('r2.jlam', 'c.00000005', '2015-04-07');

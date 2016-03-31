@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Finished implementing stats tab, average always rounds down though">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="SQLException messages now display in a dialog, fixed average to display decimal places">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.sql" afterPath="$PROJECT_DIR$/all.sql" />
     </list>
     <ignored path="CPSC 304.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6603352">
-              <caret line="433" column="20" selection-start-line="433" selection-start-column="20" selection-end-line="433" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="433" column="0" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="all.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/all.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="138" column="15" selection-start-line="138" selection-start-column="2" selection-end-line="138" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.38544253">
+              <caret line="108" column="46" selection-start-line="108" selection-start-column="46" selection-end-line="108" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -105,8 +104,8 @@
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
-        <option value="$PROJECT_DIR$/all.sql" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+        <option value="$PROJECT_DIR$/all.sql" />
       </list>
     </option>
   </component>
@@ -146,7 +145,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,32 +183,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flippetyfloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Login" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -703,7 +680,8 @@
       <workItem from="1459270741050" duration="8033000" />
       <workItem from="1459279500014" duration="7942000" />
       <workItem from="1459357312960" duration="618000" />
-      <workItem from="1459360808537" duration="2356000" />
+      <workItem from="1459360808537" duration="3917000" />
+      <workItem from="1459404980323" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
       <created>1459213391250</created>
@@ -729,11 +707,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459311084235</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="SQLException messages now display in a dialog, fixed average to display decimal places">
+      <created>1459363214666</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1459363214667</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51919000" />
+    <option name="totallyTimeSpent" value="53493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="-11" width="2089" height="1462" extended-state="6" />
@@ -741,12 +725,10 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.296237" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.502851" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15682063" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24979983" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17511289" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -755,15 +737,17 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.296237" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24979983" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943755" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -814,7 +798,8 @@
     <MESSAGE value="Breakdown tab populated with table and drop down menu options -- all.sql date field in breakdown table updated to be called breakdownDate to avoid ambiguity when displaying" />
     <MESSAGE value="Statistics tab up to least number of machines implemention completed" />
     <MESSAGE value="Finished implementing stats tab, average always rounds down though" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished implementing stats tab, average always rounds down though" />
+    <MESSAGE value="SQLException messages now display in a dialog, fixed average to display decimal places" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQLException messages now display in a dialog, fixed average to display decimal places" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -832,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,19 +1180,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="138" column="15" selection-start-line="138" selection-start-column="2" selection-end-line="138" selection-end-column="15" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
@@ -1226,11 +1198,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6603352">
-          <caret line="433" column="20" selection-start-line="433" selection-start-column="20" selection-end-line="433" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="433" column="0" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38544253">
+          <caret line="108" column="46" selection-start-line="108" selection-start-column="46" selection-end-line="108" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
