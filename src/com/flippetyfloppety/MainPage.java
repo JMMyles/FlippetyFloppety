@@ -63,11 +63,12 @@ public class MainPage extends JFrame {
     private JPanel experiment;
     private JPanel statistics;
     private JPanel userSettings;
-    private JComboBox inventoryFilterComboBox;
+    //private JComboBox inventoryFilterComboBox;
     private JList inventoryColumnList;
     private JTable inventoryFilterResultsTable;
     private JTabbedPane inventory2Pane;
     private JFrame headFrame;
+    private JTextArea inventorySearchQuery;
 
     private int user;
     private DatabaseSetup db;
@@ -139,14 +140,19 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                String proj = getProjectedAttributes(inventoryColumnList);
-                String invItem = inventoryFilterComboBox.getSelectedItem().toString();
-
-                String query = "SELECT " + proj + " FROM inventory WHERE " + invItem + " LIKE iname";
+                // String proj = getProjectedAttributes(inventoryColumnList);
+                String invItem = inventorySearchQuery.getText().toLowerCase();
+                System.out.println(invItem);
+                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
+                System.out.println(rs);
 
-                fillTable(rs, inventoryFilterResultsTable);
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, inventoryFilterResultsTable);
+                }
             }
         });
         eSearchBtn.addActionListener(new ActionListener() {
@@ -212,7 +218,7 @@ public class MainPage extends JFrame {
 
                 String proj = getProjectedAttributes(columnList);
 
-                String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+                String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
 
                 ResultSet rs = db.executeSQLQuery(query);
 

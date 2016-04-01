@@ -31,7 +31,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="33ddd" class="javax.swing.JTextArea" binding="iSearchQuery">
+              <component id="33ddd" class="javax.swing.JTextArea" binding="inventorySearchQuery">
                 <constraints/>
                 <properties>
                   <columns value="49"/>
@@ -51,6 +51,19 @@
                   <verticalTextPosition value="1"/>
                 </properties>
               </component>
+              <scrollpane id="fbf19">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="9a2d8" class="javax.swing.JTable" binding="inventoryFilterResultsTable">
+                    <constraints/>
+                    <properties>
+                      <font size="20"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
             </children>
           </grid>
           <grid id="9ec1d" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
