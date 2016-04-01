@@ -18,7 +18,6 @@ public class MainPage extends JFrame {
     private JTabbedPane inventoryPane;
     private JTextArea iSearchQuery;
     private JButton iSearchBtn;
-    private JTextField eSearchQuery;
     private JButton eSearchBtn;
     private JTextField rsid;
     private JPasswordField rpwd;
@@ -58,6 +57,9 @@ public class MainPage extends JFrame {
     private JButton calcAvgBreakdown;
     private JTextArea superAllMachines;
     private JButton calcSuperAllInspected;
+    private JTextField searchQuery;
+    private JButton searchButton;
+    private JTable expSearchResults;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -90,13 +92,13 @@ public class MainPage extends JFrame {
                 public void stateChanged(ChangeEvent changeEvent) {
 
                     // set projection options in INVENTORY tab
-                    inventoryColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-                    inventoryColumnList.setModel(new DefaultListModel());
-                    DefaultListModel inventoryModel = (DefaultListModel) inventoryColumnList.getModel();
+//                    inventoryColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+//                    inventoryColumnList.setModel(new DefaultListModel());
+//                    DefaultListModel inventoryModel = (DefaultListModel) inventoryColumnList.getModel();
 
                     // GET COLUMN NAMES FOR INVENTORY
-                    String inventoryQuery = "SELECT * FROM inventory";
-                    fillProjectionList(inventoryModel, inventoryQuery);
+//                    String inventoryQuery = "SELECT * FROM inventory";
+//                    fillProjectionList(inventoryModel, inventoryQuery);
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -155,17 +157,7 @@ public class MainPage extends JFrame {
                 }
             }
         });
-        eSearchBtn.addActionListener(new ActionListener() {
-            /**
-             * Invoked when experiment search button is pressed
-             *
-             * @param e
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-            }
-        });
         createAccBtn.addActionListener(new ActionListener() {
             /**
              * Invoked when create account button is pressed
@@ -465,6 +457,21 @@ public class MainPage extends JFrame {
                 } catch (SQLException sqle) {
                     showErrorDialog(sqle.getMessage());
                 }
+            }
+        });
+        searchButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when user searches for a labbook/experiment
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String search = searchQuery.getText().toString();
+                String query = "select * from experiment NATURAL JOIN labbook where booknum like '%" + search + "%' or ename like '%" + search + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, expSearchResults);
             }
         });
     }

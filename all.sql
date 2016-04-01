@@ -43,6 +43,7 @@ create table experiment(
 	cdate date,
 	-- JS: We should probs specify that pagenum can't be negative
 	pagenum int,
+	ename varchar2(40),
 	primary key (booknum, cdate),
 	foreign key (booknum) references labbook(booknum)
 	);
@@ -156,11 +157,11 @@ insert into labbook values(3, 'r3.jmyles');
 insert into labbook values(4, 'r4.bli');
 insert into labbook values(5, 'r1.jsihvon');
 -- Adding experiment tuples
-insert into experiment values(1, '2001-01-01', 1);
-insert into experiment values(2, '2016-01-01', 307);
-insert into experiment values(2, '2015-07-03', 210);
-insert into experiment values(3, '2015-10-28', 313);
-insert into experiment values(1, '2014-11-10', 221);
+insert into experiment values(1, '2001-01-01', 1, 'Detecting aliens in outer space');
+insert into experiment values(2, '2016-01-01', 307, 'Counting worms');
+insert into experiment values(2, '2015-07-03', 210, 'Do worms have legs?');
+insert into experiment values(3, '2015-10-28', 313, 'Analysis of a worm');
+insert into experiment values(1, '2014-11-10', 221, 'e123');
 
 -- Adding inventory tuples
 insert into inventory values('l.00000001', '4-45 fridge', '2001-01-10', 1, 'plasmid 330');
