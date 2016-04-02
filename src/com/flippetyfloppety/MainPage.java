@@ -69,6 +69,7 @@ public class MainPage extends JFrame {
     private JTabbedPane inventory2Pane;
     private JFrame headFrame;
     private JTextArea inventorySearchQuery;
+    private JButton iAntiSearchBtn;
 
     private int user;
     private DatabaseSetup db;
@@ -142,11 +143,32 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // String proj = getProjectedAttributes(inventoryColumnList);
                 String invItem = inventorySearchQuery.getText().toLowerCase();
-                System.out.println(invItem);
+
                 String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
-                System.out.println(rs);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, inventoryFilterResultsTable);
+                }
+            }
+        });
+        iAntiSearchBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when Anti-inventory search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // String proj = getProjectedAttributes(inventoryColumnList);
+                String invItem = inventorySearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");

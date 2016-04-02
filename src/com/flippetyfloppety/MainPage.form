@@ -51,6 +51,13 @@
                   <verticalTextPosition value="1"/>
                 </properties>
               </component>
+              <component id="b2d9d" class="javax.swing.JButton" binding="iAntiSearchBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="~Search"/>
+                </properties>
+              </component>
               <scrollpane id="fbf19">
                 <constraints/>
                 <properties/>
@@ -63,6 +70,12 @@
                     </properties>
                   </component>
                 </children>
+              </scrollpane>
+              <scrollpane id="2d02f">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children/>
               </scrollpane>
             </children>
           </grid>
