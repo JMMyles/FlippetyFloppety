@@ -5,11 +5,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.text.DateFormatter;
+import javax.swing.text.DefaultFormatterFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Vector;
+
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -71,6 +75,11 @@ public class MainPage extends JFrame {
     private JTabbedPane inventory2Pane;
     private JFrame headFrame;
     private JTextArea inventorySearchQuery;
+    private JTextField expName;
+    private JFormattedTextField expDate;
+    private JTextField booknum;
+    private JTextField pagenum;
+    private JButton insertNewExperimentButton;
 
     private int user;
     private DatabaseSetup db;
@@ -90,15 +99,15 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
+                    // set up date format in input field
 
-                    // set projection options in INVENTORY tab
-//                    inventoryColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-//                    inventoryColumnList.setModel(new DefaultListModel());
-//                    DefaultListModel inventoryModel = (DefaultListModel) inventoryColumnList.getModel();
 
-                    // GET COLUMN NAMES FOR INVENTORY
-//                    String inventoryQuery = "SELECT * FROM inventory";
-//                    fillProjectionList(inventoryModel, inventoryQuery);
+//                        DateFormatter date = new DateFormatter("yyyy-MM-dd");
+//                        DefaultFormatterFactory factory = new DefaultFormatterFactory(date);
+
+                        expDate.setFormatterFactory(new DefaultFormatterFactory(new DateFormatter(new SimpleDateFormat("yyyy-MM-dd"))));
+
+
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -474,6 +483,18 @@ public class MainPage extends JFrame {
                 fillTable(rs, expSearchResults);
             }
         });
+        insertNewExperimentButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+//                expDate.setFormat(displayFormatter);
+            }
+        });
     }
 
     private void fillProjectionList(DefaultListModel model, String query) {
@@ -547,4 +568,6 @@ public class MainPage extends JFrame {
     private void showErrorDialog(String errorMsg) {
         JOptionPane.showMessageDialog(mainFrame, errorMsg, "Error!", JOptionPane.ERROR_MESSAGE);
     }
+
+
 }

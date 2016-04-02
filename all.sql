@@ -8,7 +8,6 @@ drop table experiment cascade constraints;
 drop table inventory cascade constraints;
 drop table eusesi cascade constraints;
 -- JS: Can't remember if we should change the table below:
-drop table sreviewsi cascade constraints;
 drop table rupdatei cascade constraints;
 drop table rcreatesi cascade constraints;
 drop table labcreated cascade constraints;
@@ -58,8 +57,9 @@ create table eusesi(
 	booknum int NOT NULL,
 	cdate date NOT NULL,
 	iid varchar2(10),
+	qtyUsed integer,
 	primary key (booknum, cdate, iid),
-	foreign key (iid) references inventory(iid), 
+	foreign key (iid) references inventory(iid),
 	foreign key (booknum, cdate) references experiment(booknum, cdate)
 	);
 
@@ -180,11 +180,11 @@ insert into inventory values('c.00000003', 'Coat rack', '2015-12-12', 10, 'Lab c
 insert into inventory values('c.00000004', 'Glasses cabinet', '2015-12-10', 20, 'Safety glasses');
 insert into inventory values('c.00000005', 'Storage shelf 2', '2015-12-10', 20, '10mL pipettes');
 -- Adding eusesi tuples
-insert into eusesi values(0001, '2001-01-01', 'l.00000001');
-insert into eusesi values(0002, '2016-01-01', 'l.00000002');
-insert into eusesi values(0002, '2015-07-03', 'l.00000003');
-insert into eusesi values(0003, '2015-10-28', 'l.00000004');
-insert into eusesi values(0001, '2014-11-10', 'l.00000005');
+insert into eusesi values(0001, '2001-01-01', 'l.00000001', 0.1);
+insert into eusesi values(0002, '2016-01-01', 'l.00000002', 1);
+insert into eusesi values(0002, '2015-07-03', 'l.00000003', 0.2);
+insert into eusesi values(0003, '2015-10-28', 'l.00000004', 0.2);
+insert into eusesi values(0001, '2014-11-10', 'l.00000005', 0.02);
 -- Adding rupdatei tuples
 insert into rupdatei values('r1.jsihvon', 'c.00000002', '2014-10-10');
 insert into rupdatei values('r2.jlam', 'c.00000005', '2015-04-07');
