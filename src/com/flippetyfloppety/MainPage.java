@@ -70,6 +70,8 @@ public class MainPage extends JFrame {
     private JFrame headFrame;
     private JTextArea inventorySearchQuery;
     private JButton iAntiSearchBtn;
+    private JButton eAntiSearchBtn;
+    private JTable eFilterResultsTable;
 
     private int user;
     private DatabaseSetup db;
@@ -141,7 +143,7 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                // String proj = getProjectedAttributes(inventoryColumnList);
+
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
@@ -163,7 +165,7 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                // String proj = getProjectedAttributes(inventoryColumnList);
+
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
@@ -186,6 +188,39 @@ public class MainPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                String eItem = eSearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM experiment WHERE ename LIKE '%" + eItem + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, eFilterResultsTable);
+                }
+            }
+        });
+        eAntiSearchBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when Anti-experiment search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String eItem = eSearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, eFilterResultsTable);
+                }
             }
         });
         createAccBtn.addActionListener(new ActionListener() {

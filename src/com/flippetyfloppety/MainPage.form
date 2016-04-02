@@ -100,6 +100,26 @@
                   <text value="Search"/>
                 </properties>
               </component>
+              <component id="e96a6" class="javax.swing.JButton" binding="eAntiSearchBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="~Search"/>
+                </properties>
+              </component>
+              <scrollpane id="d240e">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="ec02" class="javax.swing.JTable" binding="eFilterResultsTable">
+                    <constraints/>
+                    <properties>
+                      <font size="20"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
             </children>
           </grid>
           <grid id="43796" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
