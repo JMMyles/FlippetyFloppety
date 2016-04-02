@@ -5,11 +5,15 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.text.DateFormatter;
+import javax.swing.text.DefaultFormatterFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Vector;
+
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -18,7 +22,6 @@ public class MainPage extends JFrame {
     private JTabbedPane inventoryPane;
     private JTextArea iSearchQuery;
     private JButton iSearchBtn;
-    private JTextField eSearchQuery;
     private JButton eSearchBtn;
     private JTextField rsid;
     private JPasswordField rpwd;
@@ -58,6 +61,9 @@ public class MainPage extends JFrame {
     private JButton calcAvgBreakdown;
     private JTextArea superAllMachines;
     private JButton calcSuperAllInspected;
+    private JTextField searchQuery;
+    private JButton searchButton;
+    private JTable expSearchResults;
     private JFrame mainFrame;
     private JPanel inventory;
     private JPanel experiment;
@@ -69,9 +75,17 @@ public class MainPage extends JFrame {
     private JTabbedPane inventory2Pane;
     private JFrame headFrame;
     private JTextArea inventorySearchQuery;
+<<<<<<< HEAD
     private JButton iAntiSearchBtn;
     private JButton eAntiSearchBtn;
     private JTable eFilterResultsTable;
+=======
+    private JTextField expName;
+    private JFormattedTextField expDate;
+    private JTextField booknum;
+    private JTextField pagenum;
+    private JButton insertNewExperimentButton;
+>>>>>>> 1fbb88190ae9ea7ddf7dfe8a94d673e5aced10b1
 
     private int user;
     private DatabaseSetup db;
@@ -91,15 +105,15 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
+                    // set up date format in input field
 
-                    // set projection options in INVENTORY tab
-                    inventoryColumnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-                    inventoryColumnList.setModel(new DefaultListModel());
-                    DefaultListModel inventoryModel = (DefaultListModel) inventoryColumnList.getModel();
 
-                    // GET COLUMN NAMES FOR INVENTORY
-                    String inventoryQuery = "SELECT * FROM inventory";
-                    fillProjectionList(inventoryModel, inventoryQuery);
+//                        DateFormatter date = new DateFormatter("yyyy-MM-dd");
+//                        DefaultFormatterFactory factory = new DefaultFormatterFactory(date);
+
+                        expDate.setFormatterFactory(new DefaultFormatterFactory(new DateFormatter(new SimpleDateFormat("yyyy-MM-dd"))));
+
+
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -179,15 +193,8 @@ public class MainPage extends JFrame {
                 }
             }
         });
-        eSearchBtn.addActionListener(new ActionListener() {
-            /**
-             * Invoked when experiment search button is pressed
-             *
-             * @param e
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
+<<<<<<< HEAD
                 String eItem = eSearchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM experiment WHERE ename LIKE '%" + eItem + "%'";
@@ -223,6 +230,8 @@ public class MainPage extends JFrame {
                 }
             }
         });
+=======
+>>>>>>> 1fbb88190ae9ea7ddf7dfe8a94d673e5aced10b1
         createAccBtn.addActionListener(new ActionListener() {
             /**
              * Invoked when create account button is pressed
@@ -524,6 +533,33 @@ public class MainPage extends JFrame {
                 }
             }
         });
+        searchButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when user searches for a labbook/experiment
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String search = searchQuery.getText().toString();
+                String query = "select * from experiment NATURAL JOIN labbook where booknum like '%" + search + "%' or ename like '%" + search + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
+                fillTable(rs, expSearchResults);
+            }
+        });
+        insertNewExperimentButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+//                expDate.setFormat(displayFormatter);
+            }
+        });
     }
 
     private void fillProjectionList(DefaultListModel model, String query) {
@@ -597,4 +633,6 @@ public class MainPage extends JFrame {
     private void showErrorDialog(String errorMsg) {
         JOptionPane.showMessageDialog(mainFrame, errorMsg, "Error!", JOptionPane.ERROR_MESSAGE);
     }
+
+
 }

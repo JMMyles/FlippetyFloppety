@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CPSC 304:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CPSC_304_jar</output-path>
+    <root id="archive" name="CPSC 304.jar">
+      <element id="module-output" name="CPSC 304" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../classes12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jgoodies-binding-2_13_0-20150121/jgoodies-binding-2.13.0/jgoodies-binding-2.13.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -8,7 +8,6 @@ drop table experiment cascade constraints;
 drop table inventory cascade constraints;
 drop table eusesi cascade constraints;
 -- JS: Can't remember if we should change the table below:
-drop table sreviewsi cascade constraints;
 drop table rupdatei cascade constraints;
 drop table rcreatesi cascade constraints;
 drop table labcreated cascade constraints;
@@ -43,6 +42,7 @@ create table experiment(
 	cdate date,
 	-- JS: We should probs specify that pagenum can't be negative
 	pagenum int,
+	ename varchar2(40),
 	primary key (booknum, cdate),
 	foreign key (booknum) references labbook(booknum)
 	);
@@ -57,8 +57,9 @@ create table eusesi(
 	booknum int NOT NULL,
 	cdate date NOT NULL,
 	iid varchar2(10),
+	qtyUsed integer,
 	primary key (booknum, cdate, iid),
-	foreign key (iid) references inventory(iid), 
+	foreign key (iid) references inventory(iid),
 	foreign key (booknum, cdate) references experiment(booknum, cdate)
 	);
 
@@ -156,11 +157,11 @@ insert into labbook values(3, 'r3.jmyles');
 insert into labbook values(4, 'r4.bli');
 insert into labbook values(5, 'r1.jsihvon');
 -- Adding experiment tuples
-insert into experiment values(1, '2001-01-01', 1);
-insert into experiment values(2, '2016-01-01', 307);
-insert into experiment values(2, '2015-07-03', 210);
-insert into experiment values(3, '2015-10-28', 313);
-insert into experiment values(1, '2014-11-10', 221);
+insert into experiment values(1, '2001-01-01', 1, 'Detecting aliens in outer space');
+insert into experiment values(2, '2016-01-01', 307, 'Counting worms');
+insert into experiment values(2, '2015-07-03', 210, 'Do worms have legs?');
+insert into experiment values(3, '2015-10-28', 313, 'Analysis of a worm');
+insert into experiment values(1, '2014-11-10', 221, 'e123');
 
 -- Adding inventory tuples
 insert into inventory values('l.00000001', '4-45 fridge', '2001-01-10', 1, 'plasmid 330');
@@ -179,11 +180,11 @@ insert into inventory values('c.00000003', 'Coat rack', '2015-12-12', 10, 'Lab c
 insert into inventory values('c.00000004', 'Glasses cabinet', '2015-12-10', 20, 'Safety glasses');
 insert into inventory values('c.00000005', 'Storage shelf 2', '2015-12-10', 20, '10mL pipettes');
 -- Adding eusesi tuples
-insert into eusesi values(0001, '2001-01-01', 'l.00000001');
-insert into eusesi values(0002, '2016-01-01', 'l.00000002');
-insert into eusesi values(0002, '2015-07-03', 'l.00000003');
-insert into eusesi values(0003, '2015-10-28', 'l.00000004');
-insert into eusesi values(0001, '2014-11-10', 'l.00000005');
+insert into eusesi values(0001, '2001-01-01', 'l.00000001', 0.1);
+insert into eusesi values(0002, '2016-01-01', 'l.00000002', 1);
+insert into eusesi values(0002, '2015-07-03', 'l.00000003', 0.2);
+insert into eusesi values(0003, '2015-10-28', 'l.00000004', 0.2);
+insert into eusesi values(0001, '2014-11-10', 'l.00000005', 0.02);
 -- Adding rupdatei tuples
 insert into rupdatei values('r1.jsihvon', 'c.00000002', '2014-10-10');
 insert into rupdatei values('r2.jlam', 'c.00000005', '2015-04-07');
