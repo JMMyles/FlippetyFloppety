@@ -105,29 +105,6 @@
                 <properties>
                   <font size="20"/>
                 </properties>
-<<<<<<< HEAD
-              </component>
-              <component id="e96a6" class="javax.swing.JButton" binding="eAntiSearchBtn">
-                <constraints/>
-                <properties>
-                  <font size="20"/>
-                  <text value="~Search"/>
-                </properties>
-              </component>
-              <scrollpane id="d240e">
-                <constraints/>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="ec02" class="javax.swing.JTable" binding="eFilterResultsTable">
-                    <constraints/>
-                    <properties>
-                      <font size="20"/>
-                    </properties>
-                  </component>
-                </children>
-              </scrollpane>
-=======
                 <border type="none"/>
                 <children>
                   <grid id="b7edb" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
@@ -300,7 +277,6 @@
                   </grid>
                 </children>
               </tabbedpane>
->>>>>>> 1fbb88190ae9ea7ddf7dfe8a94d673e5aced10b1
             </children>
           </grid>
           <grid id="43796" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
