@@ -76,7 +76,7 @@ create table labcreated(
 	iid int primary key,
 	-- JS: Maybe amt should be a char, so as not to restrict units (aka, only stored in mL)?
 	amnt float NOT NULL,
-  units varchar2(2) NOT NULL,
+  	units varchar2(2) NOT NULL,
 	booknum integer NOT NULL,
 	datelc date NOT NULL,
 	foreign key (iid) references inventory(iid) on delete cascade,

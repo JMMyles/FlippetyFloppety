@@ -113,7 +113,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
             ps.setDate(3, expdate);
             ps.executeUpdate();
 
-            JOptionPane.showMessageDialog(frame, "Quantity updated succesfully");
+            JOptionPane.showMessageDialog(mainFrame, "Quantity updated succesfully");
         } catch (ArrayIndexOutOfBoundsException aiobe) {
             // do nothing == this happens when we redraw the table
         } catch (SQLException sqle) {

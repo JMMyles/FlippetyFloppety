@@ -679,7 +679,7 @@ public class MainPage extends JFrame {
 
                     // update the table to show all inventory items used in the experiment
                     try {
-                        String query = "select rsid, iid, iname, lastchecked from rupdatei natural join inventory where iid=?";
+                        String query = "select rsid, iid, iname, lastchecked, supplier, ordernum from rupdatei natural join inventory natural left join equipment where iid=?";
                         PreparedStatement ps = db.getConnection().prepareStatement(query);
                         ps.setObject(1, iidVal);
                         ResultSet rs = ps.executeQuery();
