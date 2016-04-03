@@ -58,6 +58,27 @@
                   <text value="~Search"/>
                 </properties>
               </component>
+              <component id="d4074" class="javax.swing.JButton" binding="amountEqualsBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="Equals Amount"/>
+                </properties>
+              </component>
+              <component id="16f7c" class="javax.swing.JButton" binding="amountLessBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="Less Than Amount"/>
+                </properties>
+              </component>
+              <component id="e54d5" class="javax.swing.JButton" binding="amountGreaterBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="Greater Than Amount"/>
+                </properties>
+              </component>
               <scrollpane id="fbf19">
                 <constraints/>
                 <properties>
@@ -74,6 +95,12 @@
                   </component>
                 </children>
               </scrollpane>
+              <component id="deded" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="Label"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="9ec1d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

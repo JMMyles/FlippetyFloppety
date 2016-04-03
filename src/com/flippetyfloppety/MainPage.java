@@ -85,6 +85,9 @@ public class MainPage extends JFrame {
     private JTextField booknum;
     private JTextField pagenum;
     private JButton insertNewExperimentButton;
+    private JButton amountEqualsBtn;
+    private JButton amountLessBtn;
+    private JButton amountGreaterBtn;
 
     private int user;
     private DatabaseSetup db;
@@ -182,6 +185,72 @@ public class MainPage extends JFrame {
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, inventoryFilterResultsTable);
+                }
+            }
+        });
+        amountEqualsBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when amount equals search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String invAmount = inventorySearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM inventory WHERE qty = " + invAmount;
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, inventoryFilterResultsTable);
+                }
+            }
+        });
+        amountLessBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when amount less search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String invAmount = inventorySearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM inventory WHERE qty < " + invAmount;
+
+                ResultSet rs = db.executeSQLQuery(query);
+
+                if (rs == null) {
+                    System.out.println("Result is NULL");
+                } else {
+                    fillTable(rs, inventoryFilterResultsTable);
+                }
+            }
+        });
+       amountGreaterBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when amount greater search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String invAmount = inventorySearchQuery.getText().toLowerCase();
+
+                String query = "SELECT * FROM inventory WHERE qty > " + invAmount;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
