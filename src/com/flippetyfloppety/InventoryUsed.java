@@ -28,6 +28,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
         this.db = db;
         this.booknum = booknum;
         this.expdate = date;
+        inventoryTable.getTableHeader().setReorderingAllowed(false);
         mainFrame = new JFrame("InventoryUsed");
         getContentPane().add(updateInv);
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -75,13 +76,14 @@ public class InventoryUsed extends JFrame implements TableModelListener {
                 }
             }
 
-            // update inventory to reflect changes
-            query = "UPDATE inventory SET " + columnName + "=" + newVal + " where iid=" + iid;
-            System.out.println(query);
-            db.executeSQLQuery(query);
+            // update inventory with new lastChecked date and new quantity to reflect changes
+            query = "UPDATE inventory SET " + columnName + "=" + newVal + ", datec=? where iid=" + iid;
+            PreparedStatement ps = db.getConnection().prepareStatement(query);
+            ps.setDate(1, expdate);
+            ps.executeUpdate();
 
             try {
-                PreparedStatement ps = db.getConnection().prepareStatement("INSERT INTO eusesi (booknum, cdate, iid, qtyUsed) VALUES (" + booknum + ",?," + iid + ", " + qtyUsed + ")");
+                ps = db.getConnection().prepareStatement("INSERT INTO eusesi (booknum, cdate, iid, qtyUsed) VALUES (" + booknum + ",?," + iid + ", " + qtyUsed + ")");
                 ps.setDate(1, expdate);
                 ps.execute();
             } catch (SQLException sqle) {
@@ -92,6 +94,20 @@ public class InventoryUsed extends JFrame implements TableModelListener {
 
                 guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
             }
+            // update rupdatesi table
+            // first get rsid associated with booknum
+            query = "SELECT rsid FROM researcher NATURAL JOIN labbook WHERE booknum=" + booknum;
+            ResultSet rs = db.executeSQLQuery(query);
+            rs.next();
+
+            String rsid = rs.getString("rsid");
+
+            query = "INSERT INTO rupdatei (rsid, iid, lastchecked) values (?, ?, ?)";
+            ps = db.getConnection().prepareStatement(query);
+            ps.setString(1, rsid);
+            ps.setInt(2, Integer.parseInt(iid));
+            ps.setDate(3, expdate);
+            ps.executeUpdate();
 
         } catch (ArrayIndexOutOfBoundsException aiobe) {
             // do nothing == this happens when we redraw the table

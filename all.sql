@@ -51,7 +51,7 @@ create table inventory(
 	iid int NOT NULL primary key,
 	iloc varchar2(40) NOT NULL,
 	datec date NOT NULL,
-	qnty integer NOT NULL,
+	qnty float NOT NULL,
 	iname varchar2(40) NOT NULL
 	);
 create table eusesi(

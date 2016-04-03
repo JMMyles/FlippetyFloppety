@@ -152,7 +152,7 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%' or iid=" + invItem;
+                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -174,7 +174,7 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%' or iid!=" + invItem;
+                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
 
 
                 ResultSet rs = db.executeSQLQuery(query);
@@ -581,13 +581,10 @@ public class MainPage extends JFrame {
 
                 int labcreated = JOptionPane.showConfirmDialog(null, "Did you create any items in the experiment?", "Lab Created from Experiment" , JOptionPane.YES_NO_OPTION);
                 if (labcreated == JOptionPane.YES_OPTION) {
+                    InsertLabCreated ilc = new InsertLabCreated(db, labbooknum, sqldate);
+                    ilc.setVisible(true);
+                }
 
-                }
-                int invUsed = JOptionPane.showConfirmDialog(null, "Did you use any items from inventory?", "Inventory Used?", JOptionPane.YES_NO_OPTION);
-                if (invUsed == JOptionPane.YES_OPTION) {
-                    InventoryUsed inv = new InventoryUsed(db, labbooknum, sqldate);
-                    inv.setVisible(true);
-                }
 
                 // clear the fields when the user returns
                 expName.setText("");
