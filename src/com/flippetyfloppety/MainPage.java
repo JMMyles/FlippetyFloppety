@@ -221,7 +221,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, inventoryFilterResultsTable);
+                    guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
             }
         });
@@ -243,7 +243,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, inventoryFilterResultsTable);
+                    guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
             }
         });
@@ -265,7 +265,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, inventoryFilterResultsTable);
+                    guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
             }
         });
