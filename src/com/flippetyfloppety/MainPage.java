@@ -152,7 +152,7 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%' or iid LIKE '%" + invItem + "%'";
+                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%' or iid=" + invItem;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -174,7 +174,7 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%' or iid not like '%" + invItem + "%'";
+                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%' or iid!=" + invItem;
 
 
                 ResultSet rs = db.executeSQLQuery(query);
@@ -569,11 +569,9 @@ public class MainPage extends JFrame {
                     labbooknum = Integer.parseInt(booknum.getText());
                     labpagenum = Integer.parseInt(pagenum.getText());
 
+                    // PreparedStatemnt is needed to add a date format in mysql
                     PreparedStatement p = db.getConnection().prepareStatement("INSERT INTO experiment (booknum, cdate, pagenum, ename) VALUES (" + labbooknum + ",?, " + labpagenum + ", '" + name + "')");
                     p.setDate(1, sqldate);
-
-//                System.out.println(query);
-//                db.executeSQLQuery(query);
                     p.execute();
                 } catch (SQLException sqle) {
                     guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
@@ -590,6 +588,12 @@ public class MainPage extends JFrame {
                     InventoryUsed inv = new InventoryUsed(db, labbooknum, sqldate);
                     inv.setVisible(true);
                 }
+
+                // clear the fields when the user returns
+                expName.setText("");
+                expDate.setText("");
+                booknum.setText("");
+                pagenum.setText("");
             }
         });
     }

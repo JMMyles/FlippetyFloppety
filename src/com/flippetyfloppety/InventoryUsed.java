@@ -60,7 +60,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
                 return;
             } else if (columnName.equals("qnty")) {
                 // get current quantity level to calculate amount used in experiment
-                query = "SELECT qnty FROM inventory WHERE iid='" + iid + "'";
+                query = "SELECT qnty FROM inventory WHERE iid=" + iid;
                 ResultSet rs = db.executeSQLQuery(query);
                 rs.next();
 
@@ -76,12 +76,12 @@ public class InventoryUsed extends JFrame implements TableModelListener {
             }
 
             // update inventory to reflect changes
-            query = "UPDATE inventory SET " + columnName + "=" + newVal + " where iid='" + iid + "'";
+            query = "UPDATE inventory SET " + columnName + "=" + newVal + " where iid=" + iid;
             System.out.println(query);
             db.executeSQLQuery(query);
 
             try {
-                PreparedStatement ps = db.getConnection().prepareStatement("INSERT INTO eusesi (booknum, cdate, iid, qtyUsed) VALUES (" + booknum + ",?,'" + iid + "', " + qtyUsed + ")");
+                PreparedStatement ps = db.getConnection().prepareStatement("INSERT INTO eusesi (booknum, cdate, iid, qtyUsed) VALUES (" + booknum + ",?," + iid + ", " + qtyUsed + ")");
                 ps.setDate(1, expdate);
                 ps.execute();
             } catch (SQLException sqle) {
