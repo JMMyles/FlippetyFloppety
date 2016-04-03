@@ -62,7 +62,7 @@ public class MainPage extends JFrame {
     private JTextArea superAllMachines;
     private JButton calcSuperAllInspected;
     private JTextField searchQuery;
-    private JButton searchButton;
+    private JButton eSearchButton;
     private JTable expSearchResults;
     private JFrame mainFrame;
     private JPanel inventory;
@@ -85,12 +85,6 @@ public class MainPage extends JFrame {
     private JTextField booknum;
     private JTextField pagenum;
     private JButton insertNewExperimentButton;
-
-
-
-
-
-
 
     private int user;
     private DatabaseSetup db;
@@ -209,7 +203,7 @@ public class MainPage extends JFrame {
 
                 String eItem = searchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM experiment WHERE ename LIKE '%" + eItem + "%'";
+                String query = "select * from experiment NATURAL JOIN labbook where booknum like '%" + eItem + "%' or ename like '%" + eItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -544,21 +538,7 @@ public class MainPage extends JFrame {
                 }
             }
         });
-        searchButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when user searches for a labbook/experiment
-             *
-             * @param e
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String search = searchQuery.getText().toString();
-                String query = "select * from experiment NATURAL JOIN labbook where booknum like '%" + search + "%' or ename like '%" + search + "%'";
 
-                ResultSet rs = db.executeSQLQuery(query);
-                fillTable(rs, expSearchResults);
-            }
-        });
         insertNewExperimentButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.

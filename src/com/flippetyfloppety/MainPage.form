@@ -69,6 +69,7 @@
                     <constraints/>
                     <properties>
                       <font size="20"/>
+                      <rowHeight value="30"/>
                     </properties>
                   </component>
                 </children>
@@ -106,9 +107,10 @@
                         <properties>
                           <columns value="56"/>
                           <font size="20"/>
+                          <toolTipText value="Search for an experiment by name or by labbook."/>
                         </properties>
                       </component>
-                      <component id="f87d5" class="javax.swing.JButton" binding="searchButton" default-binding="true">
+                      <component id="f87d5" class="javax.swing.JButton" binding="eSearchBtn">
                         <constraints/>
                         <properties>
                           <font size="20"/>
