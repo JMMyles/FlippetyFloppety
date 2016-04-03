@@ -650,6 +650,46 @@ public class MainPage extends JFrame {
                 }
             }
         });
+
+        // when inventory table row is clicked, go see who updated it last
+        inventoryFilterResultsTable.addMouseListener(new MouseAdapter() {
+            /**
+             * {@inheritDoc}
+             *
+             * @param e
+             */
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable table =(JTable) e.getSource();
+                Point p = e.getPoint();
+                int row = table.rowAtPoint(p);
+                // double click event
+                if (e.getClickCount() == 2) {
+
+                    int iidCol = guiHelper.getColumnIndex(table, "iid");
+
+                    Object iidVal;
+
+                    try {
+                        iidVal = table.getValueAt(row, iidCol);
+                    } catch (ArrayIndexOutOfBoundsException oob) {
+                        // ignore, this happens when we are at the rupdatei natural join, we do not want to further select.
+                        return;
+                    }
+
+                    // update the table to show all inventory items used in the experiment
+                    try {
+                        String query = "select rsid, iid, iname, lastchecked from rupdatei natural join inventory where iid=?";
+                        PreparedStatement ps = db.getConnection().prepareStatement(query);
+                        ps.setObject(1, iidVal);
+                        ResultSet rs = ps.executeQuery();
+                        guiHelper.fillTable(rs, inventoryFilterResultsTable);
+                    } catch (SQLException sqle) {
+                        guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                    }
+                }
+            }
+        });
     }
 
 
