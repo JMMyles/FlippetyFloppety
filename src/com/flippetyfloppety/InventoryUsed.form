@@ -19,13 +19,16 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font size="20"/>
           <preferredSize width="700" height="433"/>
         </properties>
         <border type="none"/>
         <children>
           <component id="84018" class="javax.swing.JTable" binding="inventoryTable">
             <constraints/>
-            <properties/>
+            <properties>
+              <rowHeight value="25"/>
+            </properties>
           </component>
         </children>
       </scrollpane>

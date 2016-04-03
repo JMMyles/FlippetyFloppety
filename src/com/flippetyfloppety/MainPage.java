@@ -3,8 +3,12 @@ package com.flippetyfloppety;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -96,7 +100,17 @@ public class MainPage extends JFrame {
         this.db = db;
 
         mainFrame = new JFrame("Main");
+
+        disabledEditTable(expSearchResults);
+        disabledEditTable(inventoryFilterResultsTable);
+        disabledEditTable(filterResultsTable);
+        disabledEditTable(iFilterResultsTable);
+        disabledEditTable(bFilterResultsTable);
+
+
         getContentPane().add(inventoryPane);
+
+
         if (this.user == Login.RESEARCHER) {
             inventoryPane.setEnabledAt(2, false);
             inventoryPane.setEnabledAt(3, false);
@@ -593,8 +607,64 @@ public class MainPage extends JFrame {
                 pagenum.setText("");
             }
         });
+        expSearchResults.addMouseListener(new MouseAdapter() {
+            /**
+             * {@inheritDoc}
+             *
+             * @param e
+             */
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable table =(JTable) e.getSource();
+                Point p = e.getPoint();
+                int row = table.rowAtPoint(p);
+                // double click event
+                if (e.getClickCount() == 2) {
+
+                    int booknumCol = guiHelper.getColumnIndex(table, "booknum");
+                    int cdateCol = guiHelper.getColumnIndex(table, "cdate");
+
+                    Object booknumVal;
+                    Object cdateVal;
+
+                    try {
+                        booknumVal = table.getValueAt(row, booknumCol);
+                        cdateVal = table.getValueAt(row, cdateCol);
+                    } catch (ArrayIndexOutOfBoundsException oob) {
+                        // ignore, this happens when we are at the inventory natural join, we do not want to further select.
+                        return;
+                    }
+
+                    // update the table to show all inventory items used in the experiment
+                    try {
+
+                        String query = "select booknum, qtyUsed, iid, ename, iname, iloc, qnty as qntyRemaining from eusesi natural join experiment natural join inventory where booknum=? and cdate=?";
+                        PreparedStatement ps = db.getConnection().prepareStatement(query);
+                        ps.setObject(1, booknumVal);
+                        ps.setObject(2, cdateVal);
+                        ResultSet rs = ps.executeQuery();
+                        guiHelper.fillTable(rs, expSearchResults);
+                    } catch (SQLException sqle) {
+                        guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                    }
+                }
+            }
+        });
     }
 
 
+
+    // Disabled editing of tables on the whole main page form
+    private void disabledEditTable(JTable table) {
+        DefaultTableModel tableModel = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
+        table.setModel(tableModel);
+    }
 
 }

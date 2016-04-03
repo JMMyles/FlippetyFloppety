@@ -3,6 +3,7 @@ package com.flippetyfloppety;
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,6 +30,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
         this.booknum = booknum;
         this.expdate = date;
         inventoryTable.getTableHeader().setReorderingAllowed(false);
+        disabledEditTable(inventoryTable);
         mainFrame = new JFrame("InventoryUsed");
         getContentPane().add(updateInv);
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -73,6 +75,8 @@ public class InventoryUsed extends JFrame implements TableModelListener {
                 if (newQnty < 0) {
                     JOptionPane.showMessageDialog(mainFrame, "Quantity must be a positive value", "Error!", JOptionPane.ERROR_MESSAGE);
                     return;
+                } else if (newQnty > oldQnty) {
+                    JOptionPane.showMessageDialog(mainFrame, "The new value may not be greater than the previous value", "Error!", JOptionPane.ERROR_MESSAGE);
                 }
             }
 
@@ -122,5 +126,20 @@ public class InventoryUsed extends JFrame implements TableModelListener {
         String invQuery = "SELECT * FROM inventory order by iname asc";
         ResultSet rs = db.executeSQLQuery(invQuery);
         guiHelper.fillTable(rs, inventoryTable);
+
+    }
+
+    // Disabled editing of tables on the whole main page form
+    private void disabledEditTable(JTable table) {
+        DefaultTableModel tableModel = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //Only the third column
+                return column == 3;
+            }
+        };
+
+        table.setModel(tableModel);
     }
 }

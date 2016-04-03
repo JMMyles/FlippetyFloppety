@@ -90,4 +90,16 @@ public class GUIHelper {
         JOptionPane.showMessageDialog(mainFrame, errorMsg, "Error!", JOptionPane.ERROR_MESSAGE);
     }
 
+    // get column index where string column matches
+    public int getColumnIndex(JTable table, String columnTitle) {
+        int columnCount = table.getColumnCount();
+
+        for (int column = 0; column < columnCount; column++) {
+            if (table.getColumnName(column).equalsIgnoreCase(columnTitle)) {
+                return column;
+            }
+        }
+
+        return -1;
+    }
 }
