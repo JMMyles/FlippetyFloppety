@@ -35,16 +35,6 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
       </hspacer>
-      <component id="509c8" class="javax.swing.JButton" binding="updateBtn">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <font size="20"/>
-          <text value="Update"/>
-        </properties>
-      </component>
       <component id="d4b1c" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>

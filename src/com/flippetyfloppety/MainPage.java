@@ -3,15 +3,12 @@ package com.flippetyfloppety;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.DateFormatter;
-import javax.swing.text.DefaultFormatterFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 
 
 /**
@@ -105,15 +102,6 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
-                    // set up date format in input field
-
-
-//                        DateFormatter date = new DateFormatter("yyyy-MM-dd");
-//                        DefaultFormatterFactory factory = new DefaultFormatterFactory(date);
-
-                        expDate.setFormatterFactory(new DefaultFormatterFactory(new DateFormatter(new SimpleDateFormat("yyyy-MM-dd"))));
-
-
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
