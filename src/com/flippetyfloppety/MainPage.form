@@ -40,13 +40,6 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="e08e9" class="javax.swing.JButton" binding="iAntiSearchBtn">
-                <constraints/>
-                <properties>
-                  <font size="20"/>
-                  <text value="~Search"/>
-                </properties>
-              </component>
               <component id="c8ce5" class="javax.swing.JButton" binding="iSearchBtn">
                 <constraints/>
                 <properties>
@@ -79,12 +72,6 @@
                     </properties>
                   </component>
                 </children>
-              </scrollpane>
-              <scrollpane id="2d02f">
-                <constraints/>
-                <properties/>
-                <border type="none"/>
-                <children/>
               </scrollpane>
             </children>
           </grid>
