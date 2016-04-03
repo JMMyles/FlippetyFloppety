@@ -9,7 +9,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Jeanie on 3/25/2016.
@@ -133,6 +136,7 @@ public class MainPage extends JFrame {
                 }
             });
         }
+
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
@@ -148,7 +152,7 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
+                String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%' or iid LIKE '%" + invItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -170,7 +174,8 @@ public class MainPage extends JFrame {
 
                 String invItem = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
+                String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%' or iid not like '%" + invItem + "%'";
+
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -214,7 +219,7 @@ public class MainPage extends JFrame {
 
                 String eItem = searchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%'";
+                String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%' or booknum not like '%" + eItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -536,13 +541,53 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+                String name = expName.getText();
+                String cdate = expDate.getText();
+
+                String[] splitDate = cdate.split("-");
+
+                if (splitDate.length > 3) {
+                    JOptionPane.showMessageDialog(mainFrame, "Make sure you enter your date in yyyy-mm-dd format", "Error!", JOptionPane.ERROR_MESSAGE);
+                    return;
+                } else {
+
+                    if (splitDate[0].length() < 4 || Integer.parseInt(splitDate[0]) > Calendar.getInstance().get(Calendar.YEAR)) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Year entered!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    } else if (splitDate[1].length() < 2 || Integer.parseInt(splitDate[1]) > 12 || splitDate[2].length() < 2 || Integer.parseInt(splitDate[2]) > 31) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Date entered! Remember leading zeros!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+                int labbooknum = 0;
+                int labpagenum = 0;
+                java.sql.Date sqldate = null;
+                try {
+                    Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(cdate);
+                    sqldate = new java.sql.Date(utilDate.getTime());
+
+                    labbooknum = Integer.parseInt(booknum.getText());
+                    labpagenum = Integer.parseInt(pagenum.getText());
+
+                    PreparedStatement p = db.getConnection().prepareStatement("INSERT INTO experiment (booknum, cdate, pagenum, ename) VALUES (" + labbooknum + ",?, " + labpagenum + ", '" + name + "')");
+                    p.setDate(1, sqldate);
+
+//                System.out.println(query);
+//                db.executeSQLQuery(query);
+                    p.execute();
+                } catch (SQLException sqle) {
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                } catch (ParseException pe) {
+                    guiHelper.showErrorDialog(mainFrame, pe.getMessage());
+                }
+
                 int labcreated = JOptionPane.showConfirmDialog(null, "Did you create any items in the experiment?", "Lab Created from Experiment" , JOptionPane.YES_NO_OPTION);
                 if (labcreated == JOptionPane.YES_OPTION) {
 
                 }
                 int invUsed = JOptionPane.showConfirmDialog(null, "Did you use any items from inventory?", "Inventory Used?", JOptionPane.YES_NO_OPTION);
                 if (invUsed == JOptionPane.YES_OPTION) {
-                    InventoryUsed inv = new InventoryUsed(db);
+                    InventoryUsed inv = new InventoryUsed(db, labbooknum, sqldate);
                     inv.setVisible(true);
                 }
             }

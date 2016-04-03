@@ -42,7 +42,7 @@ public class GUIHelper {
         if (projection.size() == 0) {
             DefaultListModel dlm = (DefaultListModel) list.getModel();
             proj = dlm.toString().substring(1, dlm.toString().length() - 1);
-//            proj = "*";
+
         } else {
             proj = projection.get(0);
             for (int i = 1; i < projection.size(); i++) {
