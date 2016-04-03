@@ -4,21 +4,25 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.text.DateFormatter;
-import javax.swing.text.DefaultFormatterFactory;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Vector;
-
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Jeanie on 3/25/2016.
  */
 public class MainPage extends JFrame {
+    private GUIHelper guiHelper;
     private JTabbedPane inventoryPane;
     private JTextArea iSearchQuery;
     private JButton iSearchBtn;
@@ -93,12 +97,23 @@ public class MainPage extends JFrame {
     private DatabaseSetup db;
 
     public MainPage(int userType, DatabaseSetup db) {
+        this.guiHelper = new GUIHelper(db);
         System.out.println("In Main Page");
         this.user = userType;
         this.db = db;
 
         mainFrame = new JFrame("Main");
+
+        disabledEditTable(expSearchResults);
+        disabledEditTable(inventoryFilterResultsTable);
+        disabledEditTable(filterResultsTable);
+        disabledEditTable(iFilterResultsTable);
+        disabledEditTable(bFilterResultsTable);
+
+
         getContentPane().add(inventoryPane);
+
+
         if (this.user == Login.RESEARCHER) {
             inventoryPane.setEnabledAt(2, false);
             inventoryPane.setEnabledAt(3, false);
@@ -107,15 +122,6 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
-                    // set up date format in input field
-
-
-//                        DateFormatter date = new DateFormatter("yyyy-MM-dd");
-//                        DefaultFormatterFactory factory = new DefaultFormatterFactory(date);
-
-                        expDate.setFormatterFactory(new DefaultFormatterFactory(new DateFormatter(new SimpleDateFormat("yyyy-MM-dd"))));
-
-
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -134,19 +140,20 @@ public class MainPage extends JFrame {
 
                     // GET ALL COLUMN NAMES FOR CONSUMABLE INVENTORY JOIN
                     String urgentQuery = "SELECT * FROM consumable NATURAL JOIN inventory";
-                    fillProjectionList(uModel, urgentQuery);
+                    guiHelper.fillProjectionList(uModel, urgentQuery);
 
                     // GET ALL COLUMN NAMES FROM INSPECTION , MACHINERY, EQUIPMENT JOIN
                     String inspectionQuery = "SELECT * FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
                             " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR";
-                    fillProjectionList(iModel, inspectionQuery);
+                    guiHelper.fillProjectionList(iModel, inspectionQuery);
 
                     String breakdownQuery = "SELECT * FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
                             " NATURAL JOIN inventory ";
-                    fillProjectionList(bModel, breakdownQuery);
+                    guiHelper.fillProjectionList(bModel, breakdownQuery);
                 }
             });
         }
+
         mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
@@ -169,7 +176,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, inventoryFilterResultsTable);
+                    guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
             }
         });
@@ -186,12 +193,13 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
 
+
                 ResultSet rs = db.executeSQLQuery(query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, inventoryFilterResultsTable);
+                    guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
             }
         });
@@ -279,7 +287,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, expSearchResults);
+                    guiHelper.fillTable(rs, expSearchResults);
                 }
             }
         });
@@ -294,14 +302,14 @@ public class MainPage extends JFrame {
 
                 String eItem = searchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%'";
+                String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%' or booknum not like '%" + eItem + "%'";
 
                 ResultSet rs = db.executeSQLQuery(query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, expSearchResults);
+                    guiHelper.fillTable(rs, expSearchResults);
                 }
             }
         });
@@ -356,13 +364,13 @@ public class MainPage extends JFrame {
                     quantity = " = 0";
                 }
 
-                String proj = getProjectedAttributes(columnList);
+                String proj = guiHelper.getProjectedAttributes(columnList);
 
                 String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
-                fillTable(rs, filterResultsTable);
+                guiHelper.fillTable(rs, filterResultsTable);
             }
         });
 
@@ -385,13 +393,13 @@ public class MainPage extends JFrame {
                     sortBy = "";
                 }
 
-                String proj = getProjectedAttributes(iColumnList);
+                String proj = guiHelper.getProjectedAttributes(iColumnList);
 
                 String query = "SELECT " + proj + " FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
                         " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR " + sqlGroup + " " + sortBy;
                 System.out.println("Query = " + query);
                 ResultSet rs = db.executeSQLQuery(query);
-                fillTable(rs, iFilterResultsTable);
+                guiHelper.fillTable(rs, iFilterResultsTable);
 
             }
         });
@@ -412,12 +420,12 @@ public class MainPage extends JFrame {
                     sortBy = "";
                 }
 
-                String proj = getProjectedAttributes(bColumnList);
+                String proj = guiHelper.getProjectedAttributes(bColumnList);
                 String query = "SELECT " + proj + " FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
                         " NATURAL JOIN inventory " + sqlGroup + " " + sortBy;
                 System.out.println(query);
                 ResultSet rs = db.executeSQLQuery(query);
-                fillTable(rs, bFilterResultsTable);
+                guiHelper.fillTable(rs, bFilterResultsTable);
             }
         });
         calcNumResearchers.addActionListener(new ActionListener() {
@@ -434,7 +442,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numResearchers.setText(String.valueOf(rs.getInt("numResearchers")));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -453,7 +461,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numSupervisors.setText(String.valueOf(rs.getInt("numSuper")));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -472,7 +480,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     numExperiments.setText(String.valueOf(rs.getInt("numExp")));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -500,7 +508,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     mostSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -528,7 +536,7 @@ public class MainPage extends JFrame {
                     rs.next();
                     leastSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -548,7 +556,7 @@ public class MainPage extends JFrame {
                     superAllMachines.setText("");
                     superAllMachines.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
 
             }
@@ -572,7 +580,7 @@ public class MainPage extends JFrame {
                     mostSupplier.setText("");
                     mostSupplier.setText(rs.getString("supplier"));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
             }
         });
@@ -603,7 +611,7 @@ public class MainPage extends JFrame {
 
                     avgBreakdown.setText(Float.toString(division));
                 } catch (SQLException sqle) {
-                    showErrorDialog(sqle.getMessage());
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }
             }
         });
@@ -616,83 +624,156 @@ public class MainPage extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+                String name = expName.getText();
+                String cdate = expDate.getText();
 
-//                expDate.setFormat(displayFormatter);
+                String[] splitDate = cdate.split("-");
+
+                if (splitDate.length > 3) {
+                    JOptionPane.showMessageDialog(mainFrame, "Make sure you enter your date in yyyy-mm-dd format", "Error!", JOptionPane.ERROR_MESSAGE);
+                    return;
+                } else {
+
+                    if (splitDate[0].length() < 4 || Integer.parseInt(splitDate[0]) > Calendar.getInstance().get(Calendar.YEAR)) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Year entered!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    } else if (splitDate[1].length() < 2 || Integer.parseInt(splitDate[1]) > 12 || splitDate[2].length() < 2 || Integer.parseInt(splitDate[2]) > 31) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Date entered! Remember leading zeros!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+                int labbooknum = 0;
+                int labpagenum = 0;
+                java.sql.Date sqldate = null;
+                try {
+                    Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(cdate);
+                    sqldate = new java.sql.Date(utilDate.getTime());
+
+                    labbooknum = Integer.parseInt(booknum.getText());
+                    labpagenum = Integer.parseInt(pagenum.getText());
+
+                    // PreparedStatemnt is needed to add a date format in mysql
+                    PreparedStatement p = db.getConnection().prepareStatement("INSERT INTO experiment (booknum, cdate, pagenum, ename) VALUES (" + labbooknum + ",?, " + labpagenum + ", '" + name + "')");
+                    p.setDate(1, sqldate);
+                    p.execute();
+                } catch (SQLException sqle) {
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                } catch (ParseException pe) {
+                    guiHelper.showErrorDialog(mainFrame, pe.getMessage());
+                }
+
+                int labcreated = JOptionPane.showConfirmDialog(null, "Did you create any items in the experiment?", "Lab Created from Experiment" , JOptionPane.YES_NO_OPTION);
+                if (labcreated == JOptionPane.YES_OPTION) {
+                    InsertLabCreated ilc = new InsertLabCreated(db, labbooknum, sqldate);
+                    ilc.setVisible(true);
+                }
+
+
+                // clear the fields when the user returns
+                expName.setText("");
+                expDate.setText("");
+                booknum.setText("");
+                pagenum.setText("");
+            }
+        });
+        expSearchResults.addMouseListener(new MouseAdapter() {
+            /**
+             * {@inheritDoc}
+             *
+             * @param e
+             */
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable table =(JTable) e.getSource();
+                Point p = e.getPoint();
+                int row = table.rowAtPoint(p);
+                // double click event
+                if (e.getClickCount() == 2) {
+
+                    int booknumCol = guiHelper.getColumnIndex(table, "booknum");
+                    int cdateCol = guiHelper.getColumnIndex(table, "cdate");
+
+                    Object booknumVal;
+                    Object cdateVal;
+
+                    try {
+                        booknumVal = table.getValueAt(row, booknumCol);
+                        cdateVal = table.getValueAt(row, cdateCol);
+                    } catch (ArrayIndexOutOfBoundsException oob) {
+                        // ignore, this happens when we are at the inventory natural join, we do not want to further select.
+                        return;
+                    }
+
+                    // update the table to show all inventory items used in the experiment
+                    try {
+
+                        String query = "select booknum, qtyUsed, iid, ename, iname, iloc, qnty as qntyRemaining from eusesi natural join experiment natural join inventory where booknum=? and cdate=?";
+                        PreparedStatement ps = db.getConnection().prepareStatement(query);
+                        ps.setObject(1, booknumVal);
+                        ps.setObject(2, cdateVal);
+                        ResultSet rs = ps.executeQuery();
+                        guiHelper.fillTable(rs, expSearchResults);
+                    } catch (SQLException sqle) {
+                        guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                    }
+                }
+            }
+        });
+
+        // when inventory table row is clicked, go see who updated it last
+        inventoryFilterResultsTable.addMouseListener(new MouseAdapter() {
+            /**
+             * {@inheritDoc}
+             *
+             * @param e
+             */
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                JTable table =(JTable) e.getSource();
+                Point p = e.getPoint();
+                int row = table.rowAtPoint(p);
+                // double click event
+                if (e.getClickCount() == 2) {
+
+                    int iidCol = guiHelper.getColumnIndex(table, "iid");
+
+                    Object iidVal;
+
+                    try {
+                        iidVal = table.getValueAt(row, iidCol);
+                    } catch (ArrayIndexOutOfBoundsException oob) {
+                        // ignore, this happens when we are at the rupdatei natural join, we do not want to further select.
+                        return;
+                    }
+
+                    // update the table to show all inventory items used in the experiment
+                    try {
+                        String query = "select rsid, iid, iname, lastchecked, supplier, ordernum from rupdatei natural join inventory natural left join equipment where iid=?";
+                        PreparedStatement ps = db.getConnection().prepareStatement(query);
+                        ps.setObject(1, iidVal);
+                        ResultSet rs = ps.executeQuery();
+                        guiHelper.fillTable(rs, inventoryFilterResultsTable);
+                    } catch (SQLException sqle) {
+                        guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                    }
+                }
             }
         });
     }
 
-    private void fillProjectionList(DefaultListModel model, String query) {
-        model.removeAllElements();
-        // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
-        try {
-            ResultSet rs = this.db.executeSQLQuery(query);
 
-            ResultSetMetaData metaData = rs.getMetaData();
-            for (int i = 1; i <= metaData.getColumnCount(); i++) {
-                if (!metaData.getColumnLabel(i).toLowerCase().contains("pwd")) {
-                    model.addElement(metaData.getColumnLabel(i));
-                }
+
+    // Disabled editing of tables on the whole main page form
+    private void disabledEditTable(JTable table) {
+        DefaultTableModel tableModel = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
             }
-        } catch (SQLException sqle) {
-            showErrorDialog(sqle.getMessage());
-        }
+        };
 
+        table.setModel(tableModel);
     }
-    private String getProjectedAttributes(JList list) {
-        String proj = "";
-        List<String> projection = list.getSelectedValuesList();
-
-        if (projection.size() == 0) {
-            DefaultListModel dlm = (DefaultListModel) list.getModel();
-            proj = dlm.toString().substring(1, dlm.toString().length() - 1);
-//            proj = "*";
-        } else {
-            proj = projection.get(0);
-            for (int i = 1; i < projection.size(); i++) {
-                proj = proj.concat(", " + projection.get(i).toLowerCase());
-            }
-        }
-        System.out.println("proj = " + proj);
-        return proj;
-    }
-
-    // code adapted from http://stackoverflow.com/questions/29662235/how-to-get-jtable-data-to-update-from-resultset?rq=1
-    private void fillTable(ResultSet rs, JTable table) {
-        try {
-
-            ResultSetMetaData metaData = rs.getMetaData();
-            int numColumns = metaData.getColumnCount();
-            if (numColumns > 0) {
-                Vector<String> columnNames = new Vector<String>();
-                for (int i = 1; i <= numColumns; i++) {
-                    columnNames.add(metaData.getColumnName(i));
-                }
-                Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-                while (rs.next()) {
-                    Vector<Object> rowVal = new Vector<Object>();
-                    for (int j = 1; j <= numColumns; j++) {
-                        rowVal.add(rs.getObject(j));
-                    }
-                    data.add(rowVal);
-                }
-                DefaultTableModel model = (DefaultTableModel) table.getModel();
-                model.setDataVector(data, columnNames);
-
-                for (int k = 0; k < numColumns; k++) {
-                    TableColumn tc = table.getColumnModel().getColumn(k);
-                    tc.setHeaderValue(columnNames.get(k));
-                }
-            }
-            System.out.println("tabledfilled");
-        } catch (SQLException sqle) {
-            showErrorDialog(sqle.getMessage());
-        }
-    }
-
-    private void showErrorDialog(String errorMsg) {
-        JOptionPane.showMessageDialog(mainFrame, errorMsg, "Error!", JOptionPane.ERROR_MESSAGE);
-    }
-
 
 }
