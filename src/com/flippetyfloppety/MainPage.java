@@ -75,17 +75,22 @@ public class MainPage extends JFrame {
     private JTabbedPane inventory2Pane;
     private JFrame headFrame;
     private JTextArea inventorySearchQuery;
-<<<<<<< HEAD
+
     private JButton iAntiSearchBtn;
     private JButton eAntiSearchBtn;
     private JTable eFilterResultsTable;
-=======
+
     private JTextField expName;
     private JFormattedTextField expDate;
     private JTextField booknum;
     private JTextField pagenum;
     private JButton insertNewExperimentButton;
->>>>>>> 1fbb88190ae9ea7ddf7dfe8a94d673e5aced10b1
+
+
+
+
+
+
 
     private int user;
     private DatabaseSetup db;
@@ -193,9 +198,16 @@ public class MainPage extends JFrame {
                 }
             }
         });
+        eSearchBtn.addActionListener(new ActionListener() {
+            /**
+             * Invoked when experiment search button is pressed
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-<<<<<<< HEAD
-                String eItem = eSearchQuery.getText().toLowerCase();
+                String eItem = searchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM experiment WHERE ename LIKE '%" + eItem + "%'";
 
@@ -204,7 +216,7 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, eFilterResultsTable);
+                    fillTable(rs, expSearchResults);
                 }
             }
         });
@@ -217,7 +229,7 @@ public class MainPage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String eItem = eSearchQuery.getText().toLowerCase();
+                String eItem = searchQuery.getText().toLowerCase();
 
                 String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%'";
 
@@ -226,12 +238,11 @@ public class MainPage extends JFrame {
                 if (rs == null) {
                     System.out.println("Result is NULL");
                 } else {
-                    fillTable(rs, eFilterResultsTable);
+                    fillTable(rs, expSearchResults);
                 }
             }
         });
-=======
->>>>>>> 1fbb88190ae9ea7ddf7dfe8a94d673e5aced10b1
+
         createAccBtn.addActionListener(new ActionListener() {
             /**
              * Invoked when create account button is pressed
