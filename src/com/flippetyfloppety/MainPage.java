@@ -92,6 +92,10 @@ public class MainPage extends JFrame {
     private JButton amountEqualsBtn;
     private JButton amountLessBtn;
     private JButton amountGreaterBtn;
+    private JTextField associateOneQuery;
+    private JComboBox associateComboBox;
+    private JTextField associateTwoQuery;
+    private JButton associateSearchBtn;
 
     private int user;
     private DatabaseSetup db;
@@ -267,6 +271,28 @@ public class MainPage extends JFrame {
                 } else {
                     guiHelper.fillTable(rs, inventoryFilterResultsTable);
                 }
+            }
+        });
+        associateSearchBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                String firstAssociate = associateOneQuery.getText().toLowerCase();
+                String associateQuery = associateComboBox.getSelectedItem().toString().toLowerCase();
+                String secondAssociate = associateTwoQuery.getText().toLowerCase();
+
+                String query = "";
+                if (associateQuery.equals("and")) {
+                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' AND iname LIKE '%" + secondAssociate + "%'";
+                } else if (associateQuery.equals("or")) {
+                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' OR iname LIKE '%" + secondAssociate + "%'";
+                } else {
+                    System.out.println("Error: Inappropriate association");
+                }
+
+                ResultSet rs = db.executeSQLQuery(query);
+                guiHelper.fillTable(rs, inventoryFilterResultsTable);
+
             }
         });
         eSearchBtn.addActionListener(new ActionListener() {

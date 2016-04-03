@@ -3,7 +3,7 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1199" height="677"/>
+      <xy x="20" y="20" width="1249" height="677"/>
     </constraints>
     <properties>
       <font size="20"/>
@@ -79,6 +79,35 @@
                   <text value="Greater Than Amount"/>
                 </properties>
               </component>
+              <component id="4cdf" class="javax.swing.JTextField" binding="associateOneQuery">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                </properties>
+              </component>
+              <component id="63b64" class="javax.swing.JComboBox" binding="associateComboBox">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <model>
+                    <item value="AND"/>
+                    <item value="OR"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="4726e" class="javax.swing.JTextField" binding="associateTwoQuery">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                </properties>
+              </component>
+              <component id="bd353" class="javax.swing.JButton" binding="associateSearchBtn">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="Associate Search"/>
+                </properties>
+              </component>
               <scrollpane id="fbf19">
                 <constraints/>
                 <properties>
@@ -95,12 +124,6 @@
                   </component>
                 </children>
               </scrollpane>
-              <component id="deded" class="javax.swing.JLabel">
-                <constraints/>
-                <properties>
-                  <text value="Label"/>
-                </properties>
-              </component>
             </children>
           </grid>
           <grid id="9ec1d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
