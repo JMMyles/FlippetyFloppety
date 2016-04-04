@@ -102,6 +102,7 @@ public class MainPage extends JFrame {
     private JTabbedPane tabbedPane1;
     private JList listOfResearchers;
     private JButton deleteButton;
+    private JButton deleteInventoryButton;
 
     private int user;
     private DatabaseSetup db;
@@ -182,7 +183,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM inventory WHERE iname LIKE '%" + invItem + "%'";
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -205,7 +206,7 @@ public class MainPage extends JFrame {
                 String query = "SELECT * FROM inventory WHERE iname NOT LIKE '%" + invItem + "%'";
 
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -227,7 +228,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM inventory WHERE qnty = " + invAmount;
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -249,7 +250,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM inventory WHERE qnty < " + invAmount;
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -271,7 +272,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM inventory WHERE qnty > " + invAmount;
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -298,7 +299,7 @@ public class MainPage extends JFrame {
                     System.out.println("Error: Inappropriate association");
                 }
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
                 guiHelper.fillTable(rs, inventoryFilterResultsTable);
 
             }
@@ -316,7 +317,7 @@ public class MainPage extends JFrame {
 
                 String query = "select * from experiment NATURAL JOIN labbook where booknum like '%" + eItem + "%' or ename like '%" + eItem + "%'";
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -338,7 +339,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT * FROM experiment WHERE ename NOT LIKE '%" + eItem + "%' or booknum not like '%" + eItem + "%'";
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 if (rs == null) {
                     System.out.println("Result is NULL");
@@ -402,7 +403,7 @@ public class MainPage extends JFrame {
 
                 String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
 
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                 guiHelper.fillTable(rs, filterResultsTable);
             }
@@ -432,7 +433,7 @@ public class MainPage extends JFrame {
                 String query = "SELECT " + proj + " FROM inspection NATURAL JOIN machinery NATURAL JOIN equipment " +
                         " NATURAL JOIN inventory NATURAL JOIN rinspectm NATURAL JOIN SUPERVISOR " + sqlGroup + " " + sortBy;
                 System.out.println("Query = " + query);
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
                 guiHelper.fillTable(rs, iFilterResultsTable);
 
             }
@@ -458,7 +459,7 @@ public class MainPage extends JFrame {
                 String query = "SELECT " + proj + " FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
                         " NATURAL JOIN inventory " + sqlGroup + " " + sortBy;
                 System.out.println(query);
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
                 guiHelper.fillTable(rs, bFilterResultsTable);
             }
         });
@@ -472,7 +473,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "SELECT COUNT(*) AS numResearchers FROM researcher";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     numResearchers.setText(String.valueOf(rs.getInt("numResearchers")));
                 } catch (SQLException sqle) {
@@ -491,7 +492,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "SELECT COUNT(*) AS numSuper FROM supervisor";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     numSupervisors.setText(String.valueOf(rs.getInt("numSuper")));
                 } catch (SQLException sqle) {
@@ -510,7 +511,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "SELECT COUNT(*) AS numExp FROM experiment";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     numExperiments.setText(String.valueOf(rs.getInt("numExp")));
                 } catch (SQLException sqle) {
@@ -529,7 +530,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "select max(numInspections) as maxNum from (select count(*) as numInspections, ssid from rinspectm group by ssid)";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                     rs.next();
                     mostSuper.setText("");
@@ -538,7 +539,7 @@ public class MainPage extends JFrame {
                     numMostSuper.setText(String.valueOf(maxNum));
 
                     query = "select sname from (select count(*) as maxNum, sname from rinspectm natural join supervisor group by sname) where maxNum = " + maxNum;
-                    rs = db.executeSQLQuery(query);
+                    rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     mostSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
@@ -557,7 +558,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "select min(numInspections) as minNum from (select count(*) as numInspections, ssid from rinspectm group by ssid)";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
 
                     rs.next();
                     leastSuper.setText("");
@@ -566,7 +567,7 @@ public class MainPage extends JFrame {
                     numLeastSuper.setText(String.valueOf(minNum));
 
                     query = "select sname from (select count(*) as minNum, sname from rinspectm natural join supervisor group by sname) where minNum = " + minNum;
-                    rs = db.executeSQLQuery(query);
+                    rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     leastSuper.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
@@ -585,14 +586,14 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "select sname from supervisor s where not exists (select * from machinery m where not exists(select * from rinspectm i where i.ssid=s.ssid and i.iid=m.iid))";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     superAllMachines.setText("");
                     superAllMachines.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
 
                     superAllMachines.setText("");
-                    superAllMachines.setText("none"))
+                    superAllMachines.setText("none");
                     guiHelper.showErrorDialog(mainFrame, "No supervisor has inspected all machinery");
                 }
 
@@ -610,9 +611,9 @@ public class MainPage extends JFrame {
 
                     String query = "create or replace" +
                             " view groupedCount as select count(*) as supplierCount, supplier from productinfo group by supplier";
-                    db.executeSQLQuery(query);
+                    db.executeSQLQuery(mainFrame, query);
                     query = "select supplier from groupedCount where supplierCount = (select max(supplierCount) from groupedCount)";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     mostSupplier.setText("");
                     mostSupplier.setText(rs.getString("supplier"));
@@ -631,7 +632,7 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String query = "select min(breakdownDate) as oldest, max(breakdownDate) as recent, count(*) as numBreakdowns from breakdown order by breakdownDate ASC";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
 
                     int oldest = Integer.parseInt(rs.getString("oldest").substring(2,4));
@@ -809,6 +810,18 @@ public class MainPage extends JFrame {
                 ie.setVisible(true);
             }
 
+        });
+        deleteInventoryButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteInv x = new DeleteInv(db);
+                x.setVisible(true);
+            }
         });
     }
 

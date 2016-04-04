@@ -6,10 +6,33 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="tabbed panes on user settings - main elements of delete researcher GUI">
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="display none if no supervisors have inspected all machinery">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/deleteInv.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" />
     </list>
     <ignored path="CPSC 304.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +71,8 @@
       <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7329949">
-              <caret line="594" column="50" selection-start-line="594" selection-start-column="50" selection-end-line="594" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.31167513">
+              <caret line="613" column="50" selection-start-line="613" selection-start-column="50" selection-end-line="613" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -59,9 +82,48 @@
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="52" selection-start-line="162" selection-start-column="52" selection-end-line="162" selection-end-column="52" />
+              <caret line="174" column="65" selection-start-line="174" selection-start-column="65" selection-end-line="174" selection-end-column="65" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteInv.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertLabCreated.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="50" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteInv.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -72,21 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertLabCreated.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java">
+      <file leaf-file-name="GUIHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/all.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -96,8 +148,10 @@
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
+              <caret line="127" column="53" selection-start-line="127" selection-start-column="53" selection-end-line="127" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,27 +160,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryUsed.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUIHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -157,18 +191,22 @@
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/SearchQueries.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.form" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/Login.java" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.form" />
         <option value="$PROJECT_DIR$/all.sql" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/deleteInv.form" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/deleteInv.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.form" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
       </list>
     </option>
@@ -841,7 +879,7 @@
       <workItem from="1459703131279" duration="7554000" />
       <workItem from="1459732380765" duration="1236000" />
       <workItem from="1459733772407" duration="4012000" />
-      <workItem from="1459742643391" duration="2301000" />
+      <workItem from="1459742643391" duration="4338000" />
     </task>
     <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
       <created>1459213391250</created>
@@ -969,11 +1007,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459745972850</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="display none if no supervisors have inspected all machinery">
+      <created>1459747166245</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1459747166245</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103448000" />
+    <option name="totallyTimeSpent" value="105485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3229" y="-83" width="2902" height="1582" extended-state="6" />
@@ -1072,7 +1116,8 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="fixed up associate search to check for name and/or quantity" />
     <MESSAGE value="tabbed panes on user settings - main elements of delete researcher GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="tabbed panes on user settings - main elements of delete researcher GUI" />
+    <MESSAGE value="display none if no supervisors have inspected all machinery" />
+    <option name="LAST_COMMIT_MESSAGE" value="display none if no supervisors have inspected all machinery" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1086,21 +1131,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1338,13 +1368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12195122">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.form">
       <provider editor-type-id="ui-designer">
         <state />
@@ -1355,14 +1378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form">
       <provider editor-type-id="ui-designer">
         <state />
@@ -1370,14 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1415,14 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form">
       <provider editor-type-id="ui-designer">
         <state />
@@ -1434,12 +1433,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="52" selection-start-line="162" selection-start-column="52" selection-end-line="162" selection-end-column="52" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
@@ -1453,18 +1449,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="53" selection-start-line="127" selection-start-column="53" selection-end-line="127" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="174" column="65" selection-start-line="174" selection-start-column="65" selection-end-line="174" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <caret line="92" column="50" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7329949">
-          <caret line="594" column="50" selection-start-line="594" selection-start-column="50" selection-end-line="594" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.31167513">
+          <caret line="613" column="50" selection-start-line="613" selection-start-column="50" selection-end-line="613" selection-end-column="50" />
           <folding />
         </state>
       </provider>

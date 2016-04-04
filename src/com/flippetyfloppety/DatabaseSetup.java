@@ -1,5 +1,6 @@
 package com.flippetyfloppety;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class DatabaseSetup {
@@ -28,13 +29,17 @@ public class DatabaseSetup {
         }
     }
 
-    public ResultSet executeSQLQuery(String query) {
+    public ResultSet executeSQLQuery(JFrame mainFrame, String query) {
         try {
             PreparedStatement ps = this.connection.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             return rs;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            if (mainFrame != null) {
+                GUIHelper gui = new GUIHelper(this);
+                gui.showErrorDialog(mainFrame, e.getMessage());
+            }
+
             return null;
         }
     }

@@ -64,7 +64,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
             } else if (columnName.equals("qnty")) {
                 // get current quantity level to calculate amount used in experiment
                 query = "SELECT qnty FROM inventory WHERE iid=" + iid;
-                ResultSet rs = db.executeSQLQuery(query);
+                ResultSet rs = db.executeSQLQuery(mainFrame, query);
                 rs.next();
 
                 float oldQnty = rs.getFloat("qnty");
@@ -101,7 +101,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
             // update rupdatesi table
             // first get rsid associated with booknum
             query = "SELECT rsid FROM researcher NATURAL JOIN labbook WHERE booknum=" + booknum;
-            ResultSet rs = db.executeSQLQuery(query);
+            ResultSet rs = db.executeSQLQuery(mainFrame, query);
             rs.next();
 
             String rsid = rs.getString("rsid");
@@ -125,7 +125,7 @@ public class InventoryUsed extends JFrame implements TableModelListener {
 
     private void fillInvTable() {
         String invQuery = "SELECT * FROM inventory order by iname asc";
-        ResultSet rs = db.executeSQLQuery(invQuery);
+        ResultSet rs = db.executeSQLQuery(mainFrame, invQuery);
         guiHelper.fillTable(rs, inventoryTable);
 
     }

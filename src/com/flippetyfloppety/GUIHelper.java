@@ -22,7 +22,7 @@ public class GUIHelper {
         model.removeAllElements();
         // GET ALL COLUMN NAMES FROM INVENTORY CONSUMABLE JOIN
         try {
-            ResultSet rs = db.executeSQLQuery(query);
+            ResultSet rs = db.executeSQLQuery(null, query);
 
             ResultSetMetaData metaData = rs.getMetaData();
             for (int i = 1; i <= metaData.getColumnCount(); i++) {

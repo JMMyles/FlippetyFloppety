@@ -93,7 +93,7 @@ public class InsertEquipment extends JFrame {
 
                     // get iid just entered
                     String query = "SELECT inc_iid.currval from inventory";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     int newIid = rs.getInt(1);
 
@@ -172,7 +172,7 @@ public class InsertEquipment extends JFrame {
 
                     // get iid just entered
                     String query = "SELECT inc_iid.currval from inventory";
-                    ResultSet rs = db.executeSQLQuery(query);
+                    ResultSet rs = db.executeSQLQuery(mainFrame, query);
                     rs.next();
                     int newIid = rs.getInt(1);
 
