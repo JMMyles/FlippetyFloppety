@@ -12,7 +12,7 @@ import java.sql.SQLException;
 /**
  * Created by Jeanie on 4/3/2016.
  */
-public class InsertLabCreated extends JFrame {
+public class insertLabCreated extends JFrame {
     private JLabel title;
     private JTextField name;
     private JTextField qtyCreated;
@@ -26,7 +26,7 @@ public class InsertLabCreated extends JFrame {
     private java.sql.Date expdate;
     private DatabaseSetup db;
     private GUIHelper guiHelper;
-    public InsertLabCreated(DatabaseSetup db, int booknum, java.sql.Date sqldate) {
+    public insertLabCreated(DatabaseSetup db, int booknum, java.sql.Date sqldate) {
 
         this.db = db;
         this.booknum = booknum;

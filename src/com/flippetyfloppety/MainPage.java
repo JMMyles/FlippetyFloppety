@@ -695,7 +695,7 @@ public class MainPage extends JFrame {
 
                 int labcreated = JOptionPane.showConfirmDialog(null, "Did you create any items in the experiment?", "Lab Created from Experiment" , JOptionPane.YES_NO_OPTION);
                 if (labcreated == JOptionPane.YES_OPTION) {
-                    InsertLabCreated ilc = new InsertLabCreated(db, labbooknum, sqldate);
+                    insertLabCreated ilc = new insertLabCreated(db, labbooknum, sqldate);
                     ilc.setVisible(true);
                 }
 

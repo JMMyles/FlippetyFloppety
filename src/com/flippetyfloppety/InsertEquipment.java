@@ -99,6 +99,13 @@ public class InsertEquipment extends JFrame {
 
                     System.out.println(newIid);
 
+                    // insert into productinfo
+                    ps = db.getConnection().prepareStatement("INSERT INTO productinfo (supplier, ordernum) VALUES (?,?)");
+                    ps.setString(1, sup);
+                    ps.setString(2, ord);
+
+                    ps.executeUpdate();
+
                     // insert into equipment table
                     ps = db.getConnection().prepareStatement("INSERT INTO equipment (iid, supplier, ordernum) VALUES (?,?,?)");
                     ps.setInt(1, newIid);
@@ -111,13 +118,6 @@ public class InsertEquipment extends JFrame {
                     ps = db.getConnection().prepareStatement("INSERT INTO machinery (iid, serialnum) VALUES (?,?)");
                     ps.setInt(1, newIid);
                     ps.setString(2, ser);
-
-                    ps.executeUpdate();
-
-                    // insert into productinfo
-                    ps = db.getConnection().prepareStatement("INSERT INTO productinfo (supplier, ordernum) VALUES (?,?)");
-                    ps.setString(1, sup);
-                    ps.setString(2, ord);
 
                     ps.executeUpdate();
 
