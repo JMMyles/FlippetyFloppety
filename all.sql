@@ -191,7 +191,6 @@ insert into eusesi values(1, '2014-11-10', 5, 0.02);
 insert into rupdatei values('r1.jsihvon', 12, '2014-10-10');
 insert into rupdatei values('r2.jlam', 15, '2015-04-07');
 insert into rupdatei values('r4.bli', 7, '2015-09-23');
-insert into rupdatei values('r5.akapron', 8, '2015-11-09');
 insert into rupdatei values('r1.jsihvon', 14, '2016-02-02');
 -- Adding labcreated tuples
 insert into labcreated values(2, 1.5, 'mL', 2, '2016-01-01');
@@ -202,7 +201,7 @@ insert into labcreated values(5, 10, 'uL', 1, '2014-11-10');
 insert into rcreatesi values('r1.jsihvon', 4);
 insert into rcreatesi values('r2.jlam', 5);
 insert into rcreatesi values('r4.bli', 2);
-insert into rcreatesi values('r5.akapron', 3);
+
 -- Adding product info tuples
 insert into productinfo values('Invitrogen', 88947);
 insert into productinfo values('Invitrogen', 32439);

@@ -5,10 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -134,6 +131,21 @@ public class MainPage extends JFrame {
             inventoryPane.addChangeListener(new ChangeListener() {
                 @Override
                 public void stateChanged(ChangeEvent changeEvent) {
+
+                    listOfResearchers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                    listOfResearchers.setModel(new DefaultListModel());
+                    DefaultListModel rModel = (DefaultListModel)listOfResearchers.getModel();
+
+                    try {
+                        String rQuery = "SELECT rsid FROM researcher";
+                        ResultSet rs = db.executeSQLQuery(mainFrame, rQuery);
+                        while (rs.next()) {
+                            rModel.addElement(rs.getString("rsid"));
+                        }
+                    } catch (SQLException sqle) {
+                        guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                    }
+
 
                     // set projection options in URGENT tab
                     columnList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -821,6 +833,36 @@ public class MainPage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 DeleteInv x = new DeleteInv(db);
                 x.setVisible(true);
+            }
+        });
+        inventoryPane.addComponentListener(new ComponentAdapter() {
+        });
+        deleteButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedItem = listOfResearchers.getSelectedValue().toString();
+
+                String query = "DELETE FROM researcher WHERE rsid='" + selectedItem+"'";
+                db.executeSQLQuery(mainFrame, query);
+
+                listOfResearchers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                listOfResearchers.setModel(new DefaultListModel());
+                DefaultListModel rModel = (DefaultListModel)listOfResearchers.getModel();
+
+                try {
+                    String rQuery = "SELECT rsid FROM researcher";
+                    ResultSet rs = db.executeSQLQuery(mainFrame, rQuery);
+                    while (rs.next()) {
+                        rModel.addElement(rs.getString("rsid"));
+                    }
+                } catch (SQLException sqle) {
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                }
             }
         });
     }
