@@ -1078,7 +1078,7 @@
               </tabbedpane>
             </children>
           </grid>
-          <grid id="a2221" layout-manager="GridLayoutManager" row-count="5" column-count="15" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="a2221" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="User Settings"/>
@@ -1089,100 +1089,145 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="c18ac" class="javax.swing.JLabel">
+              <tabbedpane id="5f208" binding="tabbedPane1" default-binding="true">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="14" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="40" style="1"/>
-                  <horizontalAlignment value="2"/>
-                  <horizontalTextPosition value="2"/>
-                  <text value="Create a New Researcher Account:"/>
-                  <verticalAlignment value="1"/>
-                  <verticalTextPosition value="1"/>
-                </properties>
-              </component>
-              <component id="5558c" class="javax.swing.JButton" binding="createAccBtn">
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="15" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="25"/>
-                  <hideActionText value="false"/>
-                  <horizontalAlignment value="0"/>
-                  <text value="Create Account"/>
-                </properties>
-              </component>
-              <component id="60360" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <horizontalAlignment value="4"/>
-                  <horizontalTextPosition value="4"/>
-                  <text value="Name:"/>
-                </properties>
-              </component>
-              <component id="6b5a3" class="javax.swing.JTextField" binding="rname">
-                <constraints>
-                  <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <text value=""/>
-                </properties>
-              </component>
-              <component id="912e2" class="javax.swing.JPasswordField" binding="rpwd">
-                <constraints>
-                  <grid row="3" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <text value=""/>
-                </properties>
-              </component>
-              <component id="4a5d6" class="javax.swing.JTextField" binding="rsid">
-                <constraints>
-                  <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="-1" height="3"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="1" use-parent-layout="false">
+                    <preferred-size width="200" height="200"/>
                   </grid>
                 </constraints>
-                <properties>
-                  <columns value="10"/>
-                  <font size="20"/>
-                </properties>
-              </component>
-              <component id="14c2e" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <horizontalAlignment value="4"/>
-                  <horizontalTextPosition value="4"/>
-                  <text value="ID:"/>
-                </properties>
-              </component>
-              <component id="2a77d" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <font size="20"/>
-                  <text value="Password:"/>
-                </properties>
-              </component>
-              <hspacer id="194b2">
-                <constraints>
-                  <grid row="1" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </hspacer>
-              <hspacer id="37bb5">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </hspacer>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="1f4d0" layout-manager="GridLayoutManager" row-count="5" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <tabbedpane title="Create New Researcher"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="c18ac" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="0" column="0" row-span="1" col-span="10" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font size="40" style="1"/>
+                          <horizontalAlignment value="2"/>
+                          <horizontalTextPosition value="2"/>
+                          <text value="Create a New Researcher Account:"/>
+                          <verticalAlignment value="1"/>
+                          <verticalTextPosition value="1"/>
+                        </properties>
+                      </component>
+                      <component id="5fdca" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="2" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Password:"/>
+                        </properties>
+                      </component>
+                      <component id="84fb2" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="2" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <text value="Username:"/>
+                        </properties>
+                      </component>
+                      <component id="6b5a3" class="javax.swing.JTextField" binding="rname">
+                        <constraints>
+                          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <columns value="13"/>
+                          <font size="20"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                      <component id="4a5d6" class="javax.swing.JTextField" binding="rsid">
+                        <constraints>
+                          <grid row="3" column="5" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="1" use-parent-layout="false">
+                            <preferred-size width="-1" height="3"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <columns value="13"/>
+                          <font size="20"/>
+                        </properties>
+                      </component>
+                      <component id="7a431" class="javax.swing.JLabel">
+                        <constraints>
+                          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font size="20"/>
+                          <text value="User ID:"/>
+                        </properties>
+                      </component>
+                      <component id="5558c" class="javax.swing.JButton" binding="createAccBtn">
+                        <constraints>
+                          <grid row="4" column="5" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <font size="25"/>
+                          <hideActionText value="false"/>
+                          <horizontalAlignment value="0"/>
+                          <text value="Create Account"/>
+                        </properties>
+                      </component>
+                      <component id="912e2" class="javax.swing.JPasswordField" binding="rpwd">
+                        <constraints>
+                          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="8" fill="0" indent="5" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <columns value="13"/>
+                          <font size="20"/>
+                          <text value=""/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="9544e" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                    <margin top="0" left="0" bottom="0" right="0"/>
+                    <constraints>
+                      <tabbedpane title="Delete Researcher"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <hspacer id="8a06a">
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                      </hspacer>
+                      <scrollpane id="a51c7">
+                        <constraints>
+                          <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="e3127" class="javax.swing.JList" binding="listOfResearchers">
+                            <constraints/>
+                            <properties/>
+                          </component>
+                        </children>
+                      </scrollpane>
+                      <component id="4f668" class="javax.swing.JButton" binding="deleteButton">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="DELETE RESEARCHER"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </tabbedpane>
             </children>
           </grid>
         </children>

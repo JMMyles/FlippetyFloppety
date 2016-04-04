@@ -99,6 +99,9 @@ public class MainPage extends JFrame {
     private JButton newEquipmentButton;
     private JScrollBar scrollBar1;
     private JComboBox greaterLessCombo;
+    private JTabbedPane tabbedPane1;
+    private JList listOfResearchers;
+    private JButton deleteButton;
 
     private int user;
     private DatabaseSetup db;
