@@ -592,7 +592,7 @@ public class MainPage extends JFrame {
                 } catch (SQLException sqle) {
 
                     superAllMachines.setText("");
-                    superAllMachines.setText("none"))
+                    superAllMachines.setText("none");
                     guiHelper.showErrorDialog(mainFrame, "No supervisor has inspected all machinery");
                 }
 
