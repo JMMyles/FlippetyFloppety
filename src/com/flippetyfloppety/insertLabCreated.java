@@ -97,6 +97,8 @@ public class InsertLabCreated extends JFrame {
                     ps.setDate(3, expdate);
                     ps.executeUpdate();
 
+                    JOptionPane.showMessageDialog(mainFrame, "Quantity updated succesfully");
+
                 } catch (SQLException sqle) {
                     guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
                 }

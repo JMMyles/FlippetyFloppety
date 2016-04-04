@@ -218,7 +218,7 @@ public class MainPage extends JFrame {
 
                 String invAmount = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE qty = " + invAmount;
+                String query = "SELECT * FROM inventory WHERE qnty = " + invAmount;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -240,7 +240,7 @@ public class MainPage extends JFrame {
 
                 String invAmount = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE qty < " + invAmount;
+                String query = "SELECT * FROM inventory WHERE qnty < " + invAmount;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -262,7 +262,7 @@ public class MainPage extends JFrame {
 
                 String invAmount = inventorySearchQuery.getText().toLowerCase();
 
-                String query = "SELECT * FROM inventory WHERE qty > " + invAmount;
+                String query = "SELECT * FROM inventory WHERE qnty > " + invAmount;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
