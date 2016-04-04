@@ -3,8 +3,9 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Oracle - @localhost" uuid="85fca027-4873-4839-a035-4382f674f80c">
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
       <user-name>ora_q2d9</user-name>
+      <schema-pattern>*.ORA_Q2D9 *.PUBLIC *.SYS *.SYSTEM</schema-pattern>
+      <default-schemas>*.ORA_Q2D9 *.PUBLIC</default-schemas>
     </data-source>
   </component>
 </project>

@@ -53,6 +53,10 @@ public class InsertLabCreated extends JFrame {
                 String units = unitsCreated.getText();
                 String loc = newLoc.getText();
 
+                if (newItemName.equals("") || qty == 0 || units.equals("") || loc.equals("")) {
+                    guiHelper.showErrorDialog(mainFrame, "All fields must be entered");
+                    return;
+                }
                 try {
                     // insert into inventory table
                     PreparedStatement ps = db.getConnection().prepareStatement("INSERT INTO inventory VALUES (inc_iid.nextval,'" + loc + "',?," + qty +  ",'" + newItemName + "')");

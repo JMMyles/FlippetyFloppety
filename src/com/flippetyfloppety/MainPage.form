@@ -3,7 +3,7 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1348" height="677"/>
+      <xy x="20" y="20" width="1790" height="677"/>
     </constraints>
     <properties>
       <font size="20"/>
@@ -79,10 +79,17 @@
                   <text value="Greater Than Amount"/>
                 </properties>
               </component>
+              <component id="ffa71" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="Search by name and quantity:"/>
+                </properties>
+              </component>
               <component id="4cdf" class="javax.swing.JTextField" binding="associateOneQuery">
                 <constraints/>
                 <properties>
-                  <columns value="3"/>
+                  <columns value="10"/>
                   <font size="20"/>
                 </properties>
               </component>
@@ -93,6 +100,23 @@
                   <model>
                     <item value="AND"/>
                     <item value="OR"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="7e50b" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <text value="quantity"/>
+                </properties>
+              </component>
+              <component id="4cb8" class="javax.swing.JComboBox" binding="greaterLessCombo">
+                <constraints/>
+                <properties>
+                  <font size="20"/>
+                  <model>
+                    <item value="&lt;"/>
+                    <item value="&gt;"/>
                   </model>
                 </properties>
               </component>
@@ -113,7 +137,7 @@
               <scrollpane id="fbf19">
                 <constraints/>
                 <properties>
-                  <preferredSize width="1133" height="433"/>
+                  <preferredSize width="1500" height="433"/>
                 </properties>
                 <border type="none"/>
                 <children>

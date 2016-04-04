@@ -96,6 +96,7 @@ public class MainPage extends JFrame {
     private JComboBox associateComboBox;
     private JTextField associateTwoQuery;
     private JButton associateSearchBtn;
+    private JComboBox greaterLessCombo;
 
     private int user;
     private DatabaseSetup db;
@@ -279,13 +280,14 @@ public class MainPage extends JFrame {
 
                 String firstAssociate = associateOneQuery.getText().toLowerCase();
                 String associateQuery = associateComboBox.getSelectedItem().toString().toLowerCase();
+                String greaterLess = greaterLessCombo.getSelectedItem().toString().toLowerCase();
                 String secondAssociate = associateTwoQuery.getText().toLowerCase();
 
                 String query = "";
                 if (associateQuery.equals("and")) {
-                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' AND iname LIKE '%" + secondAssociate + "%'";
+                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' AND qnty" + greaterLess + " " + secondAssociate;
                 } else if (associateQuery.equals("or")) {
-                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' OR iname LIKE '%" + secondAssociate + "%'";
+                    query = "SELECT * FROM inventory WHERE iname LIKE '%" + firstAssociate + "%' OR  qnty" + greaterLess + " " + secondAssociate;
                 } else {
                     System.out.println("Error: Inappropriate association");
                 }
