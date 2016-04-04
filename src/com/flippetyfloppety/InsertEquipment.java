@@ -21,15 +21,8 @@ public class InsertEquipment extends JFrame {
     private JTabbedPane mname;
     private JTextField msupplier_in;
     private JButton mcreate;
-    private JFormattedTextField cname_in;
-    private JFormattedTextField cloc_in;
-    private JFormattedTextField cqnty_in;
-    private JFormattedTextField camnt_in;
-    private JFormattedTextField csupplier_in;
-    private JFormattedTextField cordnum_in;
+    private JTextField cname_in;
     private JButton ccreate;
-    private JLabel mloc;
-    private JLabel mqnty;
     private JFormattedTextField cdate_in;
     private JFormattedTextField mdate_in;
     private JPanel newE;
@@ -38,6 +31,11 @@ public class InsertEquipment extends JFrame {
     private JTextField mqty_in;
     private JTextField mordnum_in;
     private JTextField msernum_in;
+    private JTextField cloc_in;
+    private JTextField cqty_in;
+    private JTextField camnt_in;
+    private JTextField csupplier_in;
+    private JTextField cord_in;
     private JFrame mainFrame;
 
     public InsertEquipment(DatabaseSetup db) {
@@ -50,14 +48,15 @@ public class InsertEquipment extends JFrame {
         pack();
         setVisible(true);
 
-        mcreate.addActionListener(new ActionListener() {
-            // @param e
+        ccreate.addActionListener(new ActionListener() {
+            //@param e
             @Override
             public void actionPerformed(ActionEvent e) {
-                String newName = mname_in.getText();
+                String newName = cname_in.getText();
 
-                String cdate = mdate_in.getText();
+                String cdate = cdate_in.getText();
                 String[] splitDate = cdate.split("-");
+                System.out.println(splitDate);
                 if (splitDate.length > 3) {
                     JOptionPane.showMessageDialog(mainFrame, "Make sure you enter your date in yyyy-mm-dd format", "Error!", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -71,13 +70,93 @@ public class InsertEquipment extends JFrame {
                     }
                 }
                 java.sql.Date sqldate = null;
+                System.out.println(sqldate);
                 try {
-                    Date utilDate = new SimpleDateFormat("YYYY-MM-DD").parse(cdate);
+                    Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(cdate);
                     sqldate = new java.sql.Date(utilDate.getTime());
                 }
                 catch (ParseException pe) {
                     guiHelper.showErrorDialog(mainFrame, pe.getMessage());
                 }
+
+                float qty = Float.parseFloat(cqty_in.getText());
+                String loc = cloc_in.getText();
+                String sup = csupplier_in.getText();
+                String ord = cord_in.getText();
+                float amnt = Float.parseFloat(camnt_in.getText());
+
+                try {
+                    // insert into inventory table
+                    PreparedStatement ps = db.getConnection().prepareStatement("INSERT INTO inventory VALUES (inc_iid.nextval,'" + loc + "',?," + qty + ",'" + newName + "')");
+                    ps.setDate(1, sqldate);
+                    ps.executeUpdate();
+
+                    // get iid just entered
+                    String query = "SELECT inc_iid.currval from inventory";
+                    ResultSet rs = db.executeSQLQuery(query);
+                    rs.next();
+                    int newIid = rs.getInt(1);
+
+                    // insert into product info
+                    ps = db.getConnection().prepareStatement("INSERT INTO productinfo (supplier, ordernum) VALUES (?,?)");
+                    ps.setString(1, sup);
+                    ps.setString(2, ord);
+                    ps.executeUpdate();
+
+                    // insert into equipment
+                    ps = db.getConnection().prepareStatement("INSERT INTO equipment (iid, supplier, ordernum) VALUES (?,?,?)");
+                    ps.setInt(1, newIid);
+                    ps.setString(2, sup);
+                    ps.setString(3, ord);
+                    ps.executeUpdate();
+
+                    // insert into consumable table
+                    ps = db.getConnection().prepareStatement("INSERT INTO consumable (iid, amnt) VALUES (?,?)");
+                    ps.setInt(1, newIid);
+                    ps.setFloat(2, amnt);
+                    ps.executeUpdate();
+
+                    JOptionPane.showMessageDialog(mainFrame, "Consumable inserted successfully!");
+
+                } catch (SQLException sqle){
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+
+                }
+
+            }
+        });
+
+        mcreate.addActionListener(new ActionListener() {
+            // @param e
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String newName = mname_in.getText();
+
+                String cdate = mdate_in.getText();
+                String[] splitDate = cdate.split("-");
+                System.out.println(splitDate);
+                if (splitDate.length > 3) {
+                    JOptionPane.showMessageDialog(mainFrame, "Make sure you enter your date in yyyy-mm-dd format", "Error!", JOptionPane.ERROR_MESSAGE);
+                    return;
+                } else {
+                    if (splitDate[0].length() < 4 || Integer.parseInt(splitDate[0]) > Calendar.getInstance().get(Calendar.YEAR)) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Year entered!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    } else if (splitDate[1].length() < 2 || Integer.parseInt(splitDate[1]) > 12 || splitDate[2].length() < 2 || Integer.parseInt(splitDate[2]) > 31) {
+                        JOptionPane.showMessageDialog(mainFrame, "Invalid Date entered! Remember leading zeros!", "Error!", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+                java.sql.Date sqldate = null;
+                System.out.println(sqldate);
+                try {
+                    Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(cdate);
+                    sqldate = new java.sql.Date(utilDate.getTime());
+                }
+                catch (ParseException pe) {
+                    guiHelper.showErrorDialog(mainFrame, pe.getMessage());
+                }
+                System.out.println(sqldate);
 
                 float qty = Float.parseFloat(mqty_in.getText());
                 String loc = mloc_inc.getText();
