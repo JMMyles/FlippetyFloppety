@@ -6,27 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Delete researcher complete.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" />
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="update the list of researchers when one is added.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/all.sql" afterPath="$PROJECT_DIR$/all.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
     </list>
     <ignored path="CPSC 304.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8541033">
-              <caret line="887" column="17" selection-start-line="887" selection-start-column="17" selection-end-line="887" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="874" column="53" selection-start-line="874" selection-start-column="53" selection-end-line="874" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -76,26 +59,19 @@
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="187" column="50" selection-start-line="187" selection-start-column="50" selection-end-line="187" selection-end-column="50" />
+              <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteInv.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DeleteInv.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.95087004">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InsertEquipment.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -143,11 +119,11 @@
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java" />
       </list>
     </option>
   </component>
@@ -159,7 +135,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="3229" />
     <option name="y" value="-72" />
-    <option name="width" value="2688" />
+    <option name="width" value="1405" />
     <option name="height" value="1571" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -819,7 +795,7 @@
       <workItem from="1459703131279" duration="7554000" />
       <workItem from="1459732380765" duration="1236000" />
       <workItem from="1459733772407" duration="4012000" />
-      <workItem from="1459742643391" duration="5690000" />
+      <workItem from="1459742643391" duration="6647000" />
     </task>
     <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
       <created>1459213391250</created>
@@ -965,14 +941,20 @@
       <option name="project" value="LOCAL" />
       <updated>1459749833962</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update the list of researchers when one is added.">
+      <created>1459750566790</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1459750566790</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106837000" />
+    <option name="totallyTimeSpent" value="107794000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3229" y="-72" width="2688" height="1571" extended-state="0" />
+    <frame x="3229" y="-72" width="1405" height="1571" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -982,10 +964,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.502851" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15558802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24981739" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287071" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.7160494E-4" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0015278839" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1046,7 +1028,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added import to QueriesGUI" />
     <MESSAGE value="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when." />
     <MESSAGE value="Fixed password bug -- no longer shows the results table" />
     <MESSAGE value="Breakdown tab populated with table and drop down menu options -- all.sql date field in breakdown table updated to be called breakdownDate to avoid ambiguity when displaying" />
@@ -1071,7 +1052,8 @@
     <MESSAGE value="display none if no supervisors have inspected all machinery" />
     <MESSAGE value="Partially working deletion of inventory items" />
     <MESSAGE value="Delete researcher complete." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete researcher complete." />
+    <MESSAGE value="update the list of researchers when one is added." />
+    <option name="LAST_COMMIT_MESSAGE" value="update the list of researchers when one is added." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1425,6 +1407,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="874" column="53" selection-start-line="874" selection-start-column="53" selection-end-line="874" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -1439,34 +1440,15 @@
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="50" selection-start-line="187" selection-start-column="50" selection-end-line="187" selection-end-column="50" />
+          <caret line="202" column="20" selection-start-line="202" selection-start-column="20" selection-end-line="202" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DeleteInv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8541033">
-          <caret line="887" column="17" selection-start-line="887" selection-start-column="17" selection-end-line="887" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.95087004">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding />
         </state>
       </provider>

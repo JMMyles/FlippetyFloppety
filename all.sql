@@ -34,7 +34,7 @@ create table researcher(
 create table labbook(
 	booknum int NOT NULL primary key,
 	rsid varchar2(10) NOT NULL,
-	foreign key (rsid) references researcher(rsid)
+	foreign key (rsid) references researcher(rsid) 
 	);
 create table experiment(
 	-- JL: i dont think this one is right in the google doc the on update cascade, on delete cascade
@@ -69,8 +69,8 @@ create table rupdatei(
 	iid int NOT NULL,
 	lastchecked date NOT NULL,
 	primary key (rsid, iid),
-	foreign key (rsid) references researcher(rsid),
-	foreign key (iid) references inventory(iid) on delete cascade
+	foreign key (rsid) references researcher(rsid) on delete cascade,
+	foreign key (iid) references inventory(iid)
 	);
 create table labcreated(
 	iid int primary key,
@@ -79,7 +79,7 @@ create table labcreated(
   	units varchar2(2) NOT NULL,
 	booknum integer NOT NULL,
 	datelc date NOT NULL,
-	foreign key (iid) references inventory(iid) on delete cascade,
+	foreign key (iid) references inventory(iid),
 	foreign key (datelc, booknum) references experiment(cdate, booknum)
 	);
 -- researcher only creates new labcreated tuples.
@@ -89,21 +89,20 @@ create table rcreatesi(
 	rsid varchar2(10) NOT NULL,
 	iid int NOT NULL,
 	primary key (rsid, iid),
-	foreign key (rsid) references researcher(rsid),
-	foreign key (iid) references labcreated(iid) on delete cascade
+	foreign key (rsid) references researcher(rsid) on delete cascade,
+	foreign key (iid) references labcreated(iid)
 	);
 create table productinfo(
-	iid int NOT NULL primary key,
 	supplier varchar2(40) NOT NULL,
 	ordernum varchar2(10) NOT NULL,
-	foreign key (iid) references equipment(iid)
+	primary key (supplier, ordernum)
 	);
 create table equipment(
 	iid int primary key,
 	supplier varchar2(40) NOT NULL,
 	ordernum varchar2(10) NOT NULL,
-	foreign key (iid) references inventory(iid),
-	foreign key (supplier, ordernum) references productinfo(supplier,ordernum) on delete cascade
+	foreign key (iid) references inventory(iid) on delete cascade,
+	foreign key (supplier, ordernum) references productinfo(supplier,ordernum)
 	);
 create table machinery(
 	iid int primary key,
@@ -113,7 +112,7 @@ create table machinery(
 create table consumable(
 	iid int primary key,
 	amnt float NOT NULL,
-	foreign key (iid) references equipment(iid) on delete cascade,
+	foreign key (iid) references equipment(iid),
 	constraint nonNegAmnt check (amnt >=0)
 	);
 create table inspection(
