@@ -400,7 +400,7 @@ public class MainPage extends JFrame {
 
                 String proj = guiHelper.getProjectedAttributes(columnList);
 
-                String query = "SELECT * FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
+                String query = "SELECT " + proj + " FROM consumable NATURAL JOIN inventory WHERE amnt " + quantity;
 
                 ResultSet rs = db.executeSQLQuery(query);
 
@@ -590,7 +590,10 @@ public class MainPage extends JFrame {
                     superAllMachines.setText("");
                     superAllMachines.setText(rs.getString("sname"));
                 } catch (SQLException sqle) {
-                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+
+                    superAllMachines.setText("");
+                    superAllMachines.setText("none"))
+                    guiHelper.showErrorDialog(mainFrame, "No supervisor has inspected all machinery");
                 }
 
             }

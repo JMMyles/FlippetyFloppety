@@ -72,12 +72,12 @@ public class InventoryUsed extends JFrame implements TableModelListener {
                 qtyUsed = oldQnty - newQnty;
 
                 // check constraint on table for mysql 5.5 does not work
-                if (newQnty < 0) {
-                    JOptionPane.showMessageDialog(mainFrame, "Quantity must be a positive value", "Error!", JOptionPane.ERROR_MESSAGE);
-                    return;
-                } else if (newQnty > oldQnty) {
-                    JOptionPane.showMessageDialog(mainFrame, "The new value may not be greater than the previous value", "Error!", JOptionPane.ERROR_MESSAGE);
-                }
+//                if (newQnty < 0) {
+//                    JOptionPane.showMessageDialog(mainFrame, "Quantity must be a positive value", "Error!", JOptionPane.ERROR_MESSAGE);
+//                    return;
+//                } else if (newQnty > oldQnty) {
+//                    JOptionPane.showMessageDialog(mainFrame, "The new value may not be greater than the previous value", "Error!", JOptionPane.ERROR_MESSAGE);
+//                }
             }
 
             // update inventory with new lastChecked date and new quantity to reflect changes
