@@ -96,6 +96,8 @@ public class MainPage extends JFrame {
     private JComboBox associateComboBox;
     private JTextField associateTwoQuery;
     private JButton associateSearchBtn;
+    private JButton newEquipmentButton;
+    private JScrollBar scrollBar1;
 
     private int user;
     private DatabaseSetup db;
@@ -121,6 +123,7 @@ public class MainPage extends JFrame {
         if (this.user == Login.RESEARCHER) {
             inventoryPane.setEnabledAt(2, false);
             inventoryPane.setEnabledAt(3, false);
+            newEquipmentButton.setEnabled(false);
         } else {
 
             inventoryPane.addChangeListener(new ChangeListener() {
@@ -784,6 +787,20 @@ public class MainPage extends JFrame {
                     }
                 }
             }
+        });
+
+        newEquipmentButton.addActionListener( new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                InsertEquipment ie = new InsertEquipment(db);
+                ie.setVisible(true);
+            }
+
         });
     }
 
