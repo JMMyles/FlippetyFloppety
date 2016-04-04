@@ -72,7 +72,7 @@ public class InsertEquipment extends JFrame {
                 }
                 java.sql.Date sqldate = null;
                 try {
-                    Date utilDate = new SimpleDateFormat("YYYY-MM-DD").parse(cdate);
+                    Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(cdate);
                     sqldate = new java.sql.Date(utilDate.getTime());
                 }
                 catch (ParseException pe) {
