@@ -161,6 +161,12 @@ public class MainPage extends JFrame {
                     String breakdownQuery = "SELECT * FROM breakdown NATURAL JOIN machinery NATURAL JOIN equipment " +
                             " NATURAL JOIN inventory ";
                     guiHelper.fillProjectionList(bModel, breakdownQuery);
+
+                    listOfResearchers.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+                    listOfResearchers.setModel(new DefaultListModel());
+                    DefaultListModel resModel = (DefaultListModel)listOfResearchers.getModel();
+                    String researcherQuery = "SELECT * FROM researcher";
+                    guiHelper.fillProjectionList(resModel, researcherQuery);
                 }
             });
         }
