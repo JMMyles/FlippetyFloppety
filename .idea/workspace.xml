@@ -6,39 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="Inventory double click now left joins with supplier to display the supplier/order number of item">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" />
+    <list default="true" id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="bug fixes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/Login.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$15.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/AbstractLayout.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/AbstractLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/DimensionInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/DimensionInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridConstraints.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridConstraints.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridLayoutManager.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/GridLayoutManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/HorizontalInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/HorizontalInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/LayoutState.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/LayoutState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Spacer.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Spacer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/SupportCode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Util.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/VerticalInfo.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/intellij/uiDesigner/core/VerticalInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" afterPath="$PROJECT_DIR$/out/production/CPSC 304/com/flippetyfloppety/MainPage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" afterPath="$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.java" />
     </list>
     <ignored path="CPSC 304.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,138 +65,96 @@
     <favorites_list name="CPSC 304" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-          <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-7319">
-                  <caret line="293" column="17" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InsertEquipment.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="125" column="97" selection-start-line="125" selection-start-column="97" selection-end-line="125" selection-end-column="97" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InsertEquipment.form" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form">
-              <provider selected="true" editor-type-id="ui-designer">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="all.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/all.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-180">
-                  <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InventoryUsed.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DatabaseSetup.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InventoryUsed.form" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form">
-              <provider selected="true" editor-type-id="ui-designer">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GUIHelper.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="885">
-                  <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-9884">
-                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainPage.form" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
-              <provider selected="true" editor-type-id="ui-designer">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="all.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/all.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="885">
-                  <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InsertLabCreated.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="103">
-                  <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="insertLabCreated.form" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.form">
-              <provider selected="true" editor-type-id="ui-designer">
-                <state />
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
+      <file leaf-file-name="MainPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="291" column="75" selection-start-line="291" selection-start-column="75" selection-end-line="291" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainPage.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertLabCreated.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/all.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryUsed.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseSetup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <element signature="e#521#522#0" expanded="false" />
+                <element signature="e#559#560#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryUsed.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUIHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#446#447#0" expanded="false" />
+                <element signature="e#480#481#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -236,12 +186,10 @@
         <option value="$PROJECT_DIR$/all.sql" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java" />
+        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java" />
         <option value="$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form" />
-        <option value="$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java" />
       </list>
     </option>
   </component>
@@ -251,10 +199,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="41" />
-    <option name="width" value="1890" />
-    <option name="height" value="1049" />
+    <option name="x" value="3229" />
+    <option name="y" value="-83" />
+    <option name="width" value="2902" />
+    <option name="height" value="1582" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -281,7 +229,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,118 +239,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flippetyfloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainPage" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flippetyfloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flippetyfloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InsertLabCreated" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlippetyFloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flippetyfloppety" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InsertEquipment" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,21 +283,31 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -467,15 +317,27 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -493,6 +355,133 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -507,6 +496,16 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -572,6 +571,9 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -594,6 +596,12 @@
       <option name="passParentEnvs" value="true" />
       <option name="workingDirectory" />
       <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <envs />
       <method />
     </configuration>
@@ -653,6 +661,26 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <configuration default="false" name="Login" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -683,9 +711,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -694,7 +720,6 @@
       <changelist id="1c78dbbf-e8ff-47e4-be14-4a4f05970ffe" name="Default" comment="" />
       <created>1457727193393</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
       <updated>1457727193393</updated>
       <workItem from="1458347985359" duration="1920000" />
       <workItem from="1458432992650" duration="7735000" />
@@ -721,157 +746,146 @@
       <workItem from="1459653509100" duration="187000" />
       <workItem from="1459653727482" duration="20470000" />
       <workItem from="1459703131279" duration="7554000" />
-      <workItem from="1459732380765" duration="869000" />
+      <workItem from="1459732380765" duration="1236000" />
+      <workItem from="1459733772407" duration="2644000" />
     </task>
     <task id="LOCAL-00001" summary="Inspection Log created -- current bug that pwd column is also shown. Updated all.sql to create a rinspectsm table to see who inspected a particular machine and when.">
       <created>1459213391250</created>
       <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1459213391250</updated>
     </task>
     <task id="LOCAL-00002" summary="Fixed password bug -- no longer shows the results table">
       <created>1459214502994</created>
       <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1459214502994</updated>
     </task>
     <task id="LOCAL-00003" summary="Breakdown tab populated with table and drop down menu options -- all.sql date field in breakdown table updated to be called breakdownDate to avoid ambiguity when displaying">
       <created>1459223768760</created>
       <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1459223768760</updated>
     </task>
     <task id="LOCAL-00004" summary="Finished implementing stats tab, average always rounds down though">
       <created>1459311084235</created>
       <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1459311084235</updated>
     </task>
     <task id="LOCAL-00005" summary="SQLException messages now display in a dialog, fixed average to display decimal places">
       <created>1459363214666</created>
       <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1459363214667</updated>
     </task>
     <task id="LOCAL-00006" summary="Moved listeners around">
       <created>1459453565210</created>
       <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1459453565210</updated>
     </task>
     <task id="LOCAL-00007" summary="Experiment search by lab book number and/or experiment ID implemented">
       <created>1459541328856</created>
       <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1459541328856</updated>
     </task>
     <task id="LOCAL-00008" summary="Building Jar File">
       <created>1459628970866</created>
       <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1459628970866</updated>
     </task>
     <task id="LOCAL-00009" summary="Building Jar File">
       <created>1459628993591</created>
       <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1459628993591</updated>
     </task>
     <task id="LOCAL-00010" summary="Fixed a null pointer exception due to merge conflict">
       <created>1459655074012</created>
       <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1459655074012</updated>
     </task>
     <task id="LOCAL-00011" summary="refactor, made guihelper class">
       <created>1459658738751</created>
       <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1459658738751</updated>
     </task>
     <task id="LOCAL-00012" summary="update inventory used for experiment">
       <created>1459662828674</created>
       <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
       <updated>1459662828674</updated>
     </task>
     <task id="LOCAL-00013" summary="update inventory, eusesi, and experiment tables based on user entering a new experiment, and the inventory items used">
       <created>1459667602208</created>
       <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
       <updated>1459667602208</updated>
     </task>
     <task id="LOCAL-00014" summary="changed iid to auto increment to make my life easier when inserting a new inventory item">
       <created>1459669423731</created>
       <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
       <updated>1459669423731</updated>
     </task>
     <task id="LOCAL-00015" summary="update rupdatei tables, change qnty in inventory schema to float">
       <created>1459674120901</created>
       <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
       <updated>1459674120902</updated>
     </task>
     <task id="LOCAL-00016" summary="Double click on experiment search results to get items used in the experiment. Disabled editing on all columns in all tables, except the quantity column in updateInventory.">
       <created>1459709592340</created>
       <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
       <updated>1459709592340</updated>
     </task>
     <task id="LOCAL-00017" summary="Feedback for user that item inserted succesfully in lab created and inventory used. Double click on inventory row to reach rupdatesi table, to see who updated the inventory last, and when.">
       <created>1459710049816</created>
       <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
       <updated>1459710049816</updated>
     </task>
     <task id="LOCAL-00018" summary="Inventory double click now left joins with supplier to display the supplier/order number of item">
       <created>1459710916109</created>
       <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1459710916109</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="bug fixes">
+      <created>1459733260540</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1459733260540</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96768000" />
+    <option name="totallyTimeSpent" value="99779000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="41" width="1890" height="1049" extended-state="0" />
-    <editor active="false" />
+    <frame x="3229" y="-83" width="2902" height="1582" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29467085" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2958364" sideWeight="0.49429792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30021915" sideWeight="0.502851" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15558802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973877" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981739" sideWeight="0.49714896" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287071" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14880952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="7.127584E-4" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -881,8 +895,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32965076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943755" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -949,7 +963,8 @@
     <MESSAGE value="Double click on experiment search results to get items used in the experiment. Disabled editing on all columns in all tables, except the quantity column in updateInventory." />
     <MESSAGE value="Feedback for user that item inserted succesfully in lab created and inventory used. Double click on inventory row to reach rupdatesi table, to see who updated the inventory last, and when." />
     <MESSAGE value="Inventory double click now left joins with supplier to display the supplier/order number of item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inventory double click now left joins with supplier to display the supplier/order number of item" />
+    <MESSAGE value="bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -963,9 +978,23 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
@@ -973,35 +1002,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding />
         </state>
@@ -1009,193 +1038,191 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.form">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="213" column="52" selection-start-line="213" selection-start-column="52" selection-end-line="213" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="55" selection-start-line="28" selection-start-column="55" selection-end-line="28" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.form">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.form">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/85fca027-4873-4839-a035-4382f674f80c" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85fca027-4873-4839-a035-4382f674f80c/console.sql" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/jre/lib/rt.jar!/sun/misc/Launcher.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/ClassLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/QueriesGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
         </state>
       </provider>
@@ -1205,33 +1232,53 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NumberFormatException.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8329718">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.12195122">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.form">
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/GUIHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
+        <state vertical-scroll-proportion="0.0">
           <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#446#447#0" expanded="false" />
+            <element signature="e#480#481#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.form">
-      <provider selected="true" editor-type-id="ui-designer">
+      <provider editor-type-id="ui-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1239,9 +1286,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/DatabaseSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#521#522#0" expanded="false" />
+            <element signature="e#559#560#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/85fca027-4873-4839-a035-4382f674f80c">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>85fca027-4873-4839-a035-4382f674f80c</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.1" x="939.090909090909" y="429.27272727272725" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85fca027-4873-4839-a035-4382f674f80c/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="291" column="75" selection-start-line="291" selection-start-column="75" selection-end-line="291" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1250,68 +1361,9 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/insertLabCreated.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/MainPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9884">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InventoryUsed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertEquipment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="125" column="97" selection-start-line="125" selection-start-column="97" selection-end-line="125" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/flippetyfloppety/InsertLabCreated.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
