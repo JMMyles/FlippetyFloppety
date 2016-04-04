@@ -865,6 +865,29 @@ public class MainPage extends JFrame {
                 }
             }
         });
+        tabbedPane1.addChangeListener(new ChangeListener() {
+            /**
+             * Invoked when the target of the listener has changed its state.
+             *
+             * @param e a ChangeEvent object
+             */
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                listOfResearchers.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+                listOfResearchers.setModel(new DefaultListModel());
+                DefaultListModel rModel = (DefaultListModel)listOfResearchers.getModel();
+
+                try {
+                    String rQuery = "SELECT rsid FROM researcher";
+                    ResultSet rs = db.executeSQLQuery(mainFrame, rQuery);
+                    while (rs.next()) {
+                        rModel.addElement(rs.getString("rsid"));
+                    }
+                } catch (SQLException sqle) {
+                    guiHelper.showErrorDialog(mainFrame, sqle.getMessage());
+                }
+            }
+        });
     }
 
 

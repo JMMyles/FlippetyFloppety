@@ -93,9 +93,10 @@ create table rcreatesi(
 	foreign key (iid) references labcreated(iid) on delete cascade
 	);
 create table productinfo(
+	iid int NOT NULL primary key,
 	supplier varchar2(40) NOT NULL,
 	ordernum varchar2(10) NOT NULL,
-	primary key (supplier, ordernum)
+	foreign key (iid) references equipment(iid)
 	);
 create table equipment(
 	iid int primary key,
